@@ -80,33 +80,38 @@ class PhoneComponent extends React.Component<Props, PhoneState> {
                     <div className="pg-confirm__content-phone-col-text">
                         1. {this.translate('page.body.kyc.phone.enterPhone')}
                     </div>
-                    <fieldset className={phoneNumberFocusedClass}>
-                        <InputGroup>
-                            <CustomInput
-                                label={phoneNumber ? this.translate('page.body.kyc.phone.phoneNumber') : ''}
-                                defaultLabel={phoneNumber ? this.translate('page.body.kyc.phone.phoneNumber') : ''}
-                                placeholder={this.translate('page.body.kyc.phone.phoneNumber')}
-                                type="string"
-                                inputValue={phoneNumber}
-                                handleClick={this.addPlusSignToPhoneNumber}
-                                handleChangeInput={this.handleChangePhoneNumber}
-                                onKeyPress={this.handleSendEnterPress}
-                                autoFocus={true}
-                                handleFocusInput={this.handleFieldFocus('phoneNumber')}
-                            />
-                            <InputGroup.Append>
-                                <Button
-                                    block={true}
-                                    onClick={this.handleSendCode}
-                                    size="lg"
-                                    variant="primary"
-                                    disabled={!phoneNumber}
-                                >
-                                    {this.state.resendCode ? this.translate('page.body.kyc.phone.resend') : this.translate('page.body.kyc.phone.send')}
-                                </Button>
-                            </InputGroup.Append>
-                        </InputGroup>
-                    </fieldset>
+                    <form>
+                        <fieldset className={phoneNumberFocusedClass}>
+                                <InputGroup>
+                                    <CustomInput
+                                        label={phoneNumber ? this.translate('page.body.kyc.phone.phoneNumber') : ''}
+                                        defaultLabel={phoneNumber ? this.translate('page.body.kyc.phone.phoneNumber') : ''}
+                                        placeholder={this.translate('page.body.kyc.phone.phoneNumber')}
+                                        type="tel"
+                                        name="phone"
+                                        autoComplete="tel"
+                                        inputValue={phoneNumber}
+                                        handleClick={this.addPlusSignToPhoneNumber}
+                                        handleChangeInput={this.handleChangePhoneNumber}
+                                        onKeyPress={this.handleSendEnterPress}
+                                        autoFocus={true}
+                                        handleFocusInput={this.handleFieldFocus('phoneNumber')}
+                                    />
+                                    <InputGroup.Append>
+                                        <Button
+                                            block={true}
+                                            onClick={this.handleSendCode}
+                                            size="lg"
+                                            variant="primary"
+                                            disabled={!phoneNumber}
+                                            type="submit"
+                                        >
+                                            {this.state.resendCode ? this.translate('page.body.kyc.phone.resend') : this.translate('page.body.kyc.phone.send')}
+                                        </Button>
+                                    </InputGroup.Append>
+                                </InputGroup>
+                        </fieldset>
+                    </form>
                 </div>
                 <div className="pg-confirm__content-phone-col">
                     <div className="pg-confirm__content-phone-col-text">
@@ -171,7 +176,7 @@ class PhoneComponent extends React.Component<Props, PhoneState> {
     private handleSendEnterPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
         if (event.key === 'Enter') {
             event.preventDefault();
-            this.handleSendCode();
+            this.handleSendCode(event);
         }
     }
 
@@ -210,7 +215,7 @@ class PhoneComponent extends React.Component<Props, PhoneState> {
 
     private inputPhoneNumber = (value: string) => {
         const convertedText = value.trim();
-        const condition = new RegExp('^\\+\\d*?$');
+        const condition = new RegExp('^(\\(?\\+?[0-9]*\\)?)?[0-9_\\- \\(\\)]*$');
         return condition.test(convertedText);
     }
 
@@ -220,7 +225,8 @@ class PhoneComponent extends React.Component<Props, PhoneState> {
         return condition.test(convertedText);
     }
 
-    private handleSendCode = () => {
+    private handleSendCode = event => {
+        event.preventDefault();
         const requestProps = {
             phone_number: String(this.state.phoneNumber),
         };
