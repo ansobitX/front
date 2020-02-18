@@ -82,34 +82,34 @@ class PhoneComponent extends React.Component<Props, PhoneState> {
                     </div>
                     <form>
                         <fieldset className={phoneNumberFocusedClass}>
-                                <InputGroup>
-                                    <CustomInput
-                                        label={phoneNumber ? this.translate('page.body.kyc.phone.phoneNumber') : ''}
-                                        defaultLabel={phoneNumber ? this.translate('page.body.kyc.phone.phoneNumber') : ''}
-                                        placeholder={this.translate('page.body.kyc.phone.phoneNumber')}
-                                        type="tel"
-                                        name="phone"
-                                        autoComplete="tel"
-                                        inputValue={phoneNumber}
-                                        handleClick={this.addPlusSignToPhoneNumber}
-                                        handleChangeInput={this.handleChangePhoneNumber}
-                                        onKeyPress={this.handleSendEnterPress}
-                                        autoFocus={true}
-                                        handleFocusInput={this.handleFieldFocus('phoneNumber')}
-                                    />
-                                    <InputGroup.Append>
-                                        <Button
-                                            block={true}
-                                            onClick={this.handleSendCode}
-                                            size="lg"
-                                            variant="primary"
-                                            disabled={!phoneNumber}
-                                            type="submit"
-                                        >
-                                            {this.state.resendCode ? this.translate('page.body.kyc.phone.resend') : this.translate('page.body.kyc.phone.send')}
-                                        </Button>
-                                    </InputGroup.Append>
-                                </InputGroup>
+                            <InputGroup>
+                                <CustomInput
+                                    label={phoneNumber ? this.translate('page.body.kyc.phone.phoneNumber') : ''}
+                                    defaultLabel={phoneNumber ? this.translate('page.body.kyc.phone.phoneNumber') : ''}
+                                    placeholder={this.translate('page.body.kyc.phone.phoneNumber')}
+                                    type="tel"
+                                    name="phone"
+                                    autoComplete="tel"
+                                    inputValue={phoneNumber}
+                                    handleClick={this.addPlusSignToPhoneNumber}
+                                    handleChangeInput={this.handleChangePhoneNumber}
+                                    onKeyPress={this.handleSendEnterPress}
+                                    autoFocus={true}
+                                    handleFocusInput={this.handleFieldFocus('phoneNumber')}
+                                />
+                                <InputGroup.Append>
+                                    <Button
+                                        block={true}
+                                        onClick={this.handleSendCode}
+                                        size="lg"
+                                        variant="primary"
+                                        disabled={!phoneNumber}
+                                        type="submit"
+                                    >
+                                        {this.state.resendCode ? this.translate('page.body.kyc.phone.resend') : this.translate('page.body.kyc.phone.send')}
+                                    </Button>
+                                </InputGroup.Append>
+                            </InputGroup>
                         </fieldset>
                     </form>
                 </div>
@@ -171,14 +171,14 @@ class PhoneComponent extends React.Component<Props, PhoneState> {
             event.preventDefault();
             this.confirmPhone();
         }
-    }
+    };
 
     private handleSendEnterPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
         if (event.key === 'Enter') {
             event.preventDefault();
             this.handleSendCode(event);
         }
-    }
+    };
 
     private confirmPhone = () => {
         const requestProps = {
@@ -186,7 +186,7 @@ class PhoneComponent extends React.Component<Props, PhoneState> {
             verification_code: String(this.state.confirmationCode),
         };
         this.props.verifyPhone(requestProps);
-    }
+    };
 
     private addPlusSignToPhoneNumber = () => {
         if (this.state.phoneNumber.length === 0) {
@@ -194,7 +194,7 @@ class PhoneComponent extends React.Component<Props, PhoneState> {
                 phoneNumber: '+',
             });
         }
-    }
+    };
 
     private handleChangePhoneNumber = (value: string) => {
         if (this.inputPhoneNumber(value)) {
@@ -203,7 +203,7 @@ class PhoneComponent extends React.Component<Props, PhoneState> {
                 resendCode: false,
             });
         }
-    }
+    };
 
     private handleChangeConfirmationCode = (value: string) => {
         if (this.inputConfirmationCode(value)) {
@@ -216,20 +216,23 @@ class PhoneComponent extends React.Component<Props, PhoneState> {
     private inputPhoneNumber = (value: string) => {
         const convertedText = value.trim();
         const condition = new RegExp('^(\\(?\\+?[0-9]*\\)?)?[0-9_\\- \\(\\)]*$');
+
         return condition.test(convertedText);
-    }
+    };
 
     private inputConfirmationCode = (value: string) => {
         const convertedText = value.trim();
         const condition = new RegExp('^\\d*?$');
+
         return condition.test(convertedText);
-    }
+    };
 
     private handleSendCode = event => {
         event.preventDefault();
         const requestProps = {
             phone_number: String(this.state.phoneNumber),
         };
+
         if (!this.state.resendCode) {
             this.props.sendCode(requestProps);
             this.setState({
