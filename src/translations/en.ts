@@ -102,6 +102,16 @@ export const en = {
     'page.body.landing.content.buttons.getStarted': 'Let’s Get Started',
     'page.body.landing.content.buttons.useCases': 'Explore Use Cases',
 
+    'page.body.landing.content.cards.cloud.title': 'Cloud',
+    'page.body.landing.content.cards.cloud.text': 'We manage full SaaS blockchain solutions to jumpstart your project.',
+    'page.body.landing.content.cards.cloud.link': 'Benefits',
+    'page.body.landing.content.cards.enterprise.title': 'Enterprise',
+    'page.body.landing.content.cards.enterprise.text': 'We build customized Enterprise blockchain solutions.',
+    'page.body.landing.content.cards.enterprise.link': 'Stack',
+    'page.body.landing.content.cards.developers.title': 'Developers',
+    'page.body.landing.content.cards.developers.text': 'We provide blockchain developers with components, tools and resources.',
+    'page.body.landing.content.cards.developers.link': 'Repositories',
+
 
     /* Wallets */
     'page.body.wallets.estimated_value': 'Estimated Value',

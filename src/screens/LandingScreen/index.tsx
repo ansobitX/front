@@ -2,7 +2,11 @@ import * as React from 'react';
 import { InjectedIntlProps, injectIntl } from 'react-intl';
 import { Link, RouteProps, withRouter } from 'react-router-dom';
 
-const LogoImage = require('../../assets/images/logo.svg');
+//const LogoImage = require('../../assets/images/landing/logo.svg');
+const LogoLightImage = require('../../assets/images/landing/logoLight.svg');
+
+/* Icons */
+const ArrowCircleIcon = require('../../assets/images/landing/icons/ArrowCircle.svg');
 
 type Props = RouteProps & InjectedIntlProps;
 
@@ -11,7 +15,7 @@ class Landing extends React.Component<Props> {
         return (
             <div className="pg-landing-screen__header">
                 <div className="pg-landing-screen__header__left">
-                    <img src={LogoImage} alt="BaseApp Logo"/>
+                    <img src={LogoLightImage} alt="OpenDax Logo"/>
                 </div>
                 <div className="pg-landing-screen__header__middle">
                     <a href="#products" className="header-link">
@@ -51,18 +55,46 @@ class Landing extends React.Component<Props> {
     public renderLaunchBlock() {
         return (
             <div className="pg-landing-screen__launch">
-                <div className="pg-landing-screen__launch__wrap">
-                    {this.renderHeader()}
-                    <div className="pg-landing-screen__launch__wrap__content">
-                        <h1>{this.translate('page.body.landing.content.title')}</h1>
-                        <h2>{this.translate('page.body.landing.content.subtitle')}</h2>
-                        <div className="pg-landing-screen__launch__wrap__content__buttons">
-                            <Link to="/" className="landing-button">
-                                {this.translate('page.body.landing.content.buttons.getStarted')}
-                            </Link>
-                            <a href="#use-cases" className="landing-button landing-button--secondary">
-                                {this.translate('page.body.landing.content.buttons.useCases')}
-                            </a>
+                <div className="pg-landing-screen__launch__filter">
+                    <div className="pg-landing-screen__launch__wrap">
+                        {this.renderHeader()}
+                        <div className="pg-landing-screen__launch__wrap__content">
+                            <h1>{this.translate('page.body.landing.content.title')}</h1>
+                            <h2>{this.translate('page.body.landing.content.subtitle')}</h2>
+                            <div className="pg-landing-screen__launch__wrap__content__buttons">
+                                <Link to="/trading/" className="landing-button">
+                                    {this.translate('page.body.landing.content.buttons.getStarted')}
+                                </Link>
+                                <a href="#use-cases" className="landing-button landing-button--secondary">
+                                    {this.translate('page.body.landing.content.buttons.useCases')}
+                                </a>
+                            </div>
+                            <div className="pg-landing-screen__launch__wrap__content__cards">
+                                <div className="pg-landing-screen__launch__wrap__content__cards__item">
+                                    <h3>{this.translate('page.body.landing.content.cards.cloud.title')}</h3>
+                                    <span>{this.translate('page.body.landing.content.cards.cloud.text')}</span>
+                                    <Link to="#">
+                                        <span>{this.translate('page.body.landing.content.cards.cloud.link')}</span>
+                                        <img src={ArrowCircleIcon} alt="Arrow"/>
+                                    </Link>
+                                </div>
+                                <div className="pg-landing-screen__launch__wrap__content__cards__item">
+                                    <h3>{this.translate('page.body.landing.content.cards.enterprise.title')}</h3>
+                                    <span>{this.translate('page.body.landing.content.cards.enterprise.text')}</span>
+                                    <Link to="#">
+                                        <span>{this.translate('page.body.landing.content.cards.enterprise.link')}</span>
+                                        <img src={ArrowCircleIcon} alt="Arrow"/>
+                                    </Link>
+                                </div>
+                                <div className="pg-landing-screen__launch__wrap__content__cards__item">
+                                    <h3>{this.translate('page.body.landing.content.cards.developers.title')}</h3>
+                                    <span>{this.translate('page.body.landing.content.cards.developers.text')}</span>
+                                    <Link to="#">
+                                        <span>{this.translate('page.body.landing.content.cards.developers.link')}</span>
+                                        <img src={ArrowCircleIcon} alt="Arrow"/>
+                                    </Link>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
