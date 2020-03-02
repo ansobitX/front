@@ -1,7 +1,10 @@
 import * as React from 'react';
 import { InjectedIntlProps, injectIntl } from 'react-intl';
 import { RouteProps, withRouter } from 'react-router-dom';
-import { LandingLaunchBlock } from '../../components';
+import {
+    LandingBenefits,
+    LandingLaunch,
+} from '../../components';
 
 
 type Props = RouteProps & InjectedIntlProps;
@@ -11,7 +14,8 @@ class Landing extends React.Component<Props> {
     public render() {
         return (
             <div className="pg-landing-screen">
-                <LandingLaunchBlock translate={this.translate} />
+                <LandingLaunch translate={this.translate} />
+                <LandingBenefits translate={this.translate} />
             </div>
         );
     }

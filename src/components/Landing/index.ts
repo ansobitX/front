@@ -1,2 +1,3 @@
+export * from './LandingBenefits';
 export * from './LandingHeader';
-export * from './LaunchBlock';
+export * from './LandingLaunch';

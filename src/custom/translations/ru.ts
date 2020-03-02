@@ -87,6 +87,7 @@ export const ru: LangType = {
 
 
     /* Landing */
+    /* Landing Header */
     'page.body.landing.header.link.products': 'products',
     'page.body.landing.header.link.benefits': 'benefits',
     'page.body.landing.header.link.technology': 'technology',
@@ -96,11 +97,12 @@ export const ru: LangType = {
     'page.body.landing.header.link.tools': 'tools',
     'page.body.landing.header.link.company': 'company',
     'page.body.landing.header.link.pricing': 'Get pricing',
+
+    /* Landing Launch */
     'page.body.landing.content.title': 'Launch your blockchain business with OpenDAX',
     'page.body.landing.content.subtitle': 'We make it simple to get started and scale up as you grow with proven technology, security, liquidity and market making solutions driven by the needs and trends of blockchain community.',
     'page.body.landing.content.buttons.getStarted': 'Let’s Get Started',
     'page.body.landing.content.buttons.useCases': 'Explore Use Cases',
-
     'page.body.landing.content.cards.cloud.title': 'Cloud',
     'page.body.landing.content.cards.cloud.text': 'We manage full SaaS blockchain solutions to jumpstart your project.',
     'page.body.landing.content.cards.cloud.link': 'Benefits',
@@ -110,6 +112,25 @@ export const ru: LangType = {
     'page.body.landing.content.cards.developers.title': 'Developers',
     'page.body.landing.content.cards.developers.text': 'We provide blockchain developers with components, tools and resources.',
     'page.body.landing.content.cards.developers.link': 'Repositories',
+
+    /* Landing Benefits */
+    'page.body.landing.benefits.title': 'Your Benefits with OpenDAX',
+    'page.body.landing.benefits.vendor.title': 'Vendor',
+    'page.body.landing.benefits.vendor.title2': 'Independence',
+    'page.body.landing.benefits.vendor.subtitle': 'More than just a whitelabel',
+    'page.body.landing.benefits.vendor.text': 'Focus on your business and enjoy fully managed solution or get access to complete open-source codebase and train your own team to develop in-house.',
+    'page.body.landing.benefits.safety.title': 'Safety',
+    'page.body.landing.benefits.safety.title2': '& Security',
+    'page.body.landing.benefits.safety.subtitle': 'Tried and tested by thousands of developers',
+    'page.body.landing.benefits.safety.text': 'OpenDAX stack has been built with business needs and requirements in mind and holistic development culture at heart.',
+    'page.body.landing.benefits.market.title': 'Market',
+    'page.body.landing.benefits.market.title2': 'Flexibility',
+    'page.body.landing.benefits.market.subtitle': 'Seamlessly scaling with your business',
+    'page.body.landing.benefits.market.text': 'Be the first to react to ever-changing blockchain market conditions, define your strategy and deploy products while the news are still hot.',
+    'page.body.landing.benefits.global.title': 'Global',
+    'page.body.landing.benefits.global.title2': 'Liquidity',
+    'page.body.landing.benefits.global.subtitle': 'Tap into community liquidity network',
+    'page.body.landing.benefits.global.text': 'Join the truly decentralized community-driven worldwide market of liquidity to overcome any financial borders.',
 
 
     /* Wallets */

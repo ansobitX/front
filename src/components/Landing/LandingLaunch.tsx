@@ -11,7 +11,7 @@ interface OwnProps {
 
 type Props = OwnProps;
 
-export class LandingLaunchBlock extends React.Component<Props> {
+export class LandingLaunch extends React.Component<Props> {
     public render() {
         const { translate } = this.props;
 
