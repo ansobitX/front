@@ -133,6 +133,20 @@ export const en = {
     'page.body.landing.benefits.global.subtitle': 'Tap into community liquidity network',
     'page.body.landing.benefits.global.text': 'Join the truly decentralized community-driven worldwide market of liquidity to overcome any financial borders.',
 
+    /* Under Hood */
+    'page.body.landing.underHood.title': 'What’s under the hood? ',
+    'page.body.landing.underHood.architecture.title': 'Robust Cloud Architecture',
+    'page.body.landing.underHood.architecture.list.item1': 'Suka v1.0',
+    'page.body.landing.underHood.architecture.list.item2': 'Suka v2.0',
+    'page.body.landing.underHood.architecture.list.item3': 'Suka v3.0',
+    'page.body.landing.underHood.architecture.list.item4': 'Suka v4.0',
+    'page.body.landing.underHood.protocols.title': 'Relentless Safety Protocols',
+    'page.body.landing.underHood.protocols.list.item1': 'Hold on to your balls',
+    'page.body.landing.underHood.protocols.list.item2': 'Or it will blow them clean off',
+    'page.body.landing.underHood.protocols.list.item3': 'While you are drinking juice',
+    'page.body.landing.underHood.protocols.list.item4': 'At your neighborhood',
+    'page.body.landing.underHood.button': 'Learn More',
+
 
     /* Wallets */
     'page.body.wallets.estimated_value': 'Estimated Value',

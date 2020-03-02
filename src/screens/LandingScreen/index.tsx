@@ -4,6 +4,7 @@ import { RouteProps, withRouter } from 'react-router-dom';
 import {
     LandingBenefits,
     LandingLaunch,
+    LandingUnderHood,
 } from '../../components';
 
 
@@ -16,6 +17,7 @@ class Landing extends React.Component<Props> {
             <div className="pg-landing-screen">
                 <LandingLaunch translate={this.translate} />
                 <LandingBenefits translate={this.translate} />
+                <LandingUnderHood translate={this.translate} />
             </div>
         );
     }
