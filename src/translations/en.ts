@@ -133,7 +133,7 @@ export const en = {
     'page.body.landing.benefits.global.subtitle': 'Tap into community liquidity network',
     'page.body.landing.benefits.global.text': 'Join the truly decentralized community-driven worldwide market of liquidity to overcome any financial borders.',
 
-    /* Under Hood */
+    /* Landing Under Hood */
     'page.body.landing.underHood.title': 'What’s under the hood? ',
     'page.body.landing.underHood.architecture.title': 'Robust Cloud Architecture',
     'page.body.landing.underHood.architecture.list.item1': 'Suka v1.0',
@@ -146,6 +146,34 @@ export const en = {
     'page.body.landing.underHood.protocols.list.item3': 'While you are drinking juice',
     'page.body.landing.underHood.protocols.list.item4': 'At your neighborhood',
     'page.body.landing.underHood.button': 'Learn More',
+
+    /* Landing Features */
+    'page.body.landing.features.title': 'Features and Functionality',
+    'page.body.landing.features.subtitle': 'Engage your customers quickly, conveniently and reliably',
+    'page.body.landing.features.reliable.title': 'Reliable trading platform',
+    'page.body.landing.features.reliable.text1': 'SaaS exchange core to buy, sell and trade any goods and assets from fiat to crypto and digital security tokens.',
+    'page.body.landing.features.reliable.text2': 'Support for deposit, hot, warm and cold vaults to secure liquidity.',
+    'page.body.landing.features.reliable.text3': 'Integrate any third-party tools and deliver better customer experience to more customers, whether its new features or better security measures.',
+    'page.body.landing.features.reliable.text4': 'Proprietary Finex(tm) Trade Matching Engine for high-volume projects.',
+    'page.body.landing.features.reliable.text5': 'Cloud hosted solution protected against DDoS attacks and hacking, with fully encrypted user data and 2FA authentication support.',
+    'page.body.landing.features.efficient.title': 'Efficient financial tools',
+    'page.body.landing.features.efficient.text1': 'Conveniently manipulate and broker currencies, digital assets, products, goods and services.',
+    'page.body.landing.features.efficient.text2': 'Enable support for any new asset, blockchain currency or security token in minutes.',
+    'page.body.landing.features.efficient.text3': 'Plug any popular payment processor or integrate your own in a blink of an eye through financial API endpoints.',
+    'page.body.landing.features.efficient.text4': 'Arke(tm) liquidity sharing and aggregation tools to jumpstart the charts and skip cold launch.',
+    'page.body.landing.features.efficient.text5': 'Employ in-built stock KYC and AML components, integrate any service supplier on the market or customize your own.',
+    'page.body.landing.features.management.title': 'Competent customer management',
+    'page.body.landing.features.management.text1': 'Membership system support with easily customizable levels, rewards, bonuses and fees.',
+    'page.body.landing.features.management.text2': 'Collect and analyze basic identity information according to standard banking and AML regulations.',
+    'page.body.landing.features.management.text3': 'Perform risk assessment and monitoring of user activities against unexpected behaviour and fraudulent activity.',
+    'page.body.landing.features.management.text4': 'Build long-lasting and profitable customer relationships with a seamless digital onboarding processes.',
+    'page.body.landing.features.management.text5': 'Provide your customers with everything they need and analyze their activities to keep improving your service.',
+    'page.body.landing.features.meticulous.title': 'Meticulous business monitoring',
+    'page.body.landing.features.meticulous.text1': 'Oversee your business operations in a fully customizable management dashboard.',
+    'page.body.landing.features.meticulous.text2': 'Customize every aspect of your service platform as you see fit.',
+    'page.body.landing.features.meticulous.text3': 'Internal staff access control for your managing personnel to supervise everyday business activities.',
+    'page.body.landing.features.meticulous.text4': 'Integrate any fraud prevention and fraud control monitoring solution.',
+    'page.body.landing.features.meticulous.text5': 'Automate any aspect of your business monitoring to react in milliseconds.',
 
 
     /* Wallets */
