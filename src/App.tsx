@@ -37,6 +37,11 @@ type Props = AppProps & ReduxProps;
 
 class AppLayout extends React.Component<Props, {}, {}> {
     public componentDidMount() {
+        const AOS = require('aos');
+        AOS.init({
+            duration : 1000,
+        });
+
         ReactGA.pageview(history.location.pathname);
     }
 

@@ -20,14 +20,31 @@ export class LandingFeatures extends React.Component<Props> {
         return (
             <div className="pg-landing-screen__features">
                 <div className="pg-landing-screen__features__wrap">
-                    <h1>{translate('page.body.landing.features.title')}</h1>
-                    <h2>{translate('page.body.landing.features.subtitle')}</h2>
+                    <div
+                        className="pg-landing-screen__features__wrap__animation-wrap"
+                        data-aos="fade-down"
+                        data-aos-duration="1000"
+                        data-aos-offset="100"
+                    >
+                        <h1>{translate('page.body.landing.features.title')}</h1>
+                        <h2>{translate('page.body.landing.features.subtitle')}</h2>
+                    </div>
                     <div className="pg-landing-screen__features__wrap__blocks">
                         <div className="pg-landing-screen__features__wrap__blocks__item">
-                            <div className="pg-landing-screen__features__wrap__blocks__item__image">
+                            <div
+                                className="pg-landing-screen__features__wrap__blocks__item__image"
+                                data-aos="fade-up"
+                                data-aos-duration="1000"
+                                data-aos-offset="100"
+                            >
                                 <img src={ReliableImage} alt="Reliable"/>
                             </div>
-                            <div className="pg-landing-screen__features__wrap__blocks__item__content">
+                            <div
+                                className="pg-landing-screen__features__wrap__blocks__item__content"
+                                data-aos="fade-up"
+                                data-aos-duration="1200"
+                                data-aos-offset="100"
+                            >
                                 <span className="title">{translate('page.body.landing.features.reliable.title')}</span>
                                 <span className="text">
                                     <img src={CheckIcon} alt=""/>
@@ -52,10 +69,20 @@ export class LandingFeatures extends React.Component<Props> {
                             </div>
                         </div>
                         <div className="pg-landing-screen__features__wrap__blocks__item">
-                            <div className="pg-landing-screen__features__wrap__blocks__item__image">
+                            <div
+                                className="pg-landing-screen__features__wrap__blocks__item__image"
+                                data-aos="fade-up"
+                                data-aos-duration="1000"
+                                data-aos-offset="100"
+                            >
                                 <img src={EfficientImage} alt="Efficient"/>
                             </div>
-                            <div className="pg-landing-screen__features__wrap__blocks__item__content">
+                            <div
+                                className="pg-landing-screen__features__wrap__blocks__item__content"
+                                data-aos="fade-up"
+                                data-aos-duration="1200"
+                                data-aos-offset="100"
+                            >
                                 <span className="title">{translate('page.body.landing.features.efficient.title')}</span>
                                 <span className="text">{translate('page.body.landing.features.efficient.text1')}</span>
                                 <span className="text">{translate('page.body.landing.features.efficient.text2')}</span>
@@ -65,10 +92,20 @@ export class LandingFeatures extends React.Component<Props> {
                             </div>
                         </div>
                         <div className="pg-landing-screen__features__wrap__blocks__item">
-                            <div className="pg-landing-screen__features__wrap__blocks__item__image">
+                            <div
+                                className="pg-landing-screen__features__wrap__blocks__item__image"
+                                data-aos="fade-up"
+                                data-aos-duration="1000"
+                                data-aos-offset="100"
+                            >
                                 <img src={ManagementImage} alt="Management"/>
                             </div>
-                            <div className="pg-landing-screen__features__wrap__blocks__item__content">
+                            <div
+                                className="pg-landing-screen__features__wrap__blocks__item__content"
+                                data-aos="fade-up"
+                                data-aos-duration="1200"
+                                data-aos-offset="100"
+                            >
                                 <span className="title">{translate('page.body.landing.features.management.title')}</span>
                                 <span className="text">{translate('page.body.landing.features.management.text1')}</span>
                                 <span className="text">{translate('page.body.landing.features.management.text2')}</span>
@@ -78,10 +115,20 @@ export class LandingFeatures extends React.Component<Props> {
                             </div>
                         </div>
                         <div className="pg-landing-screen__features__wrap__blocks__item">
-                            <div className="pg-landing-screen__features__wrap__blocks__item__image">
+                            <div
+                                className="pg-landing-screen__features__wrap__blocks__item__image"
+                                data-aos="fade-up"
+                                data-aos-duration="1000"
+                                data-aos-offset="100"
+                            >
                                 <img src={MeticulousImage} alt="Meticulous"/>
                             </div>
-                            <div className="pg-landing-screen__features__wrap__blocks__item__content">
+                            <div
+                                className="pg-landing-screen__features__wrap__blocks__item__content"
+                                data-aos="fade-up"
+                                data-aos-duration="1200"
+                                data-aos-offset="100"
+                            >
                                 <span className="title">{translate('page.body.landing.features.meticulous.title')}</span>
                                 <span className="text">{translate('page.body.landing.features.meticulous.text1')}</span>
                                 <span className="text">{translate('page.body.landing.features.meticulous.text2')}</span>

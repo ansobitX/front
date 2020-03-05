@@ -19,8 +19,19 @@ export class LandingBenefits extends React.Component<Props> {
         return (
             <div className="pg-landing-screen__benefits">
                 <div className="pg-landing-screen__benefits__wrap">
-                    <h1>{translate('page.body.landing.benefits.title')}</h1>
-                    <div className="pg-landing-screen__benefits__wrap__blocks">
+                    <h1
+                        data-aos="fade-down"
+                        data-aos-duration="1000"
+                        data-aos-offset="100"
+                    >
+                        {translate('page.body.landing.benefits.title')}
+                    </h1>
+                    <div
+                        className="pg-landing-screen__benefits__wrap__blocks"
+                        data-aos="fade-up"
+                        data-aos-duration="1000"
+                        data-aos-offset="100"
+                    >
                         <div className="pg-landing-screen__benefits__wrap__blocks__item">
                             <span className="image"><img src={VendorImage} alt="vendor"/></span>
                             <span className="title">{translate('page.body.landing.benefits.vendor.title')}</span>

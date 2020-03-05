@@ -22,7 +22,12 @@ export class LandingUnderHood extends React.Component<Props> {
         return (
             <div className="pg-landing-screen__under-hood">
                 <div className="pg-landing-screen__under-hood__background" />
-                <div className="pg-landing-screen__under-hood__wrap">
+                <div
+                    className="pg-landing-screen__under-hood__wrap"
+                    data-aos="fade-right"
+                    data-aos-duration="1000"
+                    data-aos-offset="100"
+                >
                     <h1>{translate('page.body.landing.underHood.title')}</h1>
                     <h2>{translate('page.body.landing.underHood.architecture.title')}</h2>
                     <ul>

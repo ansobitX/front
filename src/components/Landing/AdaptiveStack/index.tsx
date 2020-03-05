@@ -14,8 +14,18 @@ export class LandingAdaptiveStack extends React.Component<Props> {
             <div className="pg-landing-screen__adaptive-stack">
                 <div className="pg-landing-screen__adaptive-stack__background">
                     <div className="pg-landing-screen__adaptive-stack__wrap">
-                        <h1>{translate('page.body.landing.adaptiveStack.title')}</h1>
-                        <div className="pg-landing-screen__adaptive-stack__content">
+                        <h1
+                            data-aos="fade-down"
+                            data-aos-duration="1000"
+                            data-aos-offset="100"
+                        >
+                            {translate('page.body.landing.adaptiveStack.title')}
+                        </h1>
+                        <div
+                            className="pg-landing-screen__adaptive-stack__content"
+                            data-aos="fade"
+                            data-aos-duration="1000"
+                        >
                             <div className="pg-landing-screen__adaptive-stack__content__item">
                                 <span className="title">{translate('page.body.landing.adaptiveStack.devOps.title')}</span>
                                 <span className="subtitle">{translate('page.body.landing.adaptiveStack.devOps.subtitle')}</span>

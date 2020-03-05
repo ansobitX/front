@@ -20,7 +20,12 @@ export class LandingLaunch extends React.Component<Props> {
                 <div className="pg-landing-screen__launch__filter">
                     <div className="pg-landing-screen__launch__wrap">
                         <LandingHeader translate={translate} />
-                        <div className="pg-landing-screen__launch__wrap__content">
+                        <div
+                            className="pg-landing-screen__launch__wrap__content"
+                            data-aos="fade-up"
+                            data-aos-duration="1000"
+                            data-aos-offset="100"
+                        >
                             <h1>{translate('page.body.landing.content.title')}</h1>
                             <h2>{translate('page.body.landing.content.subtitle')}</h2>
                             <div className="pg-landing-screen__launch__wrap__content__buttons">
@@ -31,7 +36,13 @@ export class LandingLaunch extends React.Component<Props> {
                                     {translate('page.body.landing.content.buttons.useCases')}
                                 </a>
                             </div>
-                            <div className="pg-landing-screen__launch__wrap__content__cards">
+                            <div
+                                className="pg-landing-screen__launch__wrap__content__cards"
+                                data-aos="fade-up"
+                                data-aos-offset="100"
+                                data-aos-delay="300"
+                                data-aos-duration="1000"
+                            >
                                 <div className="pg-landing-screen__launch__wrap__content__cards__item">
                                     <h3>{translate('page.body.landing.content.cards.cloud.title')}</h3>
                                     <span>{translate('page.body.landing.content.cards.cloud.text')}</span>
