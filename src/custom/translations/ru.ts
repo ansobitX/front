@@ -134,16 +134,16 @@ export const ru: LangType = {
 
     /* Landing Under Hood */
     'page.body.landing.underHood.title': 'What’s under the hood? ',
-    'page.body.landing.underHood.architecture.title': 'Robust Cloud Architecture',
-    'page.body.landing.underHood.architecture.list.item1': 'Suka v1.0',
-    'page.body.landing.underHood.architecture.list.item2': 'Suka v2.0',
-    'page.body.landing.underHood.architecture.list.item3': 'Suka v3.0',
-    'page.body.landing.underHood.architecture.list.item4': 'Suka v4.0',
-    'page.body.landing.underHood.protocols.title': 'Relentless Safety Protocols',
-    'page.body.landing.underHood.protocols.list.item1': 'Hold on to your balls',
-    'page.body.landing.underHood.protocols.list.item2': 'Or it will blow them clean off',
-    'page.body.landing.underHood.protocols.list.item3': 'While you are drinking juice',
-    'page.body.landing.underHood.protocols.list.item4': 'At your neighborhood',
+    'page.body.landing.underHood.architecture.title': 'Cutting Edge Technology',
+    'page.body.landing.underHood.architecture.list.item1': 'High performance matching engine',
+    'page.body.landing.underHood.architecture.list.item2': 'Huge liquidity pool',
+    'page.body.landing.underHood.architecture.list.item3': 'Enterprise-grade security',
+    'page.body.landing.underHood.architecture.list.item4': 'Native trading bot support',
+    'page.body.landing.underHood.protocols.title': 'Modular Cloud Architecture',
+    'page.body.landing.underHood.protocols.list.item1': 'Customizable frontend components',
+    'page.body.landing.underHood.protocols.list.item2': 'Third-party integrations support',
+    'page.body.landing.underHood.protocols.list.item3': 'Innovative DevOps toolset',
+    'page.body.landing.underHood.protocols.list.item4': 'Ability to migrate to your own servers',
     'page.body.landing.underHood.button': 'Learn More',
 
     /* Landing Features */
