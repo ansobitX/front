@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import { LandingHeader } from './';
+import { LandingHeader } from '../';
 
 /* Icons */
-const ArrowCircleIcon = require('../../assets/images/landing/icons/ArrowCircle.svg');
+const ArrowCircleIcon = require('../../../assets/images/landing/icons/ArrowCircle.svg');
 
 interface OwnProps {
     translate: (key: string) => string;

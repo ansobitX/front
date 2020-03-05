@@ -1,10 +1,10 @@
 import * as React from 'react';
 
 /* Icons */
-const VendorImage = require('../../assets/images/landing/benefits/Vendor.svg');
-const SafetyImage = require('../../assets/images/landing/benefits/Safety.svg');
-const MarketImage = require('../../assets/images/landing/benefits/Market.svg');
-const GlobalImage = require('../../assets/images/landing/benefits/Global.svg');
+const VendorImage = require('../../../assets/images/landing/benefits/Vendor.svg');
+const SafetyImage = require('../../../assets/images/landing/benefits/Safety.svg');
+const MarketImage = require('../../../assets/images/landing/benefits/Market.svg');
+const GlobalImage = require('../../../assets/images/landing/benefits/Global.svg');
 
 interface OwnProps {
     translate: (key: string) => string;

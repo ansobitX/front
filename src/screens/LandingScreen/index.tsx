@@ -2,6 +2,7 @@ import * as React from 'react';
 import { InjectedIntlProps, injectIntl } from 'react-intl';
 import { RouteProps, withRouter } from 'react-router-dom';
 import {
+    LandingAdaptiveStack,
     LandingBenefits,
     LandingFeatures,
     LandingLaunch,
@@ -20,6 +21,7 @@ class Landing extends React.Component<Props> {
                 <LandingBenefits translate={this.translate} />
                 <LandingUnderHood translate={this.translate} />
                 <LandingFeatures translate={this.translate} />
+                <LandingAdaptiveStack translate={this.translate} />
             </div>
         );
     }

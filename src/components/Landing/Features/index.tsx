@@ -1,11 +1,11 @@
 import * as React from 'react';
 
 /* Icons */
-const ReliableImage = require('../../assets/images/landing/features/Reliable.svg');
-const EfficientImage = require('../../assets/images/landing/features/Efficient.svg');
-const ManagementImage = require('../../assets/images/landing/features/Management.svg');
-const MeticulousImage = require('../../assets/images/landing/features/Meticulous.svg');
-const CheckIcon = require('../../assets/images/landing/features/Check.svg');
+const ReliableImage = require('../../../assets/images/landing/features/Reliable.svg');
+const EfficientImage = require('../../../assets/images/landing/features/Efficient.svg');
+const ManagementImage = require('../../../assets/images/landing/features/Management.svg');
+const MeticulousImage = require('../../../assets/images/landing/features/Meticulous.svg');
+const CheckIcon = require('../../../assets/images/landing/features/Check.svg');
 
 interface OwnProps {
     translate: (key: string) => string;

@@ -175,6 +175,20 @@ export const en = {
     'page.body.landing.features.meticulous.text4': 'Integrate any fraud prevention and fraud control monitoring solution.',
     'page.body.landing.features.meticulous.text5': 'Automate any aspect of your business monitoring to react in milliseconds.',
 
+    /* Landing Adaptive Stack */
+    'page.body.landing.adaptiveStack.title': 'Scale easily with our adaptable technology stack',
+    'page.body.landing.adaptiveStack.devOps.title': '50+',
+    'page.body.landing.adaptiveStack.devOps.subtitle': 'DevOps professionals',
+    'page.body.landing.adaptiveStack.devOps.text': 'Creating day and night to bring you the perfect solutions for blockchain ecosystem.',
+    'page.body.landing.adaptiveStack.blockchain.title': '150+',
+    'page.body.landing.adaptiveStack.blockchain.subtitle': 'Blockchain projects',
+    'page.body.landing.adaptiveStack.blockchain.text': 'Successfully using our technology stack in most daring projects ever imagined.',
+    'page.body.landing.adaptiveStack.community.title': '1500+',
+    'page.body.landing.adaptiveStack.community.subtitle': 'Community developers',
+    'page.body.landing.adaptiveStack.community.text': 'Contributing online and sharing experience to ensure software reliability and adaptability.',
+    'page.body.landing.adaptiveStack.buttons.pricing': 'Get Pricing',
+    'page.body.landing.adaptiveStack.buttons.solution': 'Custom Enterprise Solutions',
+
 
     /* Wallets */
     'page.body.wallets.estimated_value': 'Estimated Value',

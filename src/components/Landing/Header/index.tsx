@@ -1,8 +1,8 @@
 import * as React from 'react';
 
 /* Icons */
-//const LogoImage = require('../../assets/images/landing/logo.svg');
-const LogoLightImage = require('../../assets/images/landing/logoLight.svg');
+//const LogoImage = require('../../../assets/images/landing/logo.svg');
+const LogoLightImage = require('../../../assets/images/landing/logoLight.svg');
 
 interface OwnProps {
     translate: (key: string) => string;
