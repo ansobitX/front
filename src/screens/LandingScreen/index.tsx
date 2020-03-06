@@ -7,6 +7,7 @@ import {
     LandingFeatures,
     LandingLaunch,
     LandingUnderHood,
+    LandingUseCases,
 } from '../../components';
 
 
@@ -22,6 +23,7 @@ class Landing extends React.Component<Props> {
                 <LandingUnderHood translate={this.translate} />
                 <LandingFeatures translate={this.translate} />
                 <LandingAdaptiveStack translate={this.translate} />
+                <LandingUseCases translate={this.translate} />
             </div>
         );
     }

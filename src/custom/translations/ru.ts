@@ -188,6 +188,22 @@ export const ru: LangType = {
     'page.body.landing.adaptiveStack.buttons.pricing': 'Get Pricing',
     'page.body.landing.adaptiveStack.buttons.solution': 'Custom Enterprise Solutions',
 
+    /* Landing Use Cases */
+    'page.body.landing.useCases.title': 'Use Cases',
+    'page.body.landing.useCases.subtitle': 'Versatile digital trading, banking and analytics functionality at your fingertips',
+    'page.body.landing.useCases.assets.title': 'Trade Assets',
+    'page.body.landing.useCases.assets.text': 'A robust platform to create, issue and manage the lifecycle and exchange of blockchain assets.',
+    'page.body.landing.useCases.payments.title': 'Process Payments',
+    'page.body.landing.useCases.payments.text': 'Send, receive and manage financial transactions of any complexity.',
+    'page.body.landing.useCases.counter.title': 'Serve Over Counter',
+    'page.body.landing.useCases.counter.text': 'Peer-to-peer OTC trading of goods and securities on global markets outside of formal stock exchange.',
+    'page.body.landing.useCases.analyze.title': 'Analyze Data',
+    'page.body.landing.useCases.analyze.text': 'A data crunching, analytics and risk management engine for digital assets and security tokens.',
+    'page.body.landing.useCases.secure.title': 'Secure Escrow',
+    'page.body.landing.useCases.secure.text': 'Facilitate a third-party escrow for buying and selling merchandise and services for primary transaction parties.',
+    'page.body.landing.useCases.networks.title': 'Run Networks',
+    'page.body.landing.useCases.networks.text': 'A perfect tool to utilize tokens and participate in decentralized networks.',
+
 
     /* Wallets */
     'page.body.wallets.estimated_value': 'Оценочная стоимость',

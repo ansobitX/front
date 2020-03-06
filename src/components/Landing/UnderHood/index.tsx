@@ -62,8 +62,6 @@ export class LandingUnderHood extends React.Component<Props> {
             const targetElementHeight = (targetElement as HTMLElement).offsetHeight;
             const currentScrollOffset = currentScrollPosition;
 
-            window.console.log(targetElementOffset, targetElementHeight, currentScrollPosition);
-
             if (currentScrollOffset > targetElementOffset - targetElementHeight / 2 &&
                 currentScrollOffset < targetElementOffset + targetElementHeight / 2) {
                     targetElementBackground.setAttribute('style', `transform: rotate(${-currentScrollOffset / 120}deg)`);

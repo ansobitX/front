@@ -1,0 +1,102 @@
+.pg-landing-screen__use-cases {
+  background: var(--landing-background-light);
+  height: max-content;
+  overflow: hidden;
+  position: relative;
+  width: 100vw;
+
+  &__wrap {
+    max-width: 1200px;
+
+    h1 {
+      color: var(--landing-secondary-text-color);
+      line-height: 59px;
+      margin-bottom: 30px;
+      margin-top: 80px;
+    }
+
+    h2 {
+      color: var(--landing-primary-text-color);
+      margin-bottom: 40px;
+      max-width: 500px;
+    }
+
+    &__content {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      flex-flow: wrap;
+      height: max-content;
+      justify-content: space-between;
+      margin-bottom: 50px;
+      width: 100%;
+
+      &__item {
+        align-items: flex-start;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 4px;
+        display: flex;
+        flex-direction: column;
+        height: 298px;
+        justify-content: flex-start;
+        margin-bottom: 30px;
+        padding: 125px 60px 0 37px;
+        width: calc(50% - 15px);
+
+        &:nth-child(n) {
+          margin-left: 0;
+          margin-right: 15px;
+        }
+  
+        &:nth-child(2n){
+          margin-left: 15px;
+          margin-right: 0;
+        }
+
+        &:nth-child(1) {
+          background-image: url(assets/images/landing/useCases/Assets.png);
+        }
+
+        &:nth-child(2) {
+          background-image: url(assets/images/landing/useCases/Payments.png);
+        }
+
+        &:nth-child(3) {
+          background-image: url(assets/images/landing/useCases/Counter.png);
+        }
+
+        &:nth-child(4) {
+          background-image: url(assets/images/landing/useCases/Analyze.png);
+        }
+
+        &:nth-child(5) {
+          background-image: url(assets/images/landing/useCases/Secure.png);
+        }
+
+        &:nth-child(6) {
+          background-image: url(assets/images/landing/useCases/Network.png);
+        }
+
+        .title {
+          color: var(--bright);
+          font-size: 24px;
+          font-weight: bold;
+          letter-spacing: 0.44px;
+          line-height: 24px;
+          margin-bottom: 18px;
+          text-align: left;
+        }
+
+        .text {
+          color: var(--bright);
+          font-size: 16px;
+          font-weight: 500;
+          letter-spacing: 0.25px;
+          line-height: 30px;
+        }
+      }
+    }
+  }
+}
