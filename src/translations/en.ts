@@ -205,6 +205,33 @@ export const en = {
     'page.body.landing.useCases.networks.title': 'Run Networks',
     'page.body.landing.useCases.networks.text': 'A perfect tool to utilize tokens and participate in decentralized networks.',
 
+    /* Landing Cloud Stack */
+    'page.body.landing.cloudStack.title': 'OpenDAX Cloud Stack',
+    'page.body.landing.cloudStack.menu.link.overview': 'Overview',
+    'page.body.landing.cloudStack.menu.link.cloudPlatform': 'Cloud Platform',
+    'page.body.landing.cloudStack.menu.link.infrastructure': 'Infrastructure as Code',
+    'page.body.landing.cloudStack.menu.link.developerPlatform': 'Developer Platform',
+    'page.body.landing.cloudStack.menu.link.openSource': 'Open-source and Custom Backend',
+    'page.body.landing.cloudStack.menu.link.frontend': 'Frontend',
+    'page.body.landing.cloudStack.scrollableBlock.overview.title': 'Overview',
+    'page.body.landing.cloudStack.scrollableBlock.overview.text1': 'Our modular architecture stack provides control plane for each layer of the platform, enabling businesses to scale seamlessly on a cloud operating model.',
+    'page.body.landing.cloudStack.scrollableBlock.overview.text2': 'What you plant as a seed, may grow into a lush forest in a blink of an eye. And what’s even better, the optimized infrastructure costs include only the resources you consume at any given moment.',
+    'page.body.landing.cloudStack.scrollableBlock.cloudPlatform.title': 'Cloud Platform',
+    'page.body.landing.cloudStack.scrollableBlock.cloudPlatform.text1': 'Our go-to solution for rapid Cloud deployment is usually OVH, but may vary depending on your business bandwidth and target markets.',
+    'page.body.landing.cloudStack.scrollableBlock.cloudPlatform.text2': 'As it is, OpenDAX stack can be deployed on any popular cloud provider such as OVH, Digital Ocean, Google Cloud Platform, AWS, AliCloud and even Microsoft Azure, as well as private clouds and baremetal servers. It is just that flexible.',
+    'page.body.landing.cloudStack.scrollableBlock.infrastructure.title': 'Infrastructure as Code',
+    'page.body.landing.cloudStack.scrollableBlock.infrastructure.text1': 'We build our Cloud foundation on the same principles that allow Google, Amazon and Microsoft to run billions of cloud containers per day.',
+    'page.body.landing.cloudStack.scrollableBlock.infrastructure.text2': 'Our go-to solutions for this plane are Terraform(tm) and Vault(tm) from HashiCorp to shift from manual control, poor at scaling and prone to human errors to complete automated provisioning.',
+    'page.body.landing.cloudStack.scrollableBlock.developerPlatform.title': 'Developer Platform',
+    'page.body.landing.cloudStack.scrollableBlock.developerPlatform.text1': 'The best solutions to provide self-healing indestructible worldwide cloud are Docker(tm) and Kubernetes(tm).',
+    'page.body.landing.cloudStack.scrollableBlock.developerPlatform.text2': 'Thanks to orchestration system for automating the deployment, management, placement and routing of virtual containers, first introduced by Google and contributed to open-source, it is now possible to seamlessly operate and scale any cloud-based layer.',
+    'page.body.landing.cloudStack.scrollableBlock.openSource.title': 'Open-source and Custom Backend',
+    'page.body.landing.cloudStack.scrollableBlock.openSource.text1': 'Over the plane of critical system services, such as monitoring, log aggregation and automated deployment Drone, the public and private backend application code begins.',
+    'page.body.landing.cloudStack.scrollableBlock.openSource.text2': 'By now, you’ve probably already used dozens of the applications that were built with our application stack and framework - Airbnb, Shopify, SoundCloud, Twitch, GitHub, Zendesk to name a few, and hundreds of thousands of others.',
+    'page.body.landing.cloudStack.scrollableBlock.frontend.title': 'Frontend',
+    'page.body.landing.cloudStack.scrollableBlock.frontend.text1': 'The bread and butter of modern applications, this is where you can impress your customers with stunning visuals and intuitive user interfaces (UI).',
+    'page.body.landing.cloudStack.scrollableBlock.frontend.text2': 'Long-time fans of Angular from Google, we just couldn’t resist moving the platform to React, that makes it so easy and painless to create amazing interactive UIs. You just design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes.',
+
 
     /* Wallets */
     'page.body.wallets.estimated_value': 'Estimated Value',
