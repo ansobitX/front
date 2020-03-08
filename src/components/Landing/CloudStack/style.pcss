@@ -94,14 +94,13 @@
           flex-direction: column;
           height: 100%;
           justify-content: center;
-          padding: 57px 0;
           margin-left: calc((100vw - 1140px) / 2 + 247px);
+          margin-top: -24vh;
+          margin-bottom: 0 !important;
           max-width: 451px;
+          padding: 57px 0;
+          padding-top: calc(24vh + 57px);
           position: relative;
-
-          &:last-child {
-            margin-bottom: 114px;
-          }
 
           h2 {
             font-size: 24px;
@@ -129,6 +128,12 @@
       .static-images {
         display: none;
       }
+    }
+  }
+
+  .scrollable-block__item {
+    &:last-child {
+      margin-bottom: 114px;
     }
   }
 }
