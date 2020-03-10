@@ -1,5 +1,6 @@
 export * from './AdaptiveStack';
 export * from './Benefits';
+export * from './BuildEasy';
 export * from './CloudStack';
 export * from './Features';
 export * from './Header';

@@ -5,6 +5,7 @@ import { RouteProps, withRouter } from 'react-router-dom';
 import {
     LandingAdaptiveStack,
     LandingBenefits,
+    LandingBuildEasy,
     LandingCloudStack,
     LandingFeatures,
     LandingLaunch,
@@ -30,6 +31,7 @@ class Landing extends React.Component<Props> {
                 <LandingAdaptiveStack changeRoute={this.changeRoute} translate={this.translate} />
                 <LandingUseCases changeRoute={this.changeRoute} translate={this.translate} />
                 <LandingCloudStack changeRoute={this.changeRoute} translate={this.translate} />
+                <LandingBuildEasy changeRoute={this.changeRoute} translate={this.translate} />
             </div>
         );
     }

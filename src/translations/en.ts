@@ -232,6 +232,13 @@ export const en = {
     'page.body.landing.cloudStack.scrollableBlock.frontend.text1': 'The bread and butter of modern applications, this is where you can impress your customers with stunning visuals and intuitive user interfaces (UI).',
     'page.body.landing.cloudStack.scrollableBlock.frontend.text2': 'Long-time fans of Angular from Google, we just couldn’t resist moving the platform to React, that makes it so easy and painless to create amazing interactive UIs. You just design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes.',
 
+    /* Landing Build Easy */
+    'page.body.landing.buildEasy.title': 'Build easily with our adaptable technology stack',
+    'page.body.landing.buildEasy.text1': 'If there is a blockchain business Lego, you’re looking at it. OpenDAX platform stack is easily customizable to meet your business needs and requirements.',
+    'page.body.landing.buildEasy.text2': 'Besides the common API endpoints for third-party integrations, the robust AppLogic* component is a universal Plug-and-Play bus to define any custom business logic and apply it seamlessly.',
+    'page.body.landing.buildEasy.button': 'Talk to Technical Sales',
+    'page.body.landing.buildEasy.note': '* - available for OpenDAX Enterprise and OpenDAX Cloud Business/Corporate',
+
 
     /* Wallets */
     'page.body.wallets.estimated_value': 'Estimated Value',

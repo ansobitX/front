@@ -1,0 +1,66 @@
+.pg-landing-screen__build-easy {
+  background: var(--white);
+  height: 90vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+
+  &__background {
+    display: block;
+    background-image: url(assets/images/landing/buildEasy/background.svg);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 457px 622px;
+    content: "";
+    height: 90vh;
+    transform: translate3d(0,0,0);
+    width: 100vw;
+    z-index: 1;
+    position: absolute;
+    width: 1200px;
+    left: 35vw;
+  }
+
+  &__wrap {
+    align-items: flex-start;
+    justify-content: flex-start;
+    z-index: 2;
+
+    h1 {
+      color: var(--landing-secondary-text-color);
+      font-size: 48px;
+      line-height: 59px;
+      margin-bottom: 40px;
+      margin-top: 80px;
+      max-width: 558px;
+      text-align: left;
+    }
+
+    span {
+      color: var(--landing-primary-text-color);
+      font-size: 16px;
+      font-weight: normal;
+      letter-spacing: 0.25px;
+      line-height: 28px;
+      max-width: 558px;
+      text-align: left;
+
+      &:last-child {
+        margin-top: 75vh;
+        max-width: max-content;
+        position: absolute;
+        margin-left: 0;
+        left: 45vw;
+        width: max-content;
+      }
+    }
+
+    .landing-button {
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 22px;
+      margin-bottom: 80px;
+      margin-top: 50px;
+    }
+  }
+}
