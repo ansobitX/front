@@ -1,7 +1,9 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
+import VisibilitySensor from 'react-visibility-sensor';
 
 interface OwnProps {
+    changeRoute: (isVisible: boolean, route: string) => void;
     translate: (key: string) => string;
 }
 
@@ -17,37 +19,39 @@ export class LandingUnderHood extends React.Component<Props> {
     }
 
     public render() {
-        const { translate } = this.props;
+        const { changeRoute, translate } = this.props;
 
         return (
-            <div className="pg-landing-screen__under-hood">
-                <div className="pg-landing-screen__under-hood__background" />
-                <div
-                    className="pg-landing-screen__under-hood__wrap"
-                    data-aos="fade-right"
-                    data-aos-duration="1000"
-                    data-aos-offset="100"
-                >
-                    <h1>{translate('page.body.landing.underHood.title')}</h1>
-                    <h2>{translate('page.body.landing.underHood.architecture.title')}</h2>
-                    <ul>
-                        <li>{translate('page.body.landing.underHood.architecture.list.item1')}</li>
-                        <li>{translate('page.body.landing.underHood.architecture.list.item2')}</li>
-                        <li>{translate('page.body.landing.underHood.architecture.list.item3')}</li>
-                        <li>{translate('page.body.landing.underHood.architecture.list.item4')}</li>
-                    </ul>
-                    <h2>{translate('page.body.landing.underHood.protocols.title')}</h2>
-                    <ul>
-                        <li>{translate('page.body.landing.underHood.protocols.list.item1')}</li>
-                        <li>{translate('page.body.landing.underHood.protocols.list.item2')}</li>
-                        <li>{translate('page.body.landing.underHood.protocols.list.item3')}</li>
-                        <li>{translate('page.body.landing.underHood.protocols.list.item4')}</li>
-                    </ul>
-                    <Link to="#" className="landing-button">
-                        {translate('page.body.landing.underHood.button')}
-                    </Link>
+                <div className="pg-landing-screen__under-hood">
+                    <div className="pg-landing-screen__under-hood__background" />
+                    <VisibilitySensor onChange={e => changeRoute(e, 'under-the-hood')} partialVisibility={true}>
+                        <div
+                            className="pg-landing-screen__under-hood__wrap"
+                            data-aos="fade-right"
+                            data-aos-duration="1000"
+                            data-aos-offset="100"
+                        >
+                            <h1>{translate('page.body.landing.underHood.title')}</h1>
+                            <h2>{translate('page.body.landing.underHood.architecture.title')}</h2>
+                            <ul>
+                                <li>{translate('page.body.landing.underHood.architecture.list.item1')}</li>
+                                <li>{translate('page.body.landing.underHood.architecture.list.item2')}</li>
+                                <li>{translate('page.body.landing.underHood.architecture.list.item3')}</li>
+                                <li>{translate('page.body.landing.underHood.architecture.list.item4')}</li>
+                            </ul>
+                            <h2>{translate('page.body.landing.underHood.protocols.title')}</h2>
+                            <ul>
+                                <li>{translate('page.body.landing.underHood.protocols.list.item1')}</li>
+                                <li>{translate('page.body.landing.underHood.protocols.list.item2')}</li>
+                                <li>{translate('page.body.landing.underHood.protocols.list.item3')}</li>
+                                <li>{translate('page.body.landing.underHood.protocols.list.item4')}</li>
+                            </ul>
+                            <Link to="#" className="landing-button">
+                                {translate('page.body.landing.underHood.button')}
+                            </Link>
+                        </div>
+                    </VisibilitySensor>
                 </div>
-            </div>
         );
     }
 

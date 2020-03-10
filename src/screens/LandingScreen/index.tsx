@@ -23,14 +23,13 @@ class Landing extends React.Component<Props> {
     public render() {
         return (
             <div className="pg-landing-screen">
-                <LandingLaunch translate={this.translate} />
-                <LandingBenefits translate={this.translate} />
-                <LandingUnderHood translate={this.translate} />
-                <LandingFeatures translate={this.translate} />
-                <LandingAdaptiveStack translate={this.translate} />
+                <LandingLaunch changeRoute={this.changeRoute} translate={this.translate} />
+                <LandingBenefits changeRoute={this.changeRoute} translate={this.translate} />
+                <LandingUnderHood changeRoute={this.changeRoute} translate={this.translate} />
+                <LandingFeatures changeRoute={this.changeRoute} translate={this.translate} />
+                <LandingAdaptiveStack changeRoute={this.changeRoute} translate={this.translate} />
                 <LandingUseCases changeRoute={this.changeRoute} translate={this.translate} />
                 <LandingCloudStack changeRoute={this.changeRoute} translate={this.translate} />
-                <LandingUseCases changeRoute={this.changeRoute} translate={this.translate} />
             </div>
         );
     }
@@ -39,7 +38,7 @@ class Landing extends React.Component<Props> {
         const { history } = this.props;
 
         if (isVisible) {
-            history.replace(`#${route}`);
+            history.replace(route ? `#${route}` : '');
         }
     }
 
