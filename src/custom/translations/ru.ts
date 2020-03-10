@@ -238,6 +238,15 @@ export const ru: LangType = {
     'page.body.landing.buildEasy.button': 'Talk to Technical Sales',
     'page.body.landing.buildEasy.note': '* - available for OpenDAX Enterprise and OpenDAX Cloud Business/Corporate',
 
+    /* Landing LooksComplex */
+    'page.body.landing.looksComplex.title': 'Looks complex?',
+    'page.body.landing.looksComplex.focus.title': 'Focus on growing your business while we take care of technology',
+    'page.body.landing.looksComplex.focus.text': 'Developing a similar solution in-house will surely take over a year and will cost arm and leg. We’ve been there and we know. OpenDAX Cloud can take care of rocket science, heavy technology, component updates and security hardening while you analyze the market, define strategies, release products and grow your business.',
+    'page.body.landing.looksComplex.position.title': 'Position your business for the future',
+    'page.body.landing.looksComplex.position.text': 'OpenDAX Cloud is a highly scalable platform that never stops evolving. We recognize the challenges of today and are always preparing for tomorrow. We’re constantly looking for new technology opportunities so that you can deliver the best experience for your users.',
+    'page.body.landing.looksComplex.buttons.getPricing': 'Get Pricing',
+    'page.body.landing.looksComplex.buttons.solutions': 'Custom Enterprise Solutions',
+
 
     /* Wallets */
     'page.body.wallets.estimated_value': 'Оценочная стоимость',
