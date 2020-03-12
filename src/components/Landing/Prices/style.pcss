@@ -1,0 +1,175 @@
+.pg-landing-screen__prices {
+  background: var(--landing-background-light);
+  height: max-content;
+  width: 100vw;
+
+  &__wrap {
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    h1 {
+      align-items: flex-start;
+      color: var(--landing-secondary-text-color);
+      display: flex;
+      font-size: 48px;
+      justify-content: flex-start;
+      line-height: 59px;
+      margin-top: 89px;
+      max-width: 400px;
+      position: absolute;
+      text-align: left;
+      width: 100vw;
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 44px;
+
+      &__items {
+        align-items: flex-end;
+        display: flex;
+        flex-direction: row;
+        height: 747px;
+        justify-content: space-between;
+        margin-top: 172px;
+
+        .price-card {
+          align-items: flex-start;
+          border-radius: 4px;
+          border: 1px solid rgba(30, 40, 65, 0.05);
+          display: flex;
+          flex-direction: column;
+          height: max-content;
+          justify-content: flex-start;
+          margin: 0 10px;
+          max-width: 270px;
+          padding: 0 18px 40px 18px; 
+          width: 100vw;
+
+          h1 {
+            align-items: center;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            background: transparent;
+            color: var(--bright);
+            display: flex;
+            font-size: 24px;
+            height: 85px;
+            justify-content: center;
+            letter-spacing: 5px;
+            line-height: 24px;
+            margin: 0 0 19px -18px;
+            position: relative;
+            max-width: 269px;
+            width: 100vw;
+          }
+
+          &__value {
+            align-items: center;
+            color: var(--landing-primary-text-color);
+            display: flex;
+            flex-direction: row;
+            height: 20px;
+            justify-content: space-between;
+            margin: 5px 0;
+            width: 100%;
+            
+            span {
+              font-size: 12px;
+              font-weight: 500;
+              line-height: 28px;
+
+              &:nth-child(2) {
+                font-size: 14px;
+                font-weight: bold;
+                letter-spacing: 0.25px;
+                line-height: 28px;
+              }
+            }
+
+            &:nth-child(4) {
+              align-items: baseline;
+              height: 30px;
+
+              span {  
+                &:nth-child(2) {
+                  font-size: 30px;
+                }
+              }
+            }
+          }
+
+          .landing-button {
+            font-size: 14px;
+            font-weight: 600;
+            height: 35px;
+            letter-spacing: 1px;
+            line-height: 17px;
+            margin: 15px 0;
+            text-transform: capitalize;
+            width: 100%;
+          }
+
+          &:nth-child(1) {
+            margin-left: 0;
+
+            h1 {
+              background: var(--landing-cards-startup-bg);
+            }
+          }
+
+          &:nth-child(2) {
+            h1 {
+              background: var(--landing-cards-pro-bg);
+            }
+          }
+
+          &:nth-child(3) {
+            h1 {
+              background: var(--landing-cards-business-bg);
+            }
+          }
+
+          &:nth-child(4) {
+            margin-right: 0;
+
+            h1 {
+              background-color: var(--landing-primary-text-color);
+              background-image: url(assets/images/landing/prices/cards/corporate.svg);
+              background-position: center center;
+              background-repeat: no-repeat;
+              background-size: cover;
+            }
+          }
+        }
+      }
+
+      &__tech-sales {
+        align-items: center;
+        color: var(--landing-button-bg);
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        font-size: 14px;
+        font-weight: 500;
+        height: 24px;
+        justify-content: center;
+        letter-spacing: 0.1px;
+        line-height: 32px;
+        margin: 32px 0;
+        text-decoration: none !important;
+        user-select: none;
+
+        &:hover,
+        &:active {
+          color: var(--landing-button-bg);
+        }
+
+        span {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}

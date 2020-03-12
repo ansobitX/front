@@ -87,11 +87,26 @@ export class LandingFeatures extends React.Component<Props> {
                                     data-aos-offset="100"
                                 >
                                     <span className="title">{translate('page.body.landing.features.efficient.title')}</span>
-                                    <span className="text">{translate('page.body.landing.features.efficient.text1')}</span>
-                                    <span className="text">{translate('page.body.landing.features.efficient.text2')}</span>
-                                    <span className="text">{translate('page.body.landing.features.efficient.text3')}</span>
-                                    <span className="text">{translate('page.body.landing.features.efficient.text4')}</span>
-                                    <span className="text">{translate('page.body.landing.features.efficient.text5')}</span>
+                                    <span className="text">
+                                        <img src={CheckIcon} alt=""/>
+                                        <span>{translate('page.body.landing.features.efficient.text1')}</span>
+                                    </span>
+                                    <span className="text">
+                                        <img src={CheckIcon} alt=""/>
+                                        <span>{translate('page.body.landing.features.efficient.text2')}</span>
+                                    </span>
+                                    <span className="text">
+                                        <img src={CheckIcon} alt=""/>
+                                        <span>{translate('page.body.landing.features.efficient.text3')}</span>
+                                    </span>
+                                    <span className="text">
+                                        <img src={CheckIcon} alt=""/>
+                                        <span>{translate('page.body.landing.features.efficient.text4')}</span>
+                                    </span>
+                                    <span className="text">
+                                        <img src={CheckIcon} alt=""/>
+                                        <span>{translate('page.body.landing.features.efficient.text5')}</span>
+                                    </span>
                                 </div>
                             </div>
                             <div className="pg-landing-screen__features__wrap__blocks__item">
@@ -110,11 +125,26 @@ export class LandingFeatures extends React.Component<Props> {
                                     data-aos-offset="100"
                                 >
                                     <span className="title">{translate('page.body.landing.features.management.title')}</span>
-                                    <span className="text">{translate('page.body.landing.features.management.text1')}</span>
-                                    <span className="text">{translate('page.body.landing.features.management.text2')}</span>
-                                    <span className="text">{translate('page.body.landing.features.management.text3')}</span>
-                                    <span className="text">{translate('page.body.landing.features.management.text4')}</span>
-                                    <span className="text">{translate('page.body.landing.features.management.text5')}</span>
+                                    <span className="text">
+                                        <img src={CheckIcon} alt=""/>
+                                        <span>{translate('page.body.landing.features.management.text1')}</span>
+                                    </span>
+                                    <span className="text">
+                                        <img src={CheckIcon} alt=""/>
+                                        <span>{translate('page.body.landing.features.management.text2')}</span>
+                                    </span>
+                                    <span className="text">
+                                        <img src={CheckIcon} alt=""/>
+                                        <span>{translate('page.body.landing.features.management.text3')}</span>
+                                    </span>
+                                    <span className="text">
+                                        <img src={CheckIcon} alt=""/>
+                                        <span>{translate('page.body.landing.features.management.text4')}</span>
+                                    </span>
+                                    <span className="text">
+                                        <img src={CheckIcon} alt=""/>
+                                        <span>{translate('page.body.landing.features.management.text5')}</span>
+                                    </span>
                                 </div>
                             </div>
                             <div className="pg-landing-screen__features__wrap__blocks__item">

@@ -10,6 +10,7 @@ import {
     LandingFeatures,
     LandingLaunch,
     LandingLooksComplex,
+    LandingPrices,
     LandingUnderHood,
     LandingUseCases,
 } from '../../components';
@@ -34,6 +35,7 @@ class Landing extends React.Component<Props> {
                 <LandingCloudStack changeRoute={this.changeRoute} translate={this.translate} />
                 <LandingBuildEasy changeRoute={this.changeRoute} translate={this.translate} />
                 <LandingLooksComplex changeRoute={this.changeRoute} translate={this.translate} />
+                <LandingPrices changeRoute={this.changeRoute} translate={this.translate} />
             </div>
         );
     }
