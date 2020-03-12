@@ -2,6 +2,9 @@ import classnames from 'classnames';
 import * as React from 'react';
 import VisibilitySensor from 'react-visibility-sensor';
 
+/* Icons */
+const WIPIcon = require('../../../assets/images/landing/cloudStack/WIPIcon.svg');
+
 interface OwnProps {
     changeRoute: (isVisible: boolean, route: string) => void;
     translate: (key: string) => string;
@@ -104,6 +107,11 @@ export class LandingCloudStack extends React.Component<Props, State> {
 
     public render() {
         const { translate } = this.props;
+        const { isVisibleStaticMenu } = this.state;
+
+        const imagesBlockClass = classnames('static-images', {
+            'static-images--fixed': isVisibleStaticMenu,
+        });
 
         return (
             <div className="pg-landing-screen__cloud-stack">
@@ -121,8 +129,8 @@ export class LandingCloudStack extends React.Component<Props, State> {
                         data-aos-duration="1000"
                     >
                         {this.renderScrollableBlock()}
-                        <div className="static-images">
-                            Static images
+                        <div className={imagesBlockClass}>
+                            <img src={WIPIcon} alt="" />
                         </div>
                     </div>
                     {this.renderStaticMenu()}

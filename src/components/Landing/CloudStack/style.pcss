@@ -74,7 +74,7 @@
 
     &__content {
       align-items: center;
-      display: flex;
+      display: contents;
       flex-direction: row;
       justify-content: flex-start;
       width: 100vw;
@@ -126,7 +126,22 @@
       }
 
       .static-images {
-        display: none;
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        height: 0;
+        justify-content: flex-start;
+        max-width: 170px;
+        opacity: 0;
+    
+        &--fixed {
+          height: 100%;
+          margin-left: 300px;
+          opacity: 1;
+          position: fixed;
+          top: calc(50% - 183px);
+          transition: .2s linear;
+        }
       }
     }
   }
