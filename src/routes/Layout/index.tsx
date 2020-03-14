@@ -9,6 +9,7 @@ import { minutesUntilAutoLogout } from '../../api';
 import { WalletsFetch } from '../../containers';
 import { toggleColorTheme } from '../../helpers';
 import {
+    changeColorTheme,
     configsFetch,
     logoutFetch,
     Market,
@@ -49,6 +50,7 @@ interface ReduxProps {
 }
 
 interface DispatchProps {
+    changeColorTheme: typeof changeColorTheme;
     fetchConfigs: typeof configsFetch;
     logout: typeof logoutFetch;
     userFetch: typeof userFetch;
@@ -137,7 +139,7 @@ class LayoutComponent extends React.Component<LayoutProps, LayoutState> {
     }
 
     public componentDidUpdate(next: LayoutProps) {
-        const { isLoggedIn, history } = this.props;
+        const { colorTheme, isLoggedIn, history } = this.props;
 
         if (!isLoggedIn && next.isLoggedIn) {
             this.props.walletsReset();
@@ -145,6 +147,18 @@ class LayoutComponent extends React.Component<LayoutProps, LayoutState> {
                 history.push('/trading/');
             }
         }
+
+        let colorThemeToSet = 'light';
+
+        if (window.location.pathname === '/') {
+            colorThemeToSet = 'basic';
+        }
+
+        if (colorTheme !== colorThemeToSet) {
+            this.props.changeColorTheme(colorThemeToSet);
+        }
+
+        toggleColorTheme(colorThemeToSet);
     }
     public componentWillUnmount() {
         for (const type of LayoutComponent.eventsListen) {
@@ -158,14 +172,12 @@ class LayoutComponent extends React.Component<LayoutProps, LayoutState> {
 
     public render() {
         const {
-            colorTheme,
             isLoggedIn,
             userLoading,
         } = this.props;
         const { isShownExpSessionModal } = this.state;
 
         const tradingCls = window.location.pathname.includes('/trading') ? 'trading-layout' : '';
-        toggleColorTheme(colorTheme);
 
         return (
             <div className={`container-fluid pg-layout ${tradingCls}`}>
@@ -266,6 +278,7 @@ const mapStateToProps: MapStateToProps<ReduxProps, {}, RootState> = state => ({
 });
 
 const mapDispatchToProps: MapDispatchToProps<DispatchProps, {}> = dispatch => ({
+    changeColorTheme: payload => dispatch(changeColorTheme(payload)),
     fetchConfigs: () => dispatch(configsFetch()),
     logout: () => dispatch(logoutFetch()),
     userFetch: () => dispatch(userFetch()),
