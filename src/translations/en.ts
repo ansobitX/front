@@ -285,7 +285,7 @@ export const en = {
     'page.body.landing.prices.card.pro.ram.label': 'RAM',
     'page.body.landing.prices.card.pro.ram.value': '12GB',
     'page.body.landing.prices.card.pro.marketPairs.label': 'Market Pair limit',
-    'page.body.landing.prices.card.pro.marketPairs.value': '80',
+    'page.body.landing.prices.card.pro.marketPairs.value': '15',
     'page.body.landing.prices.card.pro.monitoring.label': 'Monitoring Service',
     'page.body.landing.prices.card.pro.currencies.label': 'ETH, ERC20',
     'page.body.landing.prices.card.pro.currencies2.label': 'BTC, LTC, XRP',

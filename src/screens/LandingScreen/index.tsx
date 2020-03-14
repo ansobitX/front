@@ -8,6 +8,7 @@ import {
     LandingBuildEasy,
     LandingCloudStack,
     LandingFeatures,
+    LandingHeader,
     LandingLaunch,
     LandingLooksComplex,
     LandingPrices,
@@ -22,10 +23,17 @@ interface HistoryProps {
 type Props = HistoryProps & RouteProps & InjectedIntlProps;
 
 class Landing extends React.Component<Props> {
+    public componentDidMount() {
+        this.handleScroll();
+    }
 
     public render() {
         return (
-            <div className="pg-landing-screen">
+            <div className="pg-landing-screen" onWheel={this.handleScroll}>
+                <LandingHeader
+                    id="landingStickyHeader"
+                    translate={this.translate}
+                />
                 <LandingLaunch changeRoute={this.changeRoute} translate={this.translate} />
                 <LandingBenefits changeRoute={this.changeRoute} translate={this.translate} />
                 <LandingUnderHood changeRoute={this.changeRoute} translate={this.translate} />
@@ -46,6 +54,19 @@ class Landing extends React.Component<Props> {
         if (isVisible) {
             history.replace(route ? `#${route}` : '');
         }
+    }
+
+    private handleScroll() {
+        const header = document.getElementById('landingStickyHeader');
+        const stickyPoint = 100;
+
+        if (window.scrollY >= stickyPoint) {
+            header && header.classList.add('pg-landing-screen__header--visible');
+        } else {
+            header && header.classList.remove('pg-landing-screen__header--visible');
+        }
+
+        return;
     }
 
     private translate = (key: string) => this.props.intl.formatMessage({id: key});

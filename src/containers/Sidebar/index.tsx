@@ -164,8 +164,8 @@ class SidebarContainer extends React.Component<Props, State> {
     };
 
     public getLanguageDropdownItems = () => {
-        return languages.map((l: string) =>
-            <Dropdown.Item onClick={e => this.handleChangeLanguage(l)}>
+        return languages.map((l: string, index) =>
+            <Dropdown.Item key={index} onClick={e => this.handleChangeLanguage(l)}>
                 <div className="dropdown-row">
                     <img
                         src={this.tryRequire(l) && require(`../../assets/images/sidebar/${l}.svg`)}
