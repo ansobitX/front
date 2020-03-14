@@ -9,7 +9,8 @@ interface OwnProps {
 
 type Props = OwnProps;
 
-export class LandingUnderHood extends React.Component<Props> {
+// tslint:disable-next-line: no-default-export
+export default class LandingUnderHood extends React.Component<Props> {
     public componentDidMount(){
         window.addEventListener('scroll', this.handleScroll);
     }

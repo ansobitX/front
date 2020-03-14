@@ -16,7 +16,8 @@ interface State {
 
 type Props = OwnProps;
 
-export class LandingCloudStack extends React.Component<Props, State> {
+// tslint:disable-next-line: no-default-export
+export default class LandingCloudStack extends React.Component<Props, State> {
     public readonly state = {
         isVisibleStaticMenu: false,
     };

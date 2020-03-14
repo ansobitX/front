@@ -14,7 +14,8 @@ interface OwnProps {
 
 type Props = OwnProps;
 
-export class LandingBenefits extends React.Component<Props> {
+// tslint:disable-next-line: no-default-export
+export default class LandingBenefits extends React.Component<Props> {
     public render() {
         const { changeRoute, translate } = this.props;
 
