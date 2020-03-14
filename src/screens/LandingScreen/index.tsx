@@ -31,7 +31,7 @@ class Landing extends React.Component<Props> {
     public render() {
         return (
             <div className="pg-landing-screen" onWheel={this.handleScroll}>
-                <React.Suspense fallback={<div>Loading...</div>}>
+                <React.Suspense fallback={null}>
                     <LandingHeader
                         id="landingStickyHeader"
                         translate={this.translate}

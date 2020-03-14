@@ -10,14 +10,6 @@ type Props = OwnProps;
 
 // tslint:disable-next-line: no-default-export
 export default class LandingAdaptiveStack extends React.Component<Props> {
-    public componentDidMount(){
-        window.addEventListener('scroll', this.handleScroll);
-    }
-
-    public componentWillUnmount(){
-        window.removeEventListener('scroll', this.handleScroll);
-    }
-
     public render() {
         const { changeRoute, translate } = this.props;
 
@@ -66,19 +58,5 @@ export default class LandingAdaptiveStack extends React.Component<Props> {
                 </div>
             </VisibilitySensor>
         );
-    }
-
-
-    private handleScroll = () => {
-        const currentPage = document.documentElement;
-        const currentScrollPosition = (window.pageYOffset || currentPage.scrollTop)  - (currentPage.clientTop || 0);
-        const targetElement = document.getElementsByClassName('pg-landing-screen__adaptive-stack')[0];
-        const targetElementBackground = document.getElementsByClassName('pg-landing-screen__adaptive-stack__background')[0];
-
-        if (targetElement && targetElementBackground) {
-            const currentScrollOffset = currentScrollPosition;
-
-            targetElementBackground.setAttribute('style', `transform: translateY(calc(${currentScrollOffset / 5}px - 1050px))`);
-        }
     }
 }
