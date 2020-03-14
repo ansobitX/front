@@ -119,26 +119,30 @@
       }
 
       &--active {
-        background-color: var(--wallets-item-bg-active);
+        background-color: var(--accent);
         outline: none;
         border: none;
-        color: var(--wallets-item-font-active);
+        color: var(--white);
+
+        span {
+          color: var(--white) !important;
+        }
 
         &:hover {
-          background: var(--wallets-item-bg-active);
+          background: var(--accent);
         }
 
         .cr-crypto-icon {
-          color: var(--white-color);
+          color: var(--white);
           opacity: 1;
         }
 
         .cr-wallet-item__amount-locked {
-          color: var(--wallets-item-font-active);
+          color: var(--white);
           opacity: 1;
 
           path {
-            fill: var(--color-white);
+            fill: var(--white);
           }
         }
 

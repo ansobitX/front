@@ -327,3 +327,53 @@ input:-webkit-autofill {
       }
   }
 }
+
+.btn-primary {
+  background: var(--button-normal);
+  border: 1px solid var(--placeholder-text);
+
+  &:focus,
+  &:hover {
+    background: var(--button-normal) !important;
+    border: 1px solid var(--button-normal) !important;
+    outline: none !important;
+  }
+
+  &:disabled {
+    background: var(--accent) !important;
+    border: 1px solid var(--button-normal) !important;
+    outline: none !important;
+  }
+}
+
+.btn-success {
+  background: var(--green);
+  border: none;
+
+  &:focus,
+  &:hover  {
+    background: var(--green) !important;
+    border: none;
+  }
+
+  &:disabled {
+    background: var(--green) !important;
+    border: none;
+  }
+}
+
+.btn-danger {
+  background: var(--red);
+  border: none;
+
+  &:focus,
+  &:hover  {
+    background: var(--red) !important;
+    border: none;
+  }
+
+  &:disabled {
+    background: var(--red) !important;
+    border: none;
+  }
+}

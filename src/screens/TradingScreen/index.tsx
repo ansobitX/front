@@ -6,8 +6,6 @@ import { incrementalOrderBook } from '../../api';
 import { Decimal } from '../../components/Decimal';
 import { Grid } from '../../components/Grid';
 import {
-    MarketsComponent,
-    MarketDepthsComponent,
     OpenOrdersComponent,
     OrderBook,
     OrderComponent,
@@ -102,19 +100,11 @@ class Trading extends React.Component<Props, StateProps> {
         },
         {
             i: 4,
-            render: () => <MarketDepthsComponent />,
-        },
-        {
-            i: 5,
             render: () => <OpenOrdersComponent/>,
         },
         {
-            i: 6,
+            i: 5,
             render: () => <RecentTrades/>,
-        },
-        {
-            i: 7,
-            render: () => <MarketsComponent/>,
         },
     ];
 

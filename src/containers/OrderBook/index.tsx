@@ -91,8 +91,8 @@ class OrderBookContainer extends React.Component<Props, State> {
                 maxVolume={calcMaxVolume(bids, asks)}
                 orderBookEntryAsks={accumulateVolume(asks)}
                 orderBookEntryBids={accumulateVolume(bids)}
-                rowBackgroundColorAsks={'rgba(232, 94, 89, 0.4)'}
-                rowBackgroundColorBids={'rgba(84, 180, 137, 0.4)'}
+                rowBackgroundColorAsks={'rgba(174, 10, 4, 0.5)'}
+                rowBackgroundColorBids={'rgba(31, 193, 167, 0.5)'}
                 dataAsks={this.renderOrderBook(asksData, 'asks', this.props.intl.formatMessage({id: 'page.noDataToShow'}), this.props.currentMarket)}
                 dataBids={this.renderOrderBook(bids, 'bids', this.props.intl.formatMessage({id: 'page.noDataToShow'}), this.props.currentMarket)}
                 headers={this.renderHeaders()}

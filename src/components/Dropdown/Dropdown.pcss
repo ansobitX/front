@@ -13,9 +13,12 @@
       height: calc(var(--gap) * 8.3);
       text-align: left;
       font-size: calc(var(--gap) * 2);
+      color: var(--bright);
 
-      &:focus {
+      &:focus,
+      &:hover {
         box-shadow: none;
+        color: var(--white);
       }
     }
 
@@ -31,7 +34,8 @@
       padding-bottom: 10px;
 
       &:hover, &:focus {
-        background: var(--header-text);
+        color: var(--white);
+        background: var(--button-normal);
         outline: none;
       }
     }

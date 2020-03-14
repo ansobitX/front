@@ -24,8 +24,8 @@ export const colors = {
     light: {
         chart: {
             primary: '#fff',
-            up: '#54B489',
-            down: '#E85E59',
+            up: '#1FC1A7',
+            down: '#AE0A04',
         },
         navbar: {
             avatar: '#28334E',
