@@ -349,6 +349,34 @@ export const en = {
 
     'page.body.landing.prices.salesLink': 'Got a custom Enterprise project in mind? Talk to our Technical Sales team',
 
+    /* Landing Footer */
+    'page.body.landing.footer.contactUs.button': 'Contact us',
+    'page.body.landing.footer.contact.title': 'Contact',
+    'page.body.landing.footer.contact.phone': '+33 977 218 281',
+    'page.body.landing.footer.contact.email': 'info@opendax.io',
+    'page.body.landing.footer.address.title': 'Address',
+    'page.body.landing.footer.address.company': 'Helios Technologies SAS',
+    'page.body.landing.footer.address.street': '14 rue de Mantes',
+    'page.body.landing.footer.address.country': '92700 Colombes, France',
+    'page.body.landing.footer.explore.title': 'Explore',
+    'page.body.landing.footer.explore.products': 'Products',
+    'page.body.landing.footer.explore.benefits': 'Benefits',
+    'page.body.landing.footer.explore.underHood': 'Technology',
+    'page.body.landing.footer.explore.features': 'Features',
+    'page.body.landing.footer.explore.useCases': 'Use Cases',
+    'page.body.landing.footer.explore2.title': 'Explore',
+    'page.body.landing.footer.explore2.benefits': 'Benefits',
+    'page.body.landing.footer.explore2.stack': 'Stack',
+    'page.body.landing.footer.explore2.pricing': 'Pricing',
+    'page.body.landing.footer.explore2.company': 'Company',
+    'page.body.landing.footer.explore2.tools': 'Tools',
+    'page.body.landing.footer.legal.title': 'Legal',
+    'page.body.landing.footer.legal.terms': 'Terms of Service',
+    'page.body.landing.footer.legal.privacy': 'Privacy Policy',
+    'page.body.landing.footer.legal.cookie': 'Cookie Policy',
+    'page.body.landing.footer.legal.gdpr': 'GDPR Statement',
+    'page.body.landing.footer.allRightsReserved': '© 2020 OpenDAX.io - All rights reserved',
+
 
     /* Wallets */
     'page.body.wallets.estimated_value': 'Estimated Value',

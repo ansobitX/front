@@ -1,0 +1,116 @@
+.pg-landing-screen__footer {
+  background: var(--landing-background-dark);
+
+  &__wrap__content {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 80px 0;
+    border-bottom: 1px solid var(--landing-text-light-third-0-1);
+    width: 100%;
+
+    &__col {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      width: 100%;
+
+      &:nth-child(1),
+      &:nth-child(2) {
+        width: 26%;
+      }
+
+      &:nth-child(3),
+      &:nth-child(4),
+      &:nth-child(5) {
+        width: 16%;
+      }
+
+      &:first-child {
+        img,
+        .social,
+        .landing-button {
+          align-items: center;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          max-width: 172px;
+          width: 100%;
+        }
+
+        img {
+          margin-top: 9px;
+          margin-bottom: 20px;
+        }
+
+        .social {
+          justify-content: space-between;
+          height: 25px;
+          margin-bottom: 50px;
+
+          a {
+            display: flex;
+            height: 25px;
+            align-items: center;
+            flex-direction: row;
+
+            img {
+              margin: 0;
+            }
+          }
+        }
+
+        .landing-button {
+          font-weight: 600;
+          font-size: 15px;
+          line-height: 22px;
+        }
+      }
+
+      &:nth-child(2) {
+        .title:nth-child(4) {
+          margin-top: 5px;
+        }
+
+        .footer-link:nth-child(5),
+        .footer-link:nth-child(6) {
+          margin-bottom: 10px;
+        }
+      }
+
+      .title {
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 15px;
+        color: var(--landing-text-light-third-0-5);
+        margin-bottom: 15px;
+      }
+
+      .footer-link {
+        color: var(--white);
+        font-size: 14px;
+        font-weight: normal;
+        line-height: 15px;
+        margin-bottom: 15px;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .copyright {
+    align-items: center;
+    color: var(--landing-text-light-third-0-5);
+    display: flex;
+    flex-direction: row;
+    font-size: 11px;
+    font-weight: 500;
+    height: 26px;
+    justify-content: center;
+    line-height: 15px;
+    margin: 40px 0;
+    text-align: center;
+    width: 100vw;
+  }
+}
