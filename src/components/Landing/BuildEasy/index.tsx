@@ -51,7 +51,7 @@ export class LandingBuildEasy extends React.Component<Props> {
             const currentScrollOffset = currentScrollPosition;
 
             if (currentScrollOffset < targetElementOffset + targetElementHeight / 2) {
-                    targetElementBackground.setAttribute('style', `transform: translateY(calc(${currentScrollOffset / 10}px - 1150px))`);
+                targetElementBackground.setAttribute('style', `transform: translateY(calc(${currentScrollOffset / 10}px - 1150px))`);
             }
         }
     }

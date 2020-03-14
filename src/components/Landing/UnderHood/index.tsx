@@ -23,7 +23,9 @@ export class LandingUnderHood extends React.Component<Props> {
 
         return (
                 <div className="pg-landing-screen__under-hood">
-                    <div className="pg-landing-screen__under-hood__background" />
+                    <div className="pg-landing-screen__under-hood__background__wrap">
+                        <div className="pg-landing-screen__under-hood__background" />
+                    </div>
                     <VisibilitySensor onChange={e => changeRoute(e, 'under-the-hood')} partialVisibility={true}>
                         <div
                             className="pg-landing-screen__under-hood__wrap"
@@ -60,15 +62,17 @@ export class LandingUnderHood extends React.Component<Props> {
         const currentScrollPosition = (window.pageYOffset || currentPage.scrollTop)  - (currentPage.clientTop || 0);
         const targetElement = document.getElementsByClassName('pg-landing-screen__under-hood')[0];
         const targetElementBackground = document.getElementsByClassName('pg-landing-screen__under-hood__background')[0];
+        const targetElementBackgroundWrap = document.getElementsByClassName('pg-landing-screen__under-hood__background__wrap')[0];
 
         if (targetElement && targetElementBackground) {
             const targetElementOffset = (targetElement as HTMLElement).offsetTop;
             const targetElementHeight = (targetElement as HTMLElement).offsetHeight;
             const currentScrollOffset = currentScrollPosition;
 
-            if (currentScrollOffset > targetElementOffset - targetElementHeight / 2 &&
-                currentScrollOffset < targetElementOffset + targetElementHeight / 2) {
-                    targetElementBackground.setAttribute('style', `transform: rotate(${-currentScrollOffset / 120}deg)`);
+            if (currentScrollOffset < targetElementOffset + targetElementHeight / 2) {
+                targetElementBackgroundWrap.setAttribute(
+                    'style', `transform: translateY(calc(${currentScrollOffset / 2}px - 850px)) rotate(${-currentScrollOffset / 200}deg)`,
+                );
             }
         }
     }
