@@ -1,24 +1,25 @@
 .pg-landing-screen__looks-complex {
   background: var(--landing-primary-cta-color);
   height: 100vh;
-  width: 100vw;
+  min-height: 800px;
   overflow: hidden;
   position: relative;
+  width: 100vw;
 
   &__background {
-    display: block;
     background-image: url(assets/images/landing/looksComplex/RocketEngine.svg);
     background-position: center 35%;
     background-repeat: no-repeat;
     background-size: cover;
     content: "";
+    display: block;
     height: 100vh;
-    transform: translate3d(0,0,0);
-    width: 100vw;
-    z-index: 1;
-    position: absolute;
-    width: 1200px;
     left: 35%;
+    min-height: 800px;
+    position: absolute;
+    transform: translate3d(0,0,0);
+    width: 1200px;
+    z-index: 1;
   }
 
   &__wrap {
