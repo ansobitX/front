@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 
 /* Icons */
 const LogoImage = require('../../../assets/images/landing/logo.svg');
@@ -49,9 +50,9 @@ export class LandingHeader extends React.Component<Props> {
                         </a>
                     </div>
                     <div className="pg-landing-screen__header__right">
-                        <a href="#pricing" className="landing-button">
+                        <Link to="/signup" className="landing-button">
                             {translate('page.body.landing.header.link.pricing')}
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

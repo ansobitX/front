@@ -32,7 +32,7 @@ export class LandingLaunch extends React.Component<Props> {
                                 <h1>{translate('page.body.landing.content.title')}</h1>
                                 <h2>{translate('page.body.landing.content.subtitle')}</h2>
                                 <div className="pg-landing-screen__launch__wrap__content__buttons">
-                                    <Link to="/trading/" className="landing-button">
+                                    <Link to="/signup" className="landing-button">
                                         {translate('page.body.landing.content.buttons.getStarted')}
                                     </Link>
                                     <a href="#use-cases" className="landing-button landing-button--secondary">
