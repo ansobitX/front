@@ -24,7 +24,7 @@ export class LandingHeader extends React.Component<Props> {
                         <img src={LogoImage} alt="OpenDax Logo"/>
                     </div>
                     <div className="pg-landing-screen__header__middle">
-                        <a href="#products" className="header-link">
+                        <a href="/" className="header-link">
                             {translate('page.body.landing.header.link.products')}
                         </a>
                         <a href="#benefits" className="header-link">
@@ -39,7 +39,7 @@ export class LandingHeader extends React.Component<Props> {
                         <a href="#use-cases" className="header-link">
                             {translate('page.body.landing.header.link.useCases')}
                         </a>
-                        <a href="#stack" className="header-link">
+                        <a href="#cloud-stack" className="header-link">
                             {translate('page.body.landing.header.link.stack')}
                         </a>
                         <a href="#tools" className="header-link">

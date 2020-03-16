@@ -1,4 +1,5 @@
 import * as React from 'react';
+import ScrollableAnchor from 'react-scrollable-anchor';
 import { Link } from 'react-router-dom';
 import VisibilitySensor from 'react-visibility-sensor';
 
@@ -23,11 +24,12 @@ export default class LandingUnderHood extends React.Component<Props> {
         const { changeRoute, translate } = this.props;
 
         return (
+            <ScrollableAnchor id={'technology'}>
                 <div className="pg-landing-screen__under-hood">
                     <div className="pg-landing-screen__under-hood__background__wrap">
                         <div className="pg-landing-screen__under-hood__background" />
                     </div>
-                    <VisibilitySensor onChange={e => changeRoute(e, 'under-the-hood')} partialVisibility={true}>
+                    <VisibilitySensor onChange={e => changeRoute(e, 'technology')} partialVisibility={true}>
                         <div
                             className="pg-landing-screen__under-hood__wrap"
                             data-aos="fade-right"
@@ -55,6 +57,7 @@ export default class LandingUnderHood extends React.Component<Props> {
                         </div>
                     </VisibilitySensor>
                 </div>
+            </ScrollableAnchor>
         );
     }
 

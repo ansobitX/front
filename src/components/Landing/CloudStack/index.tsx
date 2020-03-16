@@ -1,5 +1,6 @@
 import classnames from 'classnames';
 import * as React from 'react';
+import ScrollableAnchor from 'react-scrollable-anchor';
 import VisibilitySensor from 'react-visibility-sensor';
 
 /* Icons */
@@ -115,28 +116,30 @@ export default class LandingCloudStack extends React.Component<Props, State> {
         });
 
         return (
-            <div className="pg-landing-screen__cloud-stack">
-                <div className="pg-landing-screen__cloud-stack__wrap">
-                    <h1
-                        data-aos="fade-down"
-                        data-aos-duration="1000"
-                        data-aos-offset="100"
-                    >
-                        {translate('page.body.landing.cloudStack.title')}
-                    </h1>
-                    <div
-                        className="pg-landing-screen__cloud-stack__wrap__content"
-                        data-aos="fade"
-                        data-aos-duration="1000"
-                    >
-                        {this.renderScrollableBlock()}
-                        <div className={imagesBlockClass}>
-                            <img src={WIPIcon} alt="" />
+            <ScrollableAnchor id={'cloud-stack'}>
+                <div className="pg-landing-screen__cloud-stack">
+                    <div className="pg-landing-screen__cloud-stack__wrap">
+                        <h1
+                            data-aos="fade-down"
+                            data-aos-duration="1000"
+                            data-aos-offset="100"
+                        >
+                            {translate('page.body.landing.cloudStack.title')}
+                        </h1>
+                        <div
+                            className="pg-landing-screen__cloud-stack__wrap__content"
+                            data-aos="fade"
+                            data-aos-duration="1000"
+                        >
+                            {this.renderScrollableBlock()}
+                            <div className={imagesBlockClass}>
+                                <img src={WIPIcon} alt="" />
+                            </div>
                         </div>
+                        {this.renderStaticMenu()}
                     </div>
-                    {this.renderStaticMenu()}
                 </div>
-            </div>
+            </ScrollableAnchor>
         );
     }
 

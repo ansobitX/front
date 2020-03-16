@@ -58,19 +58,19 @@ export class LandingFooter extends React.Component<Props> {
                             </div>
                             <div className="pg-landing-screen__footer__wrap__content__col">
                                 <span className="title">{translate('page.body.landing.footer.explore.title')}</span>
-                                <Link className="footer-link" to="#adaptive-stack">{translate('page.body.landing.footer.explore.products')}</Link>
-                                <Link className="footer-link" to="#benefits">{translate('page.body.landing.footer.explore.benefits')}</Link>
-                                <Link className="footer-link" to="#under-the-hood">{translate('page.body.landing.footer.explore.underHood')}</Link>
-                                <Link className="footer-link" to="#features">{translate('page.body.landing.footer.explore.features')}</Link>
-                                <Link className="footer-link" to="#use-cases">{translate('page.body.landing.footer.explore.useCases')}</Link>
+                                <a className="footer-link" href="/">{translate('page.body.landing.footer.explore.products')}</a>
+                                <a className="footer-link" href="#benefits">{translate('page.body.landing.footer.explore.benefits')}</a>
+                                <a className="footer-link" href="#technology">{translate('page.body.landing.footer.explore.underHood')}</a>
+                                <a className="footer-link" href="#features">{translate('page.body.landing.footer.explore.features')}</a>
+                                <a className="footer-link" href="#use-cases">{translate('page.body.landing.footer.explore.useCases')}</a>
                             </div>
                             <div className="pg-landing-screen__footer__wrap__content__col">
                                 <span className="title">{translate('page.body.landing.footer.explore2.title')}</span>
-                                <Link className="footer-link" to="#benefits">{translate('page.body.landing.footer.explore2.benefits')}</Link>
-                                <Link className="footer-link" to="#adaptive-stack">{translate('page.body.landing.footer.explore2.stack')}</Link>
-                                <Link className="footer-link" to="#pricing">{translate('page.body.landing.footer.explore2.pricing')}</Link>
-                                <Link className="footer-link" to="#company">{translate('page.body.landing.footer.explore2.company')}</Link>
-                                <Link className="footer-link" to="#tools">{translate('page.body.landing.footer.explore2.tools')}</Link>
+                                <a className="footer-link" href="#benefits">{translate('page.body.landing.footer.explore2.benefits')}</a>
+                                <a className="footer-link" href="#cloud-stack">{translate('page.body.landing.footer.explore2.stack')}</a>
+                                <a className="footer-link" href="#pricing">{translate('page.body.landing.footer.explore2.pricing')}</a>
+                                <a className="footer-link" href="#company">{translate('page.body.landing.footer.explore2.company')}</a>
+                                <a className="footer-link" href="#tools">{translate('page.body.landing.footer.explore2.tools')}</a>
                             </div>
                             <div className="pg-landing-screen__footer__wrap__content__col">
                                 <span className="title">{translate('page.body.landing.footer.legal.title')}</span>
