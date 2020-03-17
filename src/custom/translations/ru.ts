@@ -11,6 +11,7 @@ export const ru: LangType = {
     'page.header.navbar.profile': 'Профиль',
     'page.header.navbar.logout': 'Выйти',
 
+    'page.sidebar.balance.title': 'Balance',
     'page.sidebar.group.text': 'Fee Group:',
     'page.sidebar.group.value': 'Base',
 

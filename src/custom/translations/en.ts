@@ -1,1 +1,3 @@
-export const en = {};
+export const en = {
+    'page.sidebar.balance.title': 'Balance',
+};

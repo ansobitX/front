@@ -2,53 +2,126 @@ import classnames from 'classnames';
 import { History } from 'history';
 import * as React from 'react';
 import { Dropdown } from 'react-bootstrap';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, InjectedIntlProps, injectIntl } from 'react-intl';
 import { connect, MapDispatchToPropsFunction } from 'react-redux';
 import { Link, RouteProps, withRouter } from 'react-router-dom';
-import {  pgRoutes } from '../../../constants';
+import { WalletItemProps, Decimal } from '../../../components';
+import { pgRoutes, VALUATION_PRIMARY_CURRENCY } from '../../../constants';
 import {
     changeLanguage,
+    currenciesFetch,
+    Currency,
     logoutFetch,
     Market,
     RootState,
+    selectCurrencies,
     selectCurrentColorTheme,
     selectCurrentLanguage,
     selectCurrentMarket,
     selectSidebarState,
     selectUserLoggedIn,
+    selectWallets,
     toggleSidebar,
+    walletsFetch,
 } from '../../../modules';
 import { languages } from '../../../api/config';
 
-interface State {
-    isOpenLanguage: boolean;
-}
-
-interface DispatchProps {
-    changeLanguage: typeof changeLanguage;
-    toggleSidebar: typeof toggleSidebar;
-    logoutFetch: typeof logoutFetch;
-}
-
-interface ReduxProps {
-    lang: string;
-    colorTheme: string;
-    isLoggedIn: boolean;
-    currentMarket: Market | undefined;
-    isActive: boolean;
-}
+/* Icons */
+const LogoImage = require('../../../assets/images/landing/logo.svg');
+const LogoLightImage = require('../../../assets/images/landing/logoLight.svg');
 
 interface OwnProps {
     onLinkChange?: () => void;
     history: History;
 }
 
-type Props = OwnProps & ReduxProps & RouteProps & DispatchProps;
+interface ReduxProps {
+    colorTheme: string;
+    currencies: Currency[];
+    currentMarket: Market | undefined;
+    isActive: boolean;
+    isLoggedIn: boolean;
+    lang: string;
+    wallets: WalletItemProps[];
+}
+
+interface DispatchProps {
+    changeLanguage: typeof changeLanguage;
+    currenciesFetch: typeof currenciesFetch;
+    fetchWallets: typeof walletsFetch;
+    logoutFetch: typeof logoutFetch;
+    toggleSidebar: typeof toggleSidebar;
+}
+
+interface State {
+    valuationCurrencyBalance: string;
+    isOpenLanguage: boolean;
+}
+
+type Props = OwnProps & ReduxProps & RouteProps & DispatchProps & InjectedIntlProps;
 
 class SidebarContainer extends React.Component<Props, State> {
     public state = {
+        valuationCurrencyBalance: '',
         isOpenLanguage: false,
     };
+
+    public componentDidMount() {
+        const { currencies, wallets } = this.props;
+
+        if (wallets.length === 0) {
+            this.props.fetchWallets();
+        }
+
+        if (currencies.length === 0) {
+            this.props.currenciesFetch();
+        }
+    }
+
+    public componentWillReceiveProps(nextProps: Props) {
+        const { currencies, wallets } = this.props;
+
+        if (nextProps.wallets.length && JSON.stringify(nextProps.wallets) !== JSON.stringify(wallets)) {
+            this.getValuationWalletBalance(nextProps.wallets, currencies);
+        }
+
+        if (nextProps.currencies.length && JSON.stringify(nextProps.currencies) !== JSON.stringify(currencies)) {
+            this.getValuationWalletBalance(wallets, nextProps.currencies);
+        }
+    }
+
+    public renderHeader(isLightColorTheme: boolean) {
+        const { isActive } = this.props;
+        const currentLogo = isLightColorTheme ? LogoLightImage : LogoImage;
+
+        return (
+            <div className="pg-sidebar-wrapper__header">
+                <img src={currentLogo} alt="Logo"/>
+                <div className="hamburger-menu" onClick={e => this.props.toggleSidebar(!isActive)}>
+                    <span/>
+                    <span/>
+                    <span/>
+                </div>
+            </div>
+        );
+    }
+
+    public renderBalance() {
+        const { valuationCurrencyBalance } = this.state;
+        const integerBalance = valuationCurrencyBalance.split('.')[0];
+        const floatBalance = valuationCurrencyBalance.split('.')[1];
+
+        return (
+            <div className="pg-sidebar-wrapper__balance">
+                <span className="pg-sidebar-wrapper__balance__title">{this.translate('page.sidebar.balance.title')}</span>
+                <div className="pg-sidebar-wrapper__balance__value">
+                    <span>€&nbsp;</span>
+                    <span>{integerBalance}</span>
+                    <span>{floatBalance ? `.${floatBalance}` : ''}</span>
+                </div>
+            </div>
+        );
+    }
 
     public render() {
         const { isLoggedIn, colorTheme, isActive, lang } = this.props;
@@ -65,6 +138,8 @@ class SidebarContainer extends React.Component<Props, State> {
 
         return (
             <div className={`pg-sidebar-wrapper ${lightBox} pg-sidebar-wrapper--${isActive ? 'active' : 'hidden'}`}>
+                {this.renderHeader(isLight)}
+                {this.renderBalance()}
                 {this.renderProfileLink()}
                 <div className="pg-sidebar-wrapper-nav">
                     {pgRoutes(isLoggedIn, isLight).map(this.renderNavItems(address))}
@@ -177,6 +252,25 @@ class SidebarContainer extends React.Component<Props, State> {
         );
     };
 
+    private getValuationWalletBalance = (wallets: WalletItemProps[], currencies: Currency[]) => {
+        let currentBalance: string | number = 0;
+
+        if (Array.isArray(wallets) && Array.isArray(currencies)) {
+            const valuationWallet = wallets.find(wallet => wallet.currency.toLowerCase() === VALUATION_PRIMARY_CURRENCY.toLowerCase());
+            const valuationCurrency = currencies.find(currency => currency.id === VALUATION_PRIMARY_CURRENCY.toLowerCase());
+
+            if (valuationWallet && valuationWallet.balance) {
+                currentBalance = valuationWallet.balance;
+
+                if (valuationCurrency) {
+                    currentBalance = Decimal.format(currentBalance, valuationCurrency.precision, ',');
+                }
+            }
+        }
+
+        this.setState({ valuationCurrencyBalance: String(currentBalance) });
+    };
+
     private tryRequire = (name: string) => {
         try {
             require(`../../../assets/images/sidebar/${name}.svg`);
@@ -190,25 +284,31 @@ class SidebarContainer extends React.Component<Props, State> {
     private handleChangeLanguage = (language: string) => {
         this.props.changeLanguage(language);
     }
+
+    private translate = (e: string) => this.props.intl.formatMessage({ id: e });
 }
 
 const mapStateToProps = (state: RootState): ReduxProps => ({
     colorTheme: selectCurrentColorTheme(state),
-    isLoggedIn: selectUserLoggedIn(state),
+    currencies: selectCurrencies(state),
     currentMarket: selectCurrentMarket(state),
-    lang: selectCurrentLanguage(state),
     isActive: selectSidebarState(state),
+    isLoggedIn: selectUserLoggedIn(state),
+    lang: selectCurrentLanguage(state),
+    wallets: selectWallets(state),
 });
 
 const mapDispatchToProps: MapDispatchToPropsFunction<DispatchProps, {}> =
     dispatch => ({
         changeLanguage: payload => dispatch(changeLanguage(payload)),
-        toggleSidebar: payload => dispatch(toggleSidebar(payload)),
+        currenciesFetch: () => dispatch(currenciesFetch()),
+        fetchWallets: () => dispatch(walletsFetch()),
         logoutFetch: () => dispatch(logoutFetch()),
+        toggleSidebar: payload => dispatch(toggleSidebar(payload)),
     });
 
 // tslint:disable no-any
-const Sidebar = withRouter(connect(mapStateToProps, mapDispatchToProps)(SidebarContainer) as any) as any;
+const Sidebar = withRouter(injectIntl(connect(mapStateToProps, mapDispatchToProps)(SidebarContainer) as any) as any);
 
 export {
     Sidebar,
