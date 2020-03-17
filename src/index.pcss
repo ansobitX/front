@@ -123,8 +123,14 @@ body {
   display: flex;
   justify-content: space-around;
   margin: 0;
-  margin-left: 274px;
+  margin-left: 83px;
   width: calc(100vw - 298px);
+  transition: .2s linear;
+
+  &--open {
+    margin-left: 274px;
+    transition: .2s linear;
+  }
 }
 
 .cr-button {

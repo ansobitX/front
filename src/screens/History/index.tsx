@@ -1,3 +1,4 @@
+import classnames from 'classnames';
 import * as React from 'react';
 import {
     InjectedIntlProps,
@@ -14,8 +15,14 @@ import {
     fetchHistory,
     marketsFetch,
     resetHistory,
+    RootState,
+    selectSidebarState,
     walletsFetch,
 } from '../../modules';
+
+interface ReduxProps {
+    isSidebarOpen: boolean;
+}
 
 interface DispatchProps {
     resetHistory: typeof resetHistory;
@@ -24,7 +31,7 @@ interface DispatchProps {
     fetchHistory: typeof fetchHistory;
 }
 
-type Props = DispatchProps & InjectedIntlProps;
+type Props = ReduxProps & DispatchProps & InjectedIntlProps;
 
 interface State {
     tab: string;
@@ -50,8 +57,13 @@ class History extends React.Component<Props, State> {
     }
 
     public render() {
+        const { isSidebarOpen } = this.props;
+        const containerClass = classnames('pg-container pg-history-tab', {
+            'pg-container--open': isSidebarOpen,
+        });
+
         return (
-            <div className="pg-history-tab pg-container">
+            <div className={containerClass}>
                 <div className="pg-history-tab__tabs-content">
                     <TabPanel
                         panels={this.renderTabs()}
@@ -93,6 +105,10 @@ class History extends React.Component<Props, State> {
     };
 }
 
+const mapStateToProps = (state: RootState): ReduxProps => ({
+    isSidebarOpen: selectSidebarState(state),
+});
+
 const mapDispatchToProps: MapDispatchToPropsFunction<DispatchProps, {}> = dispatch => ({
     fetchMarkets: () => dispatch(marketsFetch()),
     fetchWallets: () => dispatch(walletsFetch()),
@@ -100,4 +116,4 @@ const mapDispatchToProps: MapDispatchToPropsFunction<DispatchProps, {}> = dispat
     resetHistory: () => dispatch(resetHistory()),
 });
 
-export const HistoryScreen = injectIntl(connect(null, mapDispatchToProps)(History));
+export const HistoryScreen = injectIntl(connect(mapStateToProps, mapDispatchToProps)(History));

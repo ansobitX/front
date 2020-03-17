@@ -1,3 +1,4 @@
+import classnames from 'classnames';
 import * as React from 'react';
 import {
     FormattedMessage,
@@ -14,6 +15,7 @@ import {
     resetOrdersHistory,
     RootState,
     selectOrdersHistory,
+    selectSidebarState,
     selectUserLoggedIn,
 } from '../../modules';
 import {RangerConnectFetch, rangerConnectFetch} from '../../modules/public/ranger';
@@ -22,6 +24,7 @@ import {selectRanger} from '../../modules/public/ranger/selectors';
 import { OrderCommon } from '../../modules/types';
 
 interface ReduxProps {
+    isSidebarOpen: boolean;
     list: OrderCommon[];
     rangerState: RangerState;
     userLoggedIn: boolean;
@@ -65,6 +68,11 @@ class Orders extends React.PureComponent<Props, State> {
     }
 
     public render() {
+        const { isSidebarOpen } = this.props;
+        const containerClass = classnames('pg-container pg-orders-tab', {
+            'pg-container--open': isSidebarOpen,
+        });
+
         const cancelAll = this.props.list.length ? (
             <React.Fragment>
                 <span onClick={this.handleCancelAll}>
@@ -75,7 +83,7 @@ class Orders extends React.PureComponent<Props, State> {
         ) : null;
 
         return (
-            <div className="pg-orders-tab pg-container">
+            <div className={containerClass}>
                 <div className="pg-orders-tab__tabs-content">
                     <TabPanel
                         panels={this.renderTabs()}
@@ -118,6 +126,7 @@ class Orders extends React.PureComponent<Props, State> {
 }
 
 const mapStateToProps = (state: RootState): ReduxProps => ({
+    isSidebarOpen: selectSidebarState(state),
     list: selectOrdersHistory(state),
     rangerState: selectRanger(state),
     userLoggedIn: selectUserLoggedIn(state),

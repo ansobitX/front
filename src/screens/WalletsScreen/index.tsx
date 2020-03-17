@@ -1,3 +1,4 @@
+import classnames from 'classnames';
 import { Button, Spinner } from 'react-bootstrap';
 import * as React from 'react';
 import { InjectedIntlProps, injectIntl } from 'react-intl';
@@ -23,6 +24,7 @@ import {
     selectCurrencies,
     selectHistory,
     selectMobileWalletUi,
+    selectSidebarState,
     selectUserInfo,
     selectWalletAddress,
     selectWallets,
@@ -52,6 +54,7 @@ interface ReduxProps {
     beneficiariesActivateSuccess: boolean;
     beneficiariesDeleteSuccess: boolean;
     currencies: Currency[];
+    isSidebarOpen: boolean;
 }
 
 interface DispatchProps {
@@ -172,7 +175,7 @@ class WalletsComponent extends React.Component<Props, WalletsState> {
     }
 
     public render() {
-        const { wallets, historyList, mobileWalletChosen, walletsLoading } = this.props;
+        const { wallets, historyList, mobileWalletChosen, walletsLoading, isSidebarOpen } = this.props;
         const {
             beneficiary,
             total,
@@ -198,10 +201,14 @@ class WalletsComponent extends React.Component<Props, WalletsState> {
             );
         }
 
+        const containerClass = classnames('pg-container pg-wallet', {
+            'pg-container--open': isSidebarOpen,
+        });
+
         return (
             <React.Fragment>
                 <EstimatedValue wallets={wallets}/>
-                <div className="pg-container pg-wallet">
+                <div className={containerClass}>
                     <div className="text-center">
                         {walletsLoading && <Spinner animation="border" variant="primary" />}
                     </div>
@@ -469,6 +476,7 @@ const mapStateToProps = (state: RootState): ReduxProps => ({
     beneficiariesActivateSuccess: selectBeneficiariesActivateSuccess(state),
     beneficiariesDeleteSuccess: selectBeneficiariesDeleteSuccess(state),
     currencies: selectCurrencies(state),
+    isSidebarOpen: selectSidebarState(state),
 });
 
 const mapDispatchToProps: MapDispatchToProps<DispatchProps, {}> = dispatch => ({

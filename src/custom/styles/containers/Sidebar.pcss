@@ -91,20 +91,42 @@
     }
   }
 
+  &--hidden {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin-left: -190px;
+    -webkit-animation: slide-left .3s ease-out;
+    -moz-animation: slide-left .3s ease-out;
+
+    .pg-sidebar-wrapper {
+      &__balance,
+      &-nav,
+      &-lng,
+      &__deploy,
+      &-logout {
+        opacity: 0;
+      }
+    }
+  }
+
+  &--trading {
+    margin-left: -250px;
+  }
+
   &--active {
     display: block;
     position: absolute;
     left: 0;
     top: 0;
     bottom: 0;
+    margin-left: 0;
     -webkit-animation: slide-right .3s ease-out;
     -moz-animation: slide-right .3s ease-out;
   }
-  &--hidden {
-    display: none;
-    -webkit-animation: slide-left .3s ease-out;
-    -moz-animation: slide-left .3s ease-out;
-  }
+
   a {
     text-decoration: none;
     color: var(--profile-grey);

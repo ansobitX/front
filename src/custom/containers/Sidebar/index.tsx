@@ -147,8 +147,19 @@ class SidebarContainer extends React.Component<Props, State> {
             'dropdown-menu-language-field-active': isOpenLanguage,
         });
 
+        if (address === '/') {
+            return null;
+        }
+
+        const sidebarClass = classnames('pg-sidebar-wrapper', {
+            lightBox,
+            'pg-sidebar-wrapper--active': isActive,
+            'pg-sidebar-wrapper--hidden': !isActive,
+            'pg-sidebar-wrapper--trading': address.includes('/trading'),
+        });
+
         return (
-            <div className={`pg-sidebar-wrapper ${lightBox} pg-sidebar-wrapper--${isActive ? 'active' : 'hidden'}`}>
+            <div className={sidebarClass}>
                 {this.renderHeader(isLight)}
                 {isLoggedIn ? this.renderBalance() : null}
                 <div className="pg-sidebar-wrapper-nav">
@@ -180,7 +191,7 @@ class SidebarContainer extends React.Component<Props, State> {
         const { currentMarket } = this.props;
 
         const [name, url, img] = values;
-        const handleLinkChange = () => this.props.toggleSidebar(false);
+        const handleLinkChange = () => window.scrollTo(0,0);
         const path = url.includes('/trading') && currentMarket ? `/trading/${currentMarket.id}` : url;
         const isActive = (url === '/trading/' && address.includes('/trading')) || address === url;
         return (
