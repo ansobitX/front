@@ -115,10 +115,21 @@ class SidebarContainer extends React.Component<Props, State> {
             <div className="pg-sidebar-wrapper__balance">
                 <span className="pg-sidebar-wrapper__balance__title">{this.translate('page.sidebar.balance.title')}</span>
                 <div className="pg-sidebar-wrapper__balance__value">
-                    <span>€&nbsp;</span>
+                    {VALUATION_PRIMARY_CURRENCY.toLowerCase().includes('eur') ? <span>€&nbsp;</span> : null}
+                    {VALUATION_PRIMARY_CURRENCY.toLowerCase().includes('usd') ? <span>$&nbsp;</span> : null}
                     <span>{integerBalance}</span>
                     <span>{floatBalance ? `.${floatBalance}` : ''}</span>
                 </div>
+            </div>
+        );
+    }
+
+    public renderDeployButton() {
+        return (
+            <div className="pg-sidebar-wrapper__deploy">
+                <Link to="/deploy" className="pg-sidebar-wrapper__deploy__button">
+                    {this.translate('page.sidebar.deploy.button')}
+                </Link>
             </div>
         );
     }
@@ -140,7 +151,6 @@ class SidebarContainer extends React.Component<Props, State> {
             <div className={`pg-sidebar-wrapper ${lightBox} pg-sidebar-wrapper--${isActive ? 'active' : 'hidden'}`}>
                 {this.renderHeader(isLight)}
                 {this.renderBalance()}
-                {this.renderProfileLink()}
                 <div className="pg-sidebar-wrapper-nav">
                     {pgRoutes(isLoggedIn, isLight).map(this.renderNavItems(address))}
                 </div>
@@ -160,6 +170,7 @@ class SidebarContainer extends React.Component<Props, State> {
                         </Dropdown>
                     </div>
                 </div>
+                {this.renderDeployButton()}
                 {this.renderLogout()}
             </div>
         );
@@ -187,31 +198,6 @@ class SidebarContainer extends React.Component<Props, State> {
                     </p>
                 </div>
             </Link>
-        );
-    };
-
-    public renderProfileLink = () => {
-        const { isLoggedIn, colorTheme, location } = this.props;
-        const isLight = colorTheme === 'light';
-        const handleLinkChange = () => this.props.toggleSidebar(false);
-        const address = location ? location.pathname : '';
-        const isActive = address === '/profile';
-
-        return isLoggedIn && (
-            <div className="pg-sidebar-wrapper-profile">
-                <Link to="/profile" onClick={handleLinkChange} className={`${isActive && 'route-selected'}`}>
-                    <div className="pg-sidebar-wrapper-profile-link">
-                        <img
-                            className="pg-sidebar-wrapper-profile-link-img"
-                            src={require(`../../../assets/images/sidebar/profile${isLight ? 'Light' : '' }.svg`)}
-                            alt="icon"
-                        />
-                        <p className="pg-sidebar-wrapper-profile-link-text">
-                            <FormattedMessage id={'page.header.navbar.profile'} />
-                        </p>
-                    </div>
-                </Link>
-            </div>
         );
     };
 

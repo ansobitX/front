@@ -7,11 +7,14 @@ export const ru: LangType = {
     'page.header.navbar.wallets': 'Кошельки',
     'page.header.navbar.openOrders': 'Ордера',
     'page.header.navbar.history': 'История',
+    'page.header.navbar.cloud': 'Облако',
+    'page.header.navbar.settings': 'Настройки',
 
     'page.header.navbar.profile': 'Профиль',
     'page.header.navbar.logout': 'Выйти',
 
-    'page.sidebar.balance.title': 'Balance',
+    'page.sidebar.balance.title': 'Баланс',
+    'page.sidebar.deploy.button': 'Deploy now',
     'page.sidebar.group.text': 'Fee Group:',
     'page.sidebar.group.value': 'Base',
 
