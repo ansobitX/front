@@ -6,10 +6,12 @@ import {
 
 describe('Constants', () => {
     const expectedRoutesForLoggedInUser = [
-        ['page.header.navbar.trade', '/trading/', 'trade'],
+        ['page.header.navbar.cloud', '/cloud', 'cloud'],
         ['page.header.navbar.wallets', '/wallets', 'wallets'],
-        ['page.header.navbar.openOrders', '/orders', 'orders'],
+        ['page.header.navbar.trade', '/trading/', 'trade'],
         ['page.header.navbar.history', '/history', 'history'],
+        ['page.header.navbar.openOrders', '/orders', 'orders'],
+        ['page.header.navbar.settings', '/profile', 'profile'],
     ];
 
     const expectedRoutesForNotLoggedInUser = [
@@ -19,7 +21,7 @@ describe('Constants', () => {
     ];
 
     it('Rendering correct title prefix', () => {
-        expect(PG_TITLE_PREFIX).toBe('Cryptobase');
+        expect(PG_TITLE_PREFIX).toBe('OpenDAX');
     });
 
     it('Rendering correct storage default limit', () => {

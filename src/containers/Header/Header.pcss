@@ -84,9 +84,13 @@ header {
 
   &__content {
     align-items: center;
+    background: var(--background-dark);
     box-shadow: 1px 1px 5px rgba(46, 76, 128, 0.2);
     display: flex;
     height: calc(var(--gap) * 10.67);
+    justify-content: flex-start;
+    padding: 0 2%;
+    width: 100%;
   }
 
   &__toggler {
@@ -95,13 +99,6 @@ header {
     top: 15px;
     z-index: 11;
     left: 25px;
-  }
-
-  .pg-container {
-    background: var(--background-dark);
-    justify-content: flex-start;
-    padding: 0 2%;
-    width: 100%;
   }
 }
 
@@ -179,11 +176,11 @@ header {
         transition: all 0.2s linear;
       }
     }
-  }
 
-  .pg-container {
-    height: 46px;
-    justify-content: center !important;
+    &__content {
+      height: 46px;
+      justify-content: center !important;
+    }
   }
 }
 

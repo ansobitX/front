@@ -20,7 +20,7 @@ class ProfileComponent extends React.Component<RouterProps, InjectedIntlProps> {
 
     public render() {
         return (
-            <div className="container pg-profile-page">
+            <div className="pg-container pg-profile-page">
                 <div className="pg-profile-page__details">
                     <div className="row pg-profile-page-header pg-profile-page-header-first">
                         <h3 className="col-12">

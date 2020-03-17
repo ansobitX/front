@@ -57,7 +57,7 @@ class Head extends React.Component<Props> {
             <React.Fragment>
             {shouldRenderHeader &&
                 <header className={`pg-header`}>
-                    <div className={`pg-container pg-header__content ${tradingCls}`}>
+                    <div className={`pg-header__content ${tradingCls}`}>
                         <div
                             className={`pg-sidebar__toggler ${mobileWallet && 'pg-sidebar__toggler-mobile'}`}
                             onClick={this.openSidebar}
