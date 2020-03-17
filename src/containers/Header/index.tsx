@@ -44,9 +44,14 @@ type Props = ReduxProps & HistoryProps & DispatchProps & InjectedIntlProps;
 // tslint:disable jsx-no-multiline-js
 class Head extends React.Component<Props> {
     public render() {
-        const { colorTheme, mobileWallet } = this.props;
+        const { colorTheme, mobileWallet, sidebarOpened } = this.props;
         const tradingCls = window.location.pathname.includes('/trading') ? 'pg-container-trading' : '';
-        const shouldRenderHeader = !['/confirm'].some(r => window.location.pathname.includes(r)) && window.location.pathname !== '/';
+        const shouldRenderSidebar= !['/trading', '/confirm'].some(r => window.location.pathname.includes(r)) && window.location.pathname !== '/';
+        const shouldRenderHeader = window.location.pathname.includes('/trading');
+
+        if (shouldRenderSidebar && !sidebarOpened) {
+            this.props.toggleSidebar(true);
+        }
 
         return (
             <React.Fragment>
