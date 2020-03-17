@@ -101,7 +101,7 @@ const PublicRoute: React.FunctionComponent<any> = ({ component: CustomComponent,
     }
 
     if (isLogged) {
-        return <Route {...rest}><Redirect to={'/wallets'} /></Route>;
+        return <Route {...rest}><Redirect to={'/accounts'} /></Route>;
     }
 
     const renderCustomerComponent = props => <CustomComponent {...props} />;
@@ -193,8 +193,8 @@ class LayoutComponent extends React.Component<LayoutProps, LayoutState> {
                     <PrivateRoute loading={userLoading} isLogged={isLoggedIn} path="/orders" component={OrdersTabScreen} />
                     <PrivateRoute loading={userLoading} isLogged={isLoggedIn} path="/history" component={HistoryScreen} />
                     <PrivateRoute loading={userLoading} isLogged={isLoggedIn} path="/confirm" component={ConfirmScreen} />
-                    <PrivateRoute loading={userLoading} isLogged={isLoggedIn} path="/profile" component={ProfileScreen} />
-                    <PrivateRoute loading={userLoading} isLogged={isLoggedIn} path="/wallets" component={WalletsScreen} />
+                    <PrivateRoute loading={userLoading} isLogged={isLoggedIn} path="/settings" component={ProfileScreen} />
+                    <PrivateRoute loading={userLoading} isLogged={isLoggedIn} path="/accounts" component={WalletsScreen} />
                     <PrivateRoute loading={userLoading} isLogged={isLoggedIn} path="/security/2fa" component={ProfileTwoFactorAuthScreen} />
                     <Route path="**"><Redirect to="/trading/" /></Route>
                 </Switch>

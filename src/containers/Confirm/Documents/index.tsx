@@ -72,7 +72,7 @@ class DocumentsComponent extends React.Component<Props, DocumentsState> {
 
     public componentWillReceiveProps(next: Props) {
         if (next.success){
-            this.props.history.push('/profile');
+            this.props.history.push('/settings');
         }
     }
 

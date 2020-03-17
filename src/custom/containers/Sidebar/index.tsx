@@ -150,7 +150,7 @@ class SidebarContainer extends React.Component<Props, State> {
         return (
             <div className={`pg-sidebar-wrapper ${lightBox} pg-sidebar-wrapper--${isActive ? 'active' : 'hidden'}`}>
                 {this.renderHeader(isLight)}
-                {this.renderBalance()}
+                {isLoggedIn ? this.renderBalance() : null}
                 <div className="pg-sidebar-wrapper-nav">
                     {pgRoutes(isLoggedIn, isLight).map(this.renderNavItems(address))}
                 </div>
@@ -170,7 +170,7 @@ class SidebarContainer extends React.Component<Props, State> {
                         </Dropdown>
                     </div>
                 </div>
-                {this.renderDeployButton()}
+                {isLoggedIn ? this.renderDeployButton() : null}
                 {this.renderLogout()}
             </div>
         );

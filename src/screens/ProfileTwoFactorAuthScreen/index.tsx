@@ -236,7 +236,7 @@ class ToggleTwoFactorAuthComponent extends React.Component<Props, State> {
     };
 
     private handleNavigateToProfile = () => {
-        this.props.history.push('/profile');
+        this.props.history.push('/settings');
     };
 
     private get2faAction = () => {

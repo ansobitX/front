@@ -120,11 +120,11 @@ class SidebarContainer extends React.Component<Props, State> {
         const isLight = colorTheme === 'light';
         const handleLinkChange = () => this.props.toggleSidebar(false);
         const address = location ? location.pathname : '';
-        const isActive = address === '/profile';
+        const isActive = address === '/settings';
 
         return isLoggedIn && (
             <div className="pg-sidebar-wrapper-profile">
-                <Link to="/profile" onClick={handleLinkChange} className={`${isActive && 'route-selected'}`}>
+                <Link to="/settings" onClick={handleLinkChange} className={`${isActive && 'route-selected'}`}>
                     <div className="pg-sidebar-wrapper-profile-link">
                         <img
                             className="pg-sidebar-wrapper-profile-link-img"

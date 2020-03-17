@@ -7,11 +7,11 @@ import {
 describe('Constants', () => {
     const expectedRoutesForLoggedInUser = [
         ['page.header.navbar.cloud', '/cloud', 'cloud'],
-        ['page.header.navbar.wallets', '/wallets', 'wallets'],
+        ['page.header.navbar.wallets', '/accounts', 'accounts'],
         ['page.header.navbar.trade', '/trading/', 'trade'],
         ['page.header.navbar.history', '/history', 'history'],
         ['page.header.navbar.openOrders', '/orders', 'orders'],
-        ['page.header.navbar.settings', '/profile', 'profile'],
+        ['page.header.navbar.settings', '/settings', 'settings'],
     ];
 
     const expectedRoutesForNotLoggedInUser = [

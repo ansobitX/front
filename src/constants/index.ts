@@ -3,11 +3,11 @@ export const PG_TITLE_PREFIX = 'OpenDAX';
 export const pgRoutes = (isLoggedIn: boolean, isLight?: boolean): string[][] => {
     const routes = [
         ['page.header.navbar.cloud', '/cloud', `cloud${isLight ? 'Light' : ''}`],
-        ['page.header.navbar.wallets', '/wallets', `wallets${isLight ? 'Light' : ''}`],
+        ['page.header.navbar.wallets', '/accounts', `wallets${isLight ? 'Light' : ''}`],
         ['page.header.navbar.trade', '/trading/', `trade${isLight ? 'Light' : ''}`],
         ['page.header.navbar.history', '/history', `history${isLight ? 'Light' : ''}`],
         ['page.header.navbar.openOrders', '/orders', `orders${isLight ? 'Light' : ''}`],
-        ['page.header.navbar.settings', '/profile', `profile${isLight ? 'Light' : ''}`],
+        ['page.header.navbar.settings', '/settings', `profile${isLight ? 'Light' : ''}`],
     ];
     const routesUnloggedIn = [
         ['page.header.navbar.signIn', '/signin', `signin${isLight ? 'Light' : ''}`],
