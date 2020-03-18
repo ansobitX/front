@@ -102,11 +102,38 @@
     -moz-animation: slide-left .3s ease-out;
 
     .pg-sidebar-wrapper {
-      &__balance,
-      &-nav,
-      &-lng,
-      &__deploy,
+      &__header {
+        padding: 0 22px 0 21px;
+      }
+
+      &-nav {
+        margin-left: 188px;
+        padding: 3px;
+
+        .pg-sidebar-wrapper-nav-item {
+          justify-content: flex-end;
+
+          &-text {
+            display: none;
+          }
+        }
+      }
+
       &-logout {
+        justify-content: flex-end;
+
+        .pg-sidebar-wrapper-logout-link {
+          width: 33px;
+
+          &-text {
+            display: none;
+          }
+        }
+      }
+
+      &__balance,
+      &-lng,
+      &__deploy {
         opacity: 0;
       }
     }

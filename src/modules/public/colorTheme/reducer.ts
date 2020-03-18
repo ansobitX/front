@@ -10,11 +10,11 @@ export interface ColorThemeState {
     marketSelectorActive: boolean;
 }
 
-const currentColorTheme: string = localStorage.getItem('colorTheme') || 'basic';
+const currentColorTheme: string = localStorage.getItem('colorTheme') || 'light';
 
 export const initialChangeColorThemeState: ColorThemeState = {
     color: currentColorTheme,
-    sideBarActive: false,
+    sideBarActive: true,
     marketSelectorActive: false,
 };
 

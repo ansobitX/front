@@ -96,7 +96,9 @@ class SidebarContainer extends React.Component<Props, State> {
 
         return (
             <div className="pg-sidebar-wrapper__header">
-                <img src={currentLogo} alt="Logo"/>
+                <Link to="/">
+                    <img src={currentLogo} alt="Logo"/>
+                </Link>
                 <div className="hamburger-menu" onClick={e => this.props.toggleSidebar(!isActive)}>
                     <span/>
                     <span/>
@@ -148,7 +150,7 @@ class SidebarContainer extends React.Component<Props, State> {
         });
 
         // tslint:disable-next-line:prefer-switch
-        if (address === '/' || address === '/signin' || address === '/signup') {
+        if (address === '/' || ['/signin', '/signup'].includes(address)) {
             return null;
         }
 
@@ -192,11 +194,10 @@ class SidebarContainer extends React.Component<Props, State> {
         const { currentMarket } = this.props;
 
         const [name, url, img] = values;
-        const handleLinkChange = () => window.scrollTo(0,0);
         const path = url.includes('/trading') && currentMarket ? `/trading/${currentMarket.id}` : url;
         const isActive = (url === '/trading/' && address.includes('/trading')) || address === url;
         return (
-            <Link to={path} key={index} onClick={handleLinkChange} className={`${isActive && 'route-selected'}`}>
+            <Link to={path} key={index} onClick={e => this.handleChangeRoute(path)} className={`${isActive && 'route-selected'}`}>
                 <div className="pg-sidebar-wrapper-nav-item">
                     <div className="pg-sidebar-wrapper-nav-item-img-wrapper">
                         <img
@@ -278,6 +279,13 @@ class SidebarContainer extends React.Component<Props, State> {
         }
     };
 
+    private handleChangeRoute = (path: string) => {
+        window.scrollTo(0,0);
+
+        if (path.includes('/trading')) {
+            this.props.toggleSidebar(false);
+        }
+    }
 
     private handleChangeLanguage = (language: string) => {
         this.props.changeLanguage(language);

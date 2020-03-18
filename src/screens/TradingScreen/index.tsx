@@ -23,6 +23,7 @@ import {
     setCurrentMarket,
     setCurrentPrice,
     Ticker,
+    toggleSidebar,
     User,
 } from '../../modules';
 import { GridLayoutState, saveLayouts, selectGridLayoutState } from '../../modules/public/gridLayout';
@@ -70,6 +71,7 @@ interface DispatchProps {
     setCurrentPrice: typeof setCurrentPrice;
     setCurrentMarket: typeof setCurrentMarket;
     saveLayouts: typeof saveLayouts;
+    toggleSidebar: typeof toggleSidebar;
 }
 
 interface StateProps {
@@ -128,6 +130,8 @@ class Trading extends React.Component<Props, StateProps> {
         if (userLoggedIn && !withAuth) {
             this.props.rangerConnect({ withAuth: userLoggedIn });
         }
+
+        this.props.toggleSidebar(false);
     }
 
     public componentWillUnmount() {
@@ -242,6 +246,7 @@ const mapDispatchToProps: MapDispatchToPropsFunction<DispatchProps, {}> = dispat
     setCurrentPrice: payload => dispatch(setCurrentPrice(payload)),
     setCurrentMarket: payload => dispatch(setCurrentMarket(payload)),
     saveLayouts: payload => dispatch(saveLayouts(payload)),
+    toggleSidebar: payload => dispatch(toggleSidebar(payload)),
 });
 
 // tslint:disable-next-line no-any

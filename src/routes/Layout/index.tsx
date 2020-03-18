@@ -136,6 +136,14 @@ class LayoutComponent extends React.Component<LayoutProps, LayoutState> {
         this.props.userFetch();
         this.initInterval();
         this.check();
+
+        let colorThemeToSet = 'light';
+
+        if (window.location.pathname === '/') {
+            colorThemeToSet = 'basic';
+        }
+
+        this.props.changeColorTheme(colorThemeToSet);
     }
 
     public componentDidUpdate(next: LayoutProps) {

@@ -60,7 +60,7 @@ class Landing extends React.Component<Props> {
 
     private handleScroll() {
         const header = document.getElementById('landingStickyHeader');
-        const stickyPoint = 100;
+        const stickyPoint = window.innerHeight - 56;
 
         if (window.scrollY >= stickyPoint) {
             header && header.classList.add('pg-landing-screen__header--visible');
