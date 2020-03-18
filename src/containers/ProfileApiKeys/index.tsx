@@ -97,7 +97,7 @@ class ProfileApiKeysComponent extends React.Component<Props, ProfileApiKeysState
                                 className="pg-profile-page__pull-right"
                                 onClick={this.handleCreateKeyClick}
                             >
-                                {this.t('page.body.profile.apiKeys.header.create')}
+                                <img src={require('../../custom/assets/images/add.svg')} alt="create" />
                             </span>)}
                     </div>
                 </div>

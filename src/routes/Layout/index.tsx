@@ -31,7 +31,6 @@ import {
     HistoryScreen,
     LandingScreen,
     OrdersTabScreen,
-    ProfileScreen,
     ProfileTwoFactorAuthScreen,
     TradingScreen,
     VerificationScreen,
@@ -39,6 +38,7 @@ import {
     SignInScreen,
     SignUpScreen,
 } from '../../screens';
+import { ProfileScreen } from '../../custom/screens';
 import { ExpiredSessionModal } from '../../components';
 
 interface ReduxProps {

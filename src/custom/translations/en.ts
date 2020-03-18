@@ -37,4 +37,9 @@ export const en = {
     'page.body.history.deposit': 'Deposits',
     'page.body.history.withdraw': 'Withdrawals',
     'page.body.history.trade': 'Trades',
+
+    'page.body.profile.header.account': 'Account',
+    'page.body.profile.header.account.content.twoFactorAuthentication': 'Two-factor authentication',
+    'page.body.profile.header.accountActivity.content.addressip': 'IP address',
+
 };
