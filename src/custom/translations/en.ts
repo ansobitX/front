@@ -26,4 +26,10 @@ export const en = {
     'page.body.register.terms': 'I agree all statements in terms of service',
     'page.body.register': 'Register',
     'page.body.login': 'Login',
+    'page.body.orders.header': 'Orders',
+    'page.body.openOrders.header.orderType': 'Type',
+    'page.body.openOrders.header.orderType.buy.market': 'market',
+    'page.body.openOrders.header.orderType.buy.limit': 'limit',
+    'page.body.openOrders.header.orderType.sell.market': 'market',
+    'page.body.openOrders.header.orderType.sell.limit': 'limit',
 };

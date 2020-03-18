@@ -1,0 +1,22 @@
+.pg-history-elem__pagination {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 21px 41px 0 0 !important;
+  margin-bottom: 42px;
+  color: var(--icons);
+  font-size: 11px;
+
+  button {
+    cursor: pointer;
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0;
+    margin-left: calc(var(--gap) * 4.5);
+
+    &:disabled {
+      cursor: default;
+    }
+  }
+}

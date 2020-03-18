@@ -84,6 +84,9 @@ class Orders extends React.PureComponent<Props, State> {
 
         return (
             <div className={containerClass}>
+                <div className="pg-orders-tab__header">
+                    {this.props.intl.formatMessage({ id: 'page.body.orders.header'})}
+                </div>
                 <div className="pg-orders-tab__tabs-content">
                     <TabPanel
                         panels={this.renderTabs()}

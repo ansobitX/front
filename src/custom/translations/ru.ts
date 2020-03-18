@@ -27,6 +27,8 @@ export const ru: LangType = {
     'page.body.trade.header.markets.content.search': 'Поиск',
     'page.body.trade.header.markets.content.volume': 'Объем',
 
+    'page.body.orders.header': 'Ордера',
+
     'page.body.trade.header.newOrder': 'Создание ордера',
     'page.body.trade.header.newOrder.content.tabs.buy': 'Купить',
     'page.body.trade.header.newOrder.content.tabs.sell': 'Продать',
