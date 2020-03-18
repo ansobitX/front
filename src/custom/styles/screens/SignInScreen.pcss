@@ -27,6 +27,7 @@
     background: transparent;
     margin-top: 0;
     width: 100%;
+    z-index: 2;
   }
 
   &__body {
@@ -61,6 +62,22 @@
         border-bottom: 2px solid var(--sign-in-accent);
         color: var(--color-white);
       }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .pg-sign-in-screen {
+    height: 100% !important;
+
+    &__body {
+      flex-direction: column-reverse;
+      margin-top: 55px;
+    }
+
+    &__container {
+      margin: 0 !important;
+      padding: 10px;
     }
   }
 }

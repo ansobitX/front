@@ -9,6 +9,12 @@
   width: 424px;
   z-index: 2;
 
+  .custom-input {
+    .form-control {
+      height: 50px !important;
+    }
+  }
+
   &__options-group {
     width: 100%;
     height: 58px;
@@ -109,8 +115,11 @@
 
     .btn-primary {
       background-color: var(--green);
+      border: none !important;
 
-      &:disabled {
+      &:disabled,
+      &:hover,
+      &:focus {
         background: var(--green) !important;
         border: none !important;
       }
@@ -140,5 +149,11 @@
         opacity: 1;
       }
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .cr-sign-in-form {
+    width: 100%;
   }
 }

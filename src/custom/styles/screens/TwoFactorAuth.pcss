@@ -1,0 +1,154 @@
+.pg-sign-in-screen {
+  height: calc(100vh - calc(var(--gap) * 9.84));
+  margin: 0 auto;
+
+  .pg-sign-in-screen__container {
+    background: transparent;
+    margin-top: 10vh;
+    width: calc(var(--gap) * 70.66);
+  }
+
+  .custom-input {
+    .form-control {
+      height: 50px !important;
+    }
+  }
+
+  .pg-2fa___form {
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+
+    .cr-email-form {
+      background: var(--email-form-bg);
+      width: 424px;
+      margin-top: 120px;
+      min-height: 251px;
+      height: 251px;
+
+      .btn-primary {
+        font-size: 14px;
+        letter-spacing: 0.3px;
+        line-height: 22px;
+        background: var(--green) !important;
+        border: none !important;
+        color: var(--white);
+        font-weight: bold;
+        border-radius: 4px;
+      }
+
+      &__option {
+        background: var(--header);
+        border-bottom: 1px solid var(--border-grey);
+        border-radius: 3px;
+
+        &-inner {
+          text-transform: none;
+        }
+      }
+
+      &__options-group {
+        width: 100%;
+        height: calc(var(--big-gap) * 0.97);
+        border-bottom: 2px solid var(--email-form-border);
+      }
+
+      &__label {
+        margin-top: -9px;
+      }
+
+      &__input {
+        input {
+          color: var(--color-white);
+          font-size: calc(var(--gap) * 2.33);
+          border: 1px solid var(--input-block-border-color);
+          border-radius: calc(var(--gap) * 0.66);
+        }
+      }
+
+      &__header {
+        width: calc(var(--big-gap) * 6.3);
+        height: calc(var(--gap) * 4.33);
+        font-style: normal;
+        font-weight: normal;
+        line-height: calc(var(--gap) * 2.66);
+        font-size: calc(var(--gap) * 2.33);
+        color: var(--placeholder-text);
+        margin: calc(var(--gap) * 0.83);
+      }
+
+      &__cros-icon {
+        position: absolute;
+        display: inline-block;
+        right: calc(var(--gap) * 3.3);
+        margin-top: calc(var(--gap) * 0.5);
+        height: calc(var(--gap) * 2.5);
+        width: calc(var(--gap) * 2.5);
+        cursor: pointer;
+      }
+
+      &__group--focused {
+        .cr-email-form__label {
+          color: var(--sign-in-accent);
+        }
+        input {
+          border-color: var(--sign-in-accent) !important;
+        }
+      }
+
+      &__button-wrapper {
+        min-height: calc(var(--gap) * 10);
+      }
+
+      &__button {
+        color: var(--white);
+        background: var(--button-primary);
+        border-radius: calc(var(--gap) * 0.5);
+        font-size: calc(var(--gap) * 2.66);
+        line-height: normal;
+        font-style: normal;
+        font-weight: normal;
+        margin-left: 0;
+        text-align: center;
+        text-transform: uppercase;
+
+        &--disabled {
+          color: var(--button-dark-gray) !important;
+          background: var(--button-disabled) !important;
+        }
+
+        &:hover {
+          background: var(--button-hover);
+        }
+
+        &:active {
+          background: var(--button-active);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .pg-sign-in-screen {
+    width: 100%;
+    margin-top: 50px;
+    padding: 10px;
+    overflow: hidden;
+    height: 91vh !important;
+    .pg-sign-in-screen__container {
+      margin: calc(var(--gap) * 3.33) calc(var(--gap) * 1.66) 0;
+      width: 100%;
+      padding: 10px;
+    }
+
+    .pg-2fa___form{
+      form {
+        width: 100%;
+      }
+      .cr-email-form {
+        width: 100%;
+      }
+    }
+  }
+}

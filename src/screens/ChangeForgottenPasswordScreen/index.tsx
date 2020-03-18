@@ -9,7 +9,7 @@ import {
 } from 'react-redux';
 import { RouterProps } from 'react-router';
 import { withRouter } from 'react-router-dom';
-import { CustomInput } from '../../components';
+import { CustomInput, LandingHeader } from '../../components';
 import { PASSWORD_REGEX, setDocumentTitle } from '../../helpers';
 import {
     changeForgotPasswordFetch,
@@ -102,6 +102,11 @@ class ChangeForgottenPasswordComponent extends React.Component<Props, ChangeForg
         const updateConfirmPassword = e => this.handleChange('confirmPassword', e);
         return (
             <div className="pg-change-forgotten-password-screen">
+                <LandingHeader
+                    translate={this.translate}
+                    id="pg-header-register"
+                />
+                <div className="pg-change-forgotten-password-screen__background" />
                 <div className="pg-change-forgotten-password-screen__container">
                     <form>
                         <div className="cr-email-form">
@@ -212,6 +217,10 @@ class ChangeForgottenPasswordComponent extends React.Component<Props, ChangeForg
       this.setState({
         [key]: value,
       });
+    };
+
+    private translate = (id: string) => {
+        return id ? this.props.intl.formatMessage({ id }) : '';
     };
 }
 

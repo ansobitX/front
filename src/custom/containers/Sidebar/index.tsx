@@ -149,8 +149,7 @@ class SidebarContainer extends React.Component<Props, State> {
             'dropdown-menu-language-field-active': isOpenLanguage,
         });
 
-        // tslint:disable-next-line:prefer-switch
-        if (address === '/' || ['/signin', '/signup'].includes(address)) {
+        if (address === '/' || ['/signin', '/signup', '/forgot_password', '/email-verification', '/accounts/password_reset'].includes(address)) {
             return null;
         }
 

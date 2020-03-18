@@ -14,6 +14,7 @@ import {
     selectCurrentLanguage,
     selectSendEmailVerificationLoading,
 } from '../../modules';
+import { LandingHeader } from '../../components';
 
 interface OwnProps {
     history: History;
@@ -50,6 +51,11 @@ class EmailVerificationComponent extends React.Component<Props> {
         const button = this.props.intl.formatMessage({ id: 'page.resendConfirmation' });
         return (
             <div className="pg-emailverification-container">
+                <LandingHeader
+                    translate={this.translate}
+                    id="pg-header-register"
+                />
+                <div className="pg-emailverification-container__background" />
                 <div className="pg-emailverification">
                     <div className="pg-emailverification-title">{title}</div>
                     <div className="pg-emailverification-body">
@@ -70,6 +76,10 @@ class EmailVerificationComponent extends React.Component<Props> {
           lang: this.props.i18n.toLowerCase(),
         });
     }
+
+    private translate = (id: string) => {
+        return id ? this.props.intl.formatMessage({ id }) : '';
+    };
 }
 
 const mapStateToProps: MapStateToProps<ReduxProps, {}, RootState> = state => ({

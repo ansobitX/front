@@ -693,19 +693,19 @@ export const en = {
     'page.header.signUp.confirmPassword.message.error': 'Passwords don\'t match',
     'page.header.signUp.referalCode': 'Referral Code',
     'page.header.signUp.terms': 'I have read and agree to the Terms of Service',
-    'page.header.signUp.modal.header': 'VERIFY YOUR EMAIL ADDRESS',
+    'page.header.signUp.modal.header': 'Verify your email address',
     'page.header.signUp.modal.body': 'To complete registration, check for an ' +
                                       'email in your inbox with further ' +
                                       'instruction. If you cannot find the email, ' +
                                       'please check your spam folder',
     'page.header.signUp.modal.footer': 'OK',
     'page.resendConfirmation': 'Resend Confirmation',
-    'page.forgotPassword': 'Forgot Password',
+    'page.forgotPassword': 'Forgot your password',
     'page.forgotPassword.message': 'Enter email to reset password',
     'page.password2fa': '2FA verification',
     'page.password2fa.message': 'Enter 2fa code from the app',
-    'page.forgotPassword.email': 'Email',
-    'page.forgotPassword.send': 'Send',
+    'page.forgotPassword.email': 'Your email',
+    'page.forgotPassword.send': 'Send reset link',
     'page.noDataToShow': 'There is no data to show',
 
     'page.modal.withdraw.success': 'Success!',

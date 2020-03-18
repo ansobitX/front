@@ -7,6 +7,12 @@
   position: relative;
   z-index: 2;
 
+  .custom-input {
+    .form-control {
+      height: 50px !important;
+    }
+  }
+
   &__options-group {
     width: 100%;
     height: 58px;
@@ -124,7 +130,9 @@
     .btn-primary {
       background-color: var(--green);
 
-      &:disabled {
+      &:disabled,
+      &:hover,
+      &:focus {
         background: var(--green) !important;
         border: none !important;
       }

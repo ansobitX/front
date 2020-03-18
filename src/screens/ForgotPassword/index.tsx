@@ -10,7 +10,7 @@ import {
 } from 'react-redux';
 import { RouterProps } from 'react-router';
 import { withRouter } from 'react-router-dom';
-import { EmailForm } from '../../components';
+import { EmailForm, LandingHeader } from '../../components';
 import {
     EMAIL_REGEX,
     ERROR_INVALID_EMAIL,
@@ -62,26 +62,33 @@ class ForgotPasswordComponent extends React.Component<Props, ForgotPasswordState
         } = this.state;
 
         return (
-            <div className="pg-forgot-password-screen">
-                <div className="pg-forgot-password-screen__container">
-                    <div className="pg-forgot-password___form">
-                        <EmailForm
-                            OnSubmit={this.handleChangeEmail}
-                            title={this.props.intl.formatMessage({id: 'page.forgotPassword'})}
-                            emailLabel={this.props.intl.formatMessage({id: 'page.forgotPassword.email'})}
-                            buttonLabel={this.props.intl.formatMessage({id: 'page.forgotPassword.send'})}
-                            email={email}
-                            emailFocused={emailFocused}
-                            emailError={emailError}
-                            message={this.props.intl.formatMessage({id: 'page.forgotPassword.message'})}
-                            validateForm={this.validateForm}
-                            handleInputEmail={this.handleInputEmail}
-                            handleFieldFocus={this.handleFocusEmail}
-                            handleReturnBack={this.handleComeBack}
-                        />
+            <React.Fragment>
+                <LandingHeader
+                    translate={this.translate}
+                    id="pg-header-register"
+                />
+                <div className="pg-forgot-password-screen">
+                    <div className="pg-forgot-password-screen__background" />
+                    <div className="pg-forgot-password-screen__container">
+                        <div className="pg-forgot-password___form">
+                            <EmailForm
+                                OnSubmit={this.handleChangeEmail}
+                                title={this.props.intl.formatMessage({id: 'page.forgotPassword'})}
+                                emailLabel={this.props.intl.formatMessage({id: 'page.forgotPassword.email'})}
+                                buttonLabel={this.props.intl.formatMessage({id: 'page.forgotPassword.send'})}
+                                email={email}
+                                emailFocused={emailFocused}
+                                emailError={emailError}
+                                message={this.props.intl.formatMessage({id: 'page.forgotPassword.message'})}
+                                validateForm={this.validateForm}
+                                handleInputEmail={this.handleInputEmail}
+                                handleFieldFocus={this.handleFocusEmail}
+                                handleReturnBack={this.handleComeBack}
+                            />
+                        </div>
                     </div>
                 </div>
-            </div>
+            </React.Fragment>
         );
     }
 
@@ -121,6 +128,10 @@ class ForgotPasswordComponent extends React.Component<Props, ForgotPasswordState
 
     private handleComeBack = () => {
         this.props.history.goBack();
+    };
+
+    private translate = (id: string) => {
+        return id ? this.props.intl.formatMessage({ id }) : '';
     };
 }
 
