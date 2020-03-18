@@ -213,7 +213,7 @@ class WalletsComponent extends React.Component<Props, WalletsState> {
                         {walletsLoading && <Spinner animation="border" variant="primary" />}
                     </div>
                     <div className={`row no-gutters pg-wallet__tabs-content ${!historyList.length && 'pg-wallet__tabs-content-height'}`}>
-                        <div className={`col-md-5 col-sm-12 col-12 ${mobileWalletChosen && 'd-none d-md-block'}`}>
+                        <div className={`pg-wallet__list col-md-4 col-sm-12 col-12 ${mobileWalletChosen && 'd-none d-md-block'}`}>
                             <WalletList
                                 onWalletSelectionChange={this.onWalletSelectionChange}
                                 walletItems={filteredWallets || formattedWallets}
@@ -221,7 +221,7 @@ class WalletsComponent extends React.Component<Props, WalletsState> {
                                 onActiveIndexChange={this.onActiveIndexChange}
                             />
                         </div>
-                        <div className={`pg-wallet__tabs col-md-7 col-sm-12 col-12 ${!mobileWalletChosen && 'd-none d-md-block'}`}>
+                        <div className={`pg-wallet__tabs col-md-8 col-sm-12 col-12 ${!mobileWalletChosen && 'd-none d-md-block'}`}>
                             <TabPanel
                                 panels={this.renderTabs()}
                                 onTabChange={this.onTabChange}

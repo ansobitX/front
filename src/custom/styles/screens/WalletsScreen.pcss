@@ -36,6 +36,15 @@
     box-shadow: var(--shadow-primary);
   }
 
+  .pg-wallet__list {
+    min-width: 343px;
+  }
+
+
+  .pg-wallet__tabs {
+    max-width: calc(100% - 343px);
+  }
+
   .cr-crypto-icon {
     color: var(--white-color);
     opacity: 1;
@@ -339,12 +348,15 @@
         }
 
         .cr-deposit-crypto__copyable-area {
+          border: 1px solid var(--divider-color-0-5);
 
-          border: 1px solid var(--base);
           .custom-input {
             width: 85%;
+
             .input-group {
-              border: none;
+              border: none !important;
+              box-shadow: none !important;
+              outline: none !important;
             }
 
             label {
@@ -361,9 +373,17 @@
     border-bottom: 1px solid var(--header-border);
     border-radius: 0;
     margin-bottom: 0;
+
     &-navigation {
-      padding-bottom: 0;
       box-shadow: none;
+      margin-left: 36px;
+      padding-bottom: 0;
+
+      .cr-tab {
+        font-size: 11px;
+        font-weight: 500;
+        line-height: 15px;
+      }
     }
   }
 
