@@ -199,6 +199,11 @@ class ProfileAuthDetailsComponent extends React.Component<Props, State> {
 
         return (
             <div className="pg-profile-page__box pg-profile-page__left-col__basic">
+                <div className="row pg-profile-page-header pg-profile-page-header-first">
+                    <h3 className="col-12">
+                        <FormattedMessage id="page.body.profile.header.account"/>
+                    </h3>
+                </div>
                 <div className="pg-profile-page__box-header pg-profile-page__left-col__basic__info-row">
                     <div className="pg-profile-page__left-col__basic__info-row__block">
                         <div className="pg-profile-page__row pg-profile-page__details-user">
@@ -209,26 +214,25 @@ class ProfileAuthDetailsComponent extends React.Component<Props, State> {
                         </div>
                     </div>
                 </div>
+                {this.renderProfileTwoFactor()}
                 <div className="pg-profile-page__row">
                     <div>
                         <div className="pg-profile-page__label">
                             {this.props.intl.formatMessage({ id: 'page.body.profile.header.account.content.password'})}
                         </div>
-                        <div>
+                        <div className="pg-profile-page__row__value">
                             ************
                         </div>
                     </div>
                     <Button
-                        className="btn-block mt-3 mb-3 btn-lg btn btn-primary w-25"
                         onClick={this.showChangeModal}
                         size="lg"
-                        variant="primary"
+                        variant="success"
                     >
                         {this.props.intl.formatMessage({ id: 'page.body.profile.header.account.content.password.button.change'})}
                     </Button>
                     {modal}
                 </div>
-                {this.renderProfileTwoFactor()}
                 <Modal
                     className="pg-profile-page__disable-2fa-modal"
                     show={this.state.showModal}
