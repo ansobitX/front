@@ -1,0 +1,67 @@
+.register-info {
+  color: var(--white);
+  max-width: 650px;
+  margin-left: 60px;
+
+  &__header{
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 65px;
+    letter-spacing: 0.02em;
+    height: 40px;
+  }
+
+  &__subheader {
+    margin-bottom: 30px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 0.25px;
+    height: 28px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+
+    &__item {
+      display: flex;
+      margin-bottom: 35px;
+
+      &__dot {
+        height: 100%;
+        padding-top: 11px;
+        margin-right: 11px;
+
+        .circle {
+          width: 9px;
+          height: 9px;
+          background-color: var(--green);
+          border-radius: 50%;
+        }
+      }
+
+      &__text {
+        display: flex;
+        flex-direction: column;
+
+        &__header {
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 34px;
+          letter-spacing: 0.5px;
+          height: 27px;
+        }
+
+        &__desc {
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 24px;
+          letter-spacing: 0.1px;
+          max-height: 43px;
+        }
+      }
+    }
+  }
+}

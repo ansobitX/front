@@ -4,7 +4,6 @@ import { InjectedIntlProps, injectIntl } from 'react-intl';
 import { connect, MapDispatchToPropsFunction, MapStateToProps } from 'react-redux';
 import { RouterProps } from 'react-router';
 import { withRouter } from 'react-router-dom';
-import { SignInComponent, TwoFactorAuth } from '../../components';
 import { EMAIL_REGEX, ERROR_EMPTY_PASSWORD, ERROR_INVALID_EMAIL, setDocumentTitle } from '../../helpers';
 import {
     RootState,
@@ -17,7 +16,10 @@ import {
     signInError,
     signInRequire2FA,
     signUpRequireVerification,
+    toggleSidebar,
 } from '../../modules';
+import { SignInComponent, LandingHeader, TwoFactorAuth } from '../../components';
+import { RegisterInfo } from '../../custom/components';
 
 interface ReduxProps {
     isLoggedIn: boolean;
@@ -64,6 +66,7 @@ class SignIn extends React.Component<Props, SignInState> {
         setDocumentTitle('Sign In');
         this.props.signInError({ code: undefined, message: undefined });
         this.props.signUpRequireVerification({requireVerification: false});
+        this.props.toggleSidebar(false);
     }
 
     public componentWillReceiveProps(props: Props) {
@@ -80,9 +83,16 @@ class SignIn extends React.Component<Props, SignInState> {
 
         const className = cx('pg-sign-in-screen__container', { loading });
         return (
-            <div className="pg-sign-in-screen">
-                <div className={className}>{require2FA ? this.render2FA() : this.renderSignInForm()}</div>
-            </div>
+            <React.Fragment>
+                <LandingHeader
+                    translate={this.translate}
+                    id="pg-header-register"
+                />
+                <div className="pg-sign-in-screen">
+                    <div className="pg-sign-in-screen__background" />
+                    <div className={className}>{require2FA ? this.render2FA() : this.renderSignInForm()}</div>
+                </div>
+            </React.Fragment>
         );
     }
 
@@ -91,31 +101,39 @@ class SignIn extends React.Component<Props, SignInState> {
         const { email, emailError, emailFocused, password, passwordError, passwordFocused } = this.state;
 
         return (
-            <SignInComponent
-                email={email}
-                emailError={emailError}
-                emailFocused={emailFocused}
-                emailPlaceholder={this.props.intl.formatMessage({ id: 'page.header.signIn.email' })}
-                password={password}
-                passwordError={passwordError}
-                passwordFocused={passwordFocused}
-                passwordPlaceholder={this.props.intl.formatMessage({ id: 'page.header.signIn.password' })}
-                labelSignIn={this.props.intl.formatMessage({ id: 'page.header.signIn' })}
-                labelSignUp={this.props.intl.formatMessage({ id: 'page.header.signUp' })}
-                emailLabel={this.props.intl.formatMessage({ id: 'page.header.signIn.email' })}
-                passwordLabel={this.props.intl.formatMessage({ id: 'page.header.signIn.password' })}
-                receiveConfirmationLabel={this.props.intl.formatMessage({ id: 'page.header.signIn.receiveConfirmation' })}
-                forgotPasswordLabel={this.props.intl.formatMessage({ id: 'page.header.signIn.forgotPassword' })}
-                isLoading={loading}
-                onForgotPassword={this.forgotPassword}
-                onSignUp={this.handleSignUp}
-                onSignIn={this.handleSignIn}
-                handleChangeFocusField={this.handleFieldFocus}
-                isFormValid={this.validateForm}
-                refreshError={this.refreshError}
-                changeEmail={this.handleChangeEmailValue}
-                changePassword={this.handleChangePasswordValue}
-            />
+            <React.Fragment>
+                <div className="pg-sign-in-screen__body">
+                    <RegisterInfo
+                        translate={this.translate}
+                        label="signin"
+                    />
+                    <SignInComponent
+                        email={email}
+                        emailError={emailError}
+                        emailFocused={emailFocused}
+                        emailPlaceholder={this.props.intl.formatMessage({ id: 'page.header.signIn.email' })}
+                        password={password}
+                        passwordError={passwordError}
+                        passwordFocused={passwordFocused}
+                        passwordPlaceholder={this.props.intl.formatMessage({ id: 'page.header.signIn.password' })}
+                        labelSignIn={this.props.intl.formatMessage({ id: 'page.body.login'})}
+                        labelSignUp={this.props.intl.formatMessage({ id: 'page.body.register'})}
+                        emailLabel={this.props.intl.formatMessage({ id: 'page.header.signIn.email' })}
+                        passwordLabel={this.props.intl.formatMessage({ id: 'page.header.signIn.password' })}
+                        receiveConfirmationLabel={this.props.intl.formatMessage({ id: 'page.header.signIn.receiveConfirmation' })}
+                        forgotPasswordLabel={this.props.intl.formatMessage({ id: 'page.header.signIn.forgotPassword' })}
+                        isLoading={loading}
+                        onForgotPassword={this.forgotPassword}
+                        onSignUp={this.handleSignUp}
+                        onSignIn={this.handleSignIn}
+                        handleChangeFocusField={this.handleFieldFocus}
+                        isFormValid={this.validateForm}
+                        refreshError={this.refreshError}
+                        changeEmail={this.handleChangeEmailValue}
+                        changePassword={this.handleChangePasswordValue}
+                    />
+                </div>
+            </React.Fragment>
         );
     };
 
@@ -243,6 +261,10 @@ class SignIn extends React.Component<Props, SignInState> {
     private handleClose = () => {
         this.props.signInRequire2FA({ require2fa: false });
     };
+
+    private translate = (id: string) => {
+        return id ? this.props.intl.formatMessage({ id }) : '';
+    };
 }
 
 const mapStateToProps: MapStateToProps<ReduxProps, {}, RootState> = state => ({
@@ -258,6 +280,7 @@ const mapDispatchProps: MapDispatchToPropsFunction<DispatchProps, {}> = dispatch
     signInError: error => dispatch(signInError(error)),
     signInRequire2FA: payload => dispatch(signInRequire2FA(payload)),
     signUpRequireVerification: data => dispatch(signUpRequireVerification(data)),
+    toggleSidebar: payload => dispatch(toggleSidebar(payload)),
 });
 
 // tslint:disable no-any

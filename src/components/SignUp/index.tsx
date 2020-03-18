@@ -99,13 +99,13 @@ export class SignUpForm extends React.Component<SignUpFormProps> {
                 <div className="cr-sign-up-form">
                     <div className="cr-sign-up-form__options-group">
                         <div className="cr-sign-up-form__option">
-                            <div className="cr-sign-up-form__option-inner cr-sign-in-form__tab-signin" onClick={onSignIn}>
-                                {labelSignIn ? labelSignIn : 'Sign In'}
+                            <div className="cr-sign-up-form__option-inner __selected">
+                                {labelSignUp ? labelSignUp : 'Sign Up'}
                             </div>
                         </div>
                         <div className="cr-sign-up-form__option">
-                            <div className="cr-sign-up-form__option-inner __selected">
-                                {labelSignUp ? labelSignUp : 'Sign Up'}
+                            <div className="cr-sign-up-form__option-inner cr-sign-in-form__tab-signin" onClick={onSignIn}>
+                                {labelSignIn ? labelSignIn : 'Sign In'}
                             </div>
                         </div>
                     </div>

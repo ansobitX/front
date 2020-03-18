@@ -1,0 +1,41 @@
+#pg-header-register {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: max-content;
+  justify-content: center;
+  max-width: 100vw;
+  width: 100%;
+  background-color: var(--white);
+  position: fixed;
+  top: 0;
+
+  .pg-landing-screen__header__left {
+    img {
+      &:first-child {
+        display: none;
+      }
+
+      &:last-child {
+        display: block;
+      }
+    }
+  }
+
+  .landing-button {
+    font-size: 14px;
+    height: 34px;
+    letter-spacing: 0.3px;
+    line-height: 22px;
+    text-transform: capitalize;
+    width: 174px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--green);
+    color: var(--white);
+    font-weight: bold;
+    margin: 0 13px;
+    border-radius: 4px;
+  }
+}

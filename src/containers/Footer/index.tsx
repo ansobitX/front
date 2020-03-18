@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 
 class FooterComponent extends React.Component<RouterProps> {
     public render() {
-        if (this.props.history.location.pathname.startsWith('/confirm')) {
+        if (['/signin', '/signup', '/confirm'].includes(this.props.history.location.pathname)) {
             return <React.Fragment />;
         }
 

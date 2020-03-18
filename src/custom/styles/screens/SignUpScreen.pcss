@@ -1,0 +1,164 @@
+.pg-sign-up-screen {
+  display: flex;
+  justify-content: center;
+  height: calc(100vh - 58px);
+  margin-top: 50px;
+  background-color: var(--accent);
+
+  &__background {
+    background-image: url(assets/images/landing/looksComplex/RocketEngine.svg);
+    background-position: right 23%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: "";
+    display: block;
+    height: calc(100% - 60px);
+    position: absolute;
+    transform: translate3d(0,0,0);
+    right: 0%;
+    width: 1050px;
+    z-index: 1;
+    opacity: 0.2;
+    overflow: hidden;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    max-width: 1140px;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+
+  &__container {
+    margin-top: 0 !important;
+  }
+
+  .cr-sign-up-form {
+    background: var(--base-bright);
+    margin: 0 auto;
+    border-radius: calc(var(--gap) * 0.66);
+    min-height: calc(var(--big-gap) * 10);
+
+    &__options-group {
+      width: 100%;
+      height: calc(var(--big-gap) * 0.97);
+      border-bottom: 2px solid var(--sign-in-text);
+    }
+
+    &__form-content {
+      top: calc(var(--gap) * 14.8);
+    }
+
+    &__group {
+      margin-bottom: 24px;
+    }
+
+    &__option {
+      background: var(--header);
+      .__selected {
+        border-bottom: 2px solid var(--sign-in-accent);
+        color: var(--color-white);
+      }
+    }
+
+    &__group--focused {
+      .cr-sign-up-form__label {
+        color: var(--sign-in-accent);
+      }
+
+      input {
+        border-color: var(--sign-in-accent) !important;
+      }
+    }
+
+    .cr-button {
+      color: var(--color-white);
+      background: var(--button-primary) !important;
+      border-radius: calc(var(--gap) * 0.5);
+      font-size: calc(var(--gap) * 2.66);
+      margin-top: calc(var(--gap) * 1.55);
+
+      &--disabled {
+        color: var(--button-dark-gray);
+        background: var(--button-disabled) !important;
+      }
+
+      &:hover {
+        background: var(--button-hover) !important;
+      }
+
+      &:active {
+        background: var(--button-active) !important;
+      }
+    }
+
+    &__title {
+      background: transparent;
+      color: var(--active-color);
+      font-size: calc(var(--gap) * 4);
+      margin: calc(var(--gap) * 6.66) !important;
+    }
+
+    &__label {
+      background: var(--base-bright);
+      color: var(--text-muted);
+      font-size: calc(var(--gap) * 2);
+      top: calc(var(--gap) * (-1.33));
+      position: absolute;
+    }
+
+    &__input {
+      input {
+        color: var(--color-white);
+        font-size: calc(var(--gap) * 2.33);
+        border: 1px solid var(--input-block-border-color);
+        border-radius: calc(var(--gap) * 0.66);
+      }
+    }
+
+    &__footer {
+      &-create {
+        font-size: calc(var(--gap) * 2.33);
+        font-weight: bolder;
+      }
+      &-signin {
+        color: var(--active-color);
+        font-size: calc(var(--gap) * 2.33);
+        font-weight: bold;
+      }
+    }
+
+    .cr-checkbox {
+      padding-left: calc(2.6 * var(--checkbox-general-intent));
+
+      &__checkitem {
+        border-color: var(--checkbox-border-color);
+        &::after {
+          border-color: var(--color-white);
+        }
+      }
+
+      &__label {
+        color: var(--c--base-9);
+        font-size: calc(var(--gap) * 2.33);
+      }
+    }
+
+    &__error {
+      color: var(--color-red);
+    }
+
+    &__recaptcha {
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  .cr-sign-in-form {
+    &__error-message {
+      color: var(--order-error-color);
+    }
+  }
+}

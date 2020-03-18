@@ -33,11 +33,11 @@ import {
     OrdersTabScreen,
     ProfileScreen,
     ProfileTwoFactorAuthScreen,
-    SignInScreen,
-    SignUpScreen,
     TradingScreen,
     VerificationScreen,
     WalletsScreen,
+    SignInScreen,
+    SignUpScreen,
 } from '../../screens';
 import { ExpiredSessionModal } from '../../components';
 

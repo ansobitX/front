@@ -39,7 +39,7 @@ describe('SignIn component', () => {
 
     it('render correct title', () => {
         const wrapper = setup();
-        expect(wrapper.find('.__selected').text()).toBe('Sign In');
+        expect(wrapper.find('.__selected').text()).toBe('Login');
     });
 
     it('should render logo block', () => {

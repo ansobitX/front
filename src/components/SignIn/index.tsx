@@ -73,13 +73,13 @@ export class SignInComponent extends React.Component<SignInProps> {
                 <div className="cr-sign-in-form">
                     <div className="cr-sign-in-form__options-group">
                         <div className="cr-sign-in-form__option">
-                            <div className="cr-sign-in-form__option-inner __selected">
-                                {labelSignIn ? labelSignIn : 'Sign In'}
+                            <div className="cr-sign-in-form__option-inner cr-sign-in-form__tab-signup" onClick={onSignUp}>
+                                {labelSignUp ? labelSignUp : 'Register'}
                             </div>
                         </div>
                         <div className="cr-sign-in-form__option">
-                            <div className="cr-sign-in-form__option-inner cr-sign-in-form__tab-signup" onClick={onSignUp}>
-                                {labelSignUp ? labelSignUp : 'Sign Up'}
+                            <div className="cr-sign-in-form__option-inner __selected">
+                                {labelSignIn ? labelSignIn : 'Login'}
                             </div>
                         </div>
                     </div>

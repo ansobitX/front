@@ -65,7 +65,7 @@ describe('SignUp component', () => {
 
     it('should have correct labels', () => {
         const wrapper = setup({ labelSignIn: 'label sign in', labelSignUp: 'label sign up'});
-        expect(wrapper.find('.cr-sign-up-form__option-inner').first().text()).toBe('label sign in');
+        expect(wrapper.find('.cr-sign-up-form__option-inner').first().text()).toBe('label sign up');
         expect(wrapper.find('.__selected').text()).toBe('label sign up');
     });
 

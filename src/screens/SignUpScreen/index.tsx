@@ -13,7 +13,6 @@ import {
     MapStateToProps,
 } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { Modal, SignUpForm } from '../../components';
 import { GeetestCaptcha } from '../../containers';
 import {
     EMAIL_REGEX,
@@ -31,7 +30,10 @@ import {
     selectSignUpError,
     selectSignUpRequireVerification,
     signUp,
+    toggleSidebar,
 } from '../../modules';
+import { SignUpForm, LandingHeader, Modal  } from '../../components';
+import { RegisterInfo } from '../../custom/components';
 
 interface ReduxProps {
     configs: Configs;
@@ -95,6 +97,7 @@ class SignUp extends React.Component<Props> {
         if (refId && refId !== localReferralCode) {
             localStorage.setItem('referralCode', referralCode);
         }
+        this.props.toggleSidebar(false);
     }
 
     public componentWillReceiveProps(nextProps: Props) {
@@ -137,55 +140,68 @@ class SignUp extends React.Component<Props> {
 
         const className = cx('pg-sign-up-screen__container', { loading });
         return (
-            <div className="pg-sign-up-screen">
-                <div className={className}>
-                    <SignUpForm
-                        labelSignIn={this.props.intl.formatMessage({ id: 'page.header.signIn'})}
-                        labelSignUp={this.props.intl.formatMessage({ id: 'page.header.signUp'})}
-                        emailLabel={this.props.intl.formatMessage({ id: 'page.header.signUp.email'})}
-                        passwordLabel={this.props.intl.formatMessage({ id: 'page.header.signUp.password'})}
-                        confirmPasswordLabel={this.props.intl.formatMessage({ id: 'page.header.signUp.confirmPassword'})}
-                        referalCodeLabel={this.props.intl.formatMessage({ id: 'page.header.signUp.referalCode'})}
-                        termsMessage={this.props.intl.formatMessage({ id: 'page.header.signUp.terms'})}
-                        refId={refId}
-                        handleChangeRefId={this.handleChangeRefId}
-                        isLoading={loading}
-                        onSignIn={this.handleSignIn}
-                        onSignUp={this.handleSignUp}
-                        email={email}
-                        handleChangeEmail={this.handleChangeEmail}
-                        password={password}
-                        handleChangePassword={this.handleChangePassword}
-                        confirmPassword={confirmPassword}
-                        handleChangeConfirmPassword={this.handleChangeConfirmPassword}
-                        hasConfirmed={hasConfirmed}
-                        clickCheckBox={this.handleCheckboxClick}
-                        validateForm={this.handleValidateForm}
-                        emailError={emailError}
-                        passwordError={passwordError}
-                        confirmationError={confirmationError}
-                        confirmPasswordFocused={confirmPasswordFocused}
-                        refIdFocused={refIdFocused}
-                        emailFocused={emailFocused}
-                        passwordFocused={passwordFocused}
-                        handleFocusEmail={this.handleFocusEmail}
-                        handleFocusPassword={this.handleFocusPassword}
-                        handleFocusConfirmPassword={this.handleFocusConfirmPassword}
-                        handleFocusRefId={this.handleFocusRefId}
-                        captchaType={configs.captcha_type}
-                        renderCaptcha={this.renderCaptcha()}
-                        reCaptchaSuccess={reCaptchaSuccess}
-                        geetestCaptchaSuccess={geetestCaptchaSuccess}
-                        captcha_response={captcha_response}
-                    />
-                    <Modal
-                        show={this.state.showModal}
-                        header={this.renderModalHeader()}
-                        content={this.renderModalBody()}
-                        footer={this.renderModalFooter()}
-                    />
+            <React.Fragment>
+                <LandingHeader
+                    translate={this.translate}
+                    id="pg-header-register"
+                />
+                <div className="pg-sign-up-screen">
+                    <div className="pg-sign-up-screen__background" />
+                    <div className="pg-sign-up-screen__body">
+                        <RegisterInfo
+                            translate={this.translate}
+                            label="signup"
+                        />
+                        <div className={className}>
+                            <SignUpForm
+                                labelSignIn={this.props.intl.formatMessage({ id: 'page.body.login'})}
+                                labelSignUp={this.props.intl.formatMessage({ id: 'page.body.register'})}
+                                emailLabel={this.props.intl.formatMessage({ id: 'page.header.signUp.email'})}
+                                passwordLabel={this.props.intl.formatMessage({ id: 'page.header.signUp.password'})}
+                                confirmPasswordLabel={this.props.intl.formatMessage({ id: 'page.header.signUp.confirmPassword'})}
+                                referalCodeLabel={this.props.intl.formatMessage({ id: 'page.header.signUp.referalCode'})}
+                                termsMessage={this.props.intl.formatMessage({ id: 'page.body.register.terms'})}
+                                refId={refId}
+                                handleChangeRefId={this.handleChangeRefId}
+                                isLoading={loading}
+                                onSignIn={this.handleSignIn}
+                                onSignUp={this.handleSignUp}
+                                email={email}
+                                handleChangeEmail={this.handleChangeEmail}
+                                password={password}
+                                handleChangePassword={this.handleChangePassword}
+                                confirmPassword={confirmPassword}
+                                handleChangeConfirmPassword={this.handleChangeConfirmPassword}
+                                hasConfirmed={hasConfirmed}
+                                clickCheckBox={this.handleCheckboxClick}
+                                validateForm={this.handleValidateForm}
+                                emailError={emailError}
+                                passwordError={passwordError}
+                                confirmationError={confirmationError}
+                                confirmPasswordFocused={confirmPasswordFocused}
+                                refIdFocused={refIdFocused}
+                                emailFocused={emailFocused}
+                                passwordFocused={passwordFocused}
+                                handleFocusEmail={this.handleFocusEmail}
+                                handleFocusPassword={this.handleFocusPassword}
+                                handleFocusConfirmPassword={this.handleFocusConfirmPassword}
+                                handleFocusRefId={this.handleFocusRefId}
+                                captchaType={configs.captcha_type}
+                                renderCaptcha={this.renderCaptcha()}
+                                reCaptchaSuccess={reCaptchaSuccess}
+                                geetestCaptchaSuccess={geetestCaptchaSuccess}
+                                captcha_response={captcha_response}
+                            />
+                            <Modal
+                                show={this.state.showModal}
+                                header={this.renderModalHeader()}
+                                content={this.renderModalBody()}
+                                footer={this.renderModalFooter()}
+                            />
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </React.Fragment>
         );
     }
 
@@ -445,6 +461,10 @@ class SignUp extends React.Component<Props> {
             return;
         }
     }
+
+    private translate = (id: string) => {
+        return id ? this.props.intl.formatMessage({ id }) : '';
+    };
 }
 
 const mapStateToProps: MapStateToProps<ReduxProps, {}, RootState> = state => ({
@@ -457,6 +477,7 @@ const mapStateToProps: MapStateToProps<ReduxProps, {}, RootState> = state => ({
 const mapDispatchProps: MapDispatchToPropsFunction<DispatchProps, {}> =
     dispatch => ({
         signUp: credentials => dispatch(signUp(credentials)),
+        toggleSidebar: payload => dispatch(toggleSidebar(payload)),
     });
 
 // tslint:disable-next-line:no-any
