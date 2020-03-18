@@ -10,7 +10,7 @@ Access-Control-Allow-Credentials: true
    "currency":"ltc",
    "amount":"0.99",
    "fee":"0.0",
-   "txid":"4516e174e7f04fafd14026c22d2bc288695aaa96f4b44518aa86ac7e27fc2458",
+   "txid":"",
    "created_at":"2018-12-03T17:13:58+01:00",
    "confirmations":1,
    "completed_at":"2018-12-03T17:14:56+01:00",
