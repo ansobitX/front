@@ -177,9 +177,10 @@ class HistoryComponent extends React.Component<Props> {
                 ) : (
                     intl.formatMessage({id: `page.body.history.deposit.content.status.${item.state}`})
                 );
+                const txidToDisplay = `${txid.slice(0,12)}...${txid.slice(txid.length - 13, txid.length - 1)}`;
 
                 return [
-                    <div className="pg-history-elem__hide" key={txid}><a href={blockchainLink} target="_blank" rel="noopener noreferrer">{txid}</a></div>,
+                    <div className="pg-history-elem__hide" key={txid}><a href={blockchainLink} target="_blank" rel="noopener noreferrer">{txidToDisplay}</a></div>,
                     localeDate(created_at, 'fullDate'),
                     currency && currency.toUpperCase(),
                     wallet && preciseData(amount, wallet.fixed),
@@ -191,8 +192,10 @@ class HistoryComponent extends React.Component<Props> {
                 const state = intl.formatMessage({ id: `page.body.history.withdraw.content.status.${item.state}` });
                 const blockchainLink = this.getBlockchainLink(currency, txid, rid);
                 const wallet = wallets.find(obj => obj.currency === currency);
+                const addressToDisplay = txid ? `${txid.slice(0,12)}...${txid.slice(txid.length - 13, txid.length - 1)}` : `${rid.slice(0,12)}...${rid.slice(rid.length - 13, rid.length - 1)}`;
+
                 return [
-                    <div className="pg-history-elem__hide" key={txid || rid}><a href={blockchainLink} target="_blank" rel="noopener noreferrer">{txid || rid}</a></div>,
+                    <div className="pg-history-elem__hide" key={txid || rid}><a href={blockchainLink} target="_blank" rel="noopener noreferrer">{addressToDisplay}</a></div>,
                     localeDate(created_at, 'fullDate'),
                     uppercase(currency),
                     wallet && preciseData(amount, wallet.fixed),

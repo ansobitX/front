@@ -64,6 +64,9 @@ class History extends React.Component<Props, State> {
 
         return (
             <div className={containerClass}>
+                <div className="pg-history-tab__header">
+                    {this.props.intl.formatMessage({ id: 'page.body.history.header'})}
+                </div>
                 <div className="pg-history-tab__tabs-content">
                     <TabPanel
                         panels={this.renderTabs()}

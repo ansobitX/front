@@ -1,4 +1,4 @@
-.pg-orders-tab {
+.pg-history-tab {
   align-items: flex-start !important;
   background: var(--base-bright);
   display: flex;
@@ -7,8 +7,8 @@
   padding: 0 !important;
   margin-top: calc(24px - var(--gap) * 1.3) !important;
   border-radius: 4px;
-  max-width: unset !important;
   margin-bottom: 24px !important;
+  max-width: unset !important;
   border: 1px solid var(--light-item-border);
   box-shadow: var(--shadow-primary);
 
@@ -25,12 +25,11 @@
     text-align: center;
   }
 
-  .pg-orders-tab__tabs-content {
+  .pg-history-tab__tabs-content {
     align-items: flex-start;
     width: 100%;
 
     .cr-tab-panel__navigation-container {
-      position: relative;
       background: var(--table-dark-header-color);
       border-bottom: 1px solid var(--divider-color);
       border-top-left-radius: calc(var(--gap) * 0.66);
@@ -57,16 +56,31 @@
 
   .pg-history-elem-empty {
     min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .pg-history-elem-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .pg-history-elem {
+    padding-top: var(--gap);
+
+    &__hide {
+      color: var(--accent);
+    }
+
     &__empty {
       text-align: center;
       color: var(--table-text-color);
     }
 
     &__pagination {
-      padding: 21px calc(var(--gap) * 2);
+      padding: var(--gap) calc(var(--gap) * 2);
 
       p {
         margin-bottom: 0;
@@ -90,7 +104,6 @@
       .cr-table-header__content {
         display: none;
       }
-
       .cr-table {
         background: transparent;
         border-collapse: collapse;
@@ -100,7 +113,7 @@
 
           &-row {
             border-bottom: 1px solid var(--header-border);
-
+            
             th {
               background-color: var(--background-dark);
               color: var(--icons);
@@ -115,25 +128,23 @@
               font-style: normal;
               font-weight: 500;
               line-height: 15px;
-              width: 42px;
+              width: max-content;
 
               &:first-child {
                 text-align: left;
                 padding-left: 36px !important;
               }
 
-              &:nth-child(8) {
-                padding-top: 22px !important;
-                width: 10%;
-              }
-
               &:nth-child(2), &:nth-child(3) {
                 text-align: left;
+              }
+
+              &:last-child {
+                padding-right: 36px !important;
               }
             }
           }
         }
-
         &__body {
           background-color: var(--background-dark);
 
@@ -157,6 +168,7 @@
               &:first-child {
                 text-align: left;
                 padding-left: 36px !important;
+                width: 30%;
               }
 
               &:nth-child(2), &:nth-child(3) {
@@ -164,57 +176,18 @@
               }
 
               &:last-child {
-                display: flex;
-                flex-direction: row;
-                justify-content: flex-end;
-                align-items: center;
-                width: 50%;
-
+                padding-right: 36px !important;
                 &:first-letter {
                   text-transform: uppercase;
                 }
               }
 
               a {
-                color: var(--table-text-color);
+                color: var(--accent);
                 text-decoration: none;
-              }
-
-              .close {
-                position: relative;
-                display: inline-block;
-                height: 16px;
-                width: 16px;
-                opacity: 1;
-                margin-bottom: 2px;
 
                 &:hover {
-                  &::before,
-                  &::after {
-                    background: var(--color-red);
-                  }
-                }
-
-                &::before,
-                &::after {
-                  background: var(--icons-light);
-                  content: '';
-                  position: absolute;
-                  top: 65%;
-                  left: 0;
-                  height: 1px;
-                  width: 100%;
-                }
-
-                &::before {
-                  transform: rotate(45deg);
-                }
-
-                &::after {
-                  transform: rotate(-45deg);
-                }
-                span {
-                  display: none;
+                  text-decoration: underline;
                 }
               }
             }
@@ -222,81 +195,54 @@
         }
       }
     }
-
-    &-executed {
-      color: var(--orders-execute-color);
-    }
-
-    &-canceled {
-      color: var(--color-red);
-    }
-
-    &-opened {
-      color: var(--color-green);
-    }
-  }
-
-  .cr-tab-panel__optinal-head {
-    position: absolute;
-    right: 45px;
-    margin-top: 1%;
-    cursor: pointer;
-    text-align: right;
-    font-family: 'Montserrat';
-    font-weight: 500;
-    font-size: 11px !important;
-    line-height: 15px;
-    color: var(--icons);
-
-    &:hover {
-      color: var(--color-red);
-
-      .pg-orders-tab__close {
-        &::before,
-        &::after {
-          background: var(--color-red);
-        }
-      }
-    }
-  }
-
-  &__close {
-    position: relative;
-    display: inline-block;
-    margin-left: 12px;
-    height: 16px;
-    width: 16px;
-
-    &::before,
-    &::after {
-      background: var(--icons-light);
-      content: '';
-      position: absolute;
-      top: 65%;
-      left: 0;
-      height: 1px;
-      width: 100%;
-    }
-
-    &::before {
-      transform: rotate(45deg);
-    }
-
-    &::after {
-      transform: rotate(-45deg);
-    }
   }
 
   @media screen and (max-width: 768px) {
-    .cr-tab-panel__optinal-head {
-      right: 1%;
-      top: 20%;
+    .pg-history-elem {
+      &__hide {
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
     }
 
     .cr-table-container {
       .cr-table {
         overflow: scroll;
       }
+    }
+
+    .cr-tab-panel {
+      &__navigation-container {
+        overflow: hidden;
+      }
+    }
+
+    .cr-tab {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1%;
+      right: 7%;
+
+      &__pointer {
+        width: 80% !important;
+        left: 40% !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .pg-history-elem {
+    &__hide {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .cr-table-container {
+    .cr-table {
+      overflow: scroll;
     }
   }
 }

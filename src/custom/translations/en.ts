@@ -32,4 +32,9 @@ export const en = {
     'page.body.openOrders.header.orderType.buy.limit': 'limit',
     'page.body.openOrders.header.orderType.sell.market': 'market',
     'page.body.openOrders.header.orderType.sell.limit': 'limit',
+
+    'page.body.history.header': 'History',
+    'page.body.history.deposit': 'Deposits',
+    'page.body.history.withdraw': 'Withdrawals',
+    'page.body.history.trade': 'Trades',
 };

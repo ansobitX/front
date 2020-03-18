@@ -14,7 +14,7 @@ Total: 28
       "funds": "0.0003",
       "market": "ethbtc",
       "created_at": "2018-12-14T12:00:47+01:00",
-      "side": "ask"
+      "side": "sell"
     },
     {
       "id": 162387,
@@ -23,7 +23,7 @@ Total: 28
       "funds": "0.009",
       "market": "ethbtc",
       "created_at": "2018-12-14T11:32:42+01:00",
-      "side": "ask"
+      "side": "sell"
     },
     {
       "id": 162386,
@@ -32,7 +32,7 @@ Total: 28
       "funds": "0.00045",
       "market": "ethbtc",
       "created_at": "2018-12-14T11:32:16+01:00",
-      "side": "ask"
+      "side": "sell"
     },
     {
       "id": 162385,
@@ -41,7 +41,7 @@ Total: 28
       "funds": "0.00006",
       "market": "ethbtc",
       "created_at": "2018-12-14T11:32:16+01:00",
-      "side": "bid"
+      "side": "buy"
     },
     {
       "id": 162384,
@@ -50,7 +50,7 @@ Total: 28
       "funds": "0.0006",
       "market": "ethbtc",
       "created_at": "2018-12-14T11:31:44+01:00",
-      "side": "bid"
+      "side": "buy"
     },
     {
       "id": 162383,
@@ -59,7 +59,7 @@ Total: 28
       "funds": "0.0006",
       "market": "ethbtc",
       "created_at": "2018-12-14T11:30:54+01:00",
-      "side": "bid"
+      "side": "buy"
     },
     {
       "id": 162382,
@@ -68,7 +68,7 @@ Total: 28
       "funds": "0.0006",
       "market": "ethbtc",
       "created_at": "2018-12-14T11:30:28+01:00",
-      "side": "bid"
+      "side": "buy"
     },
     {
       "id": 162379,
@@ -77,7 +77,7 @@ Total: 28
       "funds": "0.0006",
       "market": "ethbtc",
       "created_at": "2018-12-14T10:05:27+01:00",
-      "side": "bid"
+      "side": "buy"
     },
     {
       "id": 162361,
@@ -86,7 +86,7 @@ Total: 28
       "funds": "0.0006",
       "market": "ethbtc",
       "created_at": "2018-12-13T16:53:33+01:00",
-      "side": "ask"
+      "side": "sell"
     },
     {
       "id": 162354,
@@ -95,7 +95,7 @@ Total: 28
       "funds": "0.006",
       "market": "ethbtc",
       "created_at": "2018-12-13T14:50:42+01:00",
-      "side": "bid"
+      "side": "buy"
     },
     {
       "id": 162353,
@@ -104,7 +104,7 @@ Total: 28
       "funds": "0.002",
       "market": "ethbtc",
       "created_at": "2018-12-13T14:50:42+01:00",
-      "side": "bid"
+      "side": "buy"
     },
     {
       "id": 162352,
@@ -113,7 +113,7 @@ Total: 28
       "funds": "0.0018",
       "market": "ethbtc",
       "created_at": "2018-12-13T14:49:51+01:00",
-      "side": "ask"
+      "side": "sell"
     },
     {
       "id": 162351,
@@ -122,7 +122,7 @@ Total: 28
       "funds": "0.00114",
       "market": "ethbtc",
       "created_at": "2018-12-13T14:48:35+01:00",
-      "side": "bid"
+      "side": "buy"
     },
     {
       "id": 162350,
@@ -131,7 +131,7 @@ Total: 28
       "funds": "0.00088",
       "market": "ethbtc",
       "created_at": "2018-12-13T14:48:35+01:00",
-      "side": "ask"
+      "side": "sell"
     },
     {
       "id": 162349,
@@ -140,7 +140,7 @@ Total: 28
       "funds": "0.0024",
       "market": "ethbtc",
       "created_at": "2018-12-13T14:47:24+01:00",
-      "side": "ask"
+      "side": "sell"
     },
     {
       "id": 162339,
@@ -149,7 +149,7 @@ Total: 28
       "funds": "0.0008",
       "market": "ethbtc",
       "created_at": "2018-12-12T14:01:45+01:00",
-      "side": "ask"
+      "side": "sell"
     },
     {
       "id": 162337,
@@ -158,7 +158,7 @@ Total: 28
       "funds": "0.0008",
       "market": "ethbtc",
       "created_at": "2018-12-12T13:59:27+01:00",
-      "side": "ask"
+      "side": "sell"
     },
     {
       "id": 162334,
@@ -167,7 +167,7 @@ Total: 28
       "funds": "0.0008",
       "market": "ethbtc",
       "created_at": "2018-12-12T12:09:41+01:00",
-      "side": "ask"
+      "side": "sell"
     },
     {
       "id": 162331,
@@ -176,7 +176,7 @@ Total: 28
       "funds": "0.0008",
       "market": "ethbtc",
       "created_at": "2018-12-12T12:04:50+01:00",
-      "side": "ask"
+      "side": "sell"
     },
     {
       "id": 162326,
@@ -185,7 +185,7 @@ Total: 28
       "funds": "0.00552",
       "market": "ethbtc",
       "created_at": "2018-12-12T11:40:55+01:00",
-      "side": "bid"
+      "side": "buy"
     },
     {
       "id": 162325,
@@ -194,7 +194,7 @@ Total: 28
       "funds": "0.00279",
       "market": "ethbtc",
       "created_at": "2018-12-12T11:40:55+01:00",
-      "side": "bid"
+      "side": "buy"
     },
     {
       "id": 162324,
@@ -203,7 +203,7 @@ Total: 28
       "funds": "0.00621",
       "market": "ethbtc",
       "created_at": "2018-12-12T11:40:13+01:00",
-      "side": "bid"
+      "side": "buy"
     },
     {
       "id": 162323,
@@ -212,7 +212,7 @@ Total: 28
       "funds": "0.0031",
       "market": "ethbtc",
       "created_at": "2018-12-12T11:40:13+01:00",
-      "side": "bid"
+      "side": "buy"
     },
     {
         "id": 162246,
@@ -221,7 +221,7 @@ Total: 28
         "funds": "0.006",
         "market": "ethbtc",
         "created_at": "2018-12-07T10:12:15+01:00",
-        "side": "ask"
+        "side": "sell"
       },
       {
         "id": 162245,
@@ -230,6 +230,6 @@ Total: 28
         "funds": "0.01",
         "market": "ethbtc",
         "created_at": "2018-12-07T10:12:15+01:00",
-        "side": "ask"
+        "side": "sell"
       }
 ]
