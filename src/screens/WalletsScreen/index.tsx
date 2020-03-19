@@ -6,11 +6,12 @@ import { connect, MapDispatchToProps } from 'react-redux';
 import { RouterProps } from 'react-router';
 import { withRouter } from 'react-router-dom';
 import { CurrencyInfo, DepositCrypto, DepositFiat, TabPanel, WalletItemProps, WalletList } from '../../components';
+import { VALUATION_PRIMARY_CURRENCY } from '../../constants';
 import { Withdraw, WithdrawProps } from '../../containers';
 import { ModalWithdrawConfirmation } from '../../containers/ModalWithdrawConfirmation';
 import { ModalWithdrawSubmit } from '../../containers/ModalWithdrawSubmit';
 import { EstimatedValue } from '../../containers/Wallets/EstimatedValue';
-import { WalletHistory } from '../../custom/containers/Wallets/History';
+import { DepositPrimaryWallet, WalletHistory } from '../../custom/containers/Wallets';
 import { formatCCYAddress, setDocumentTitle } from '../../helpers';
 import {
     alertPush,
@@ -358,6 +359,14 @@ class WalletsComponent extends React.Component<Props, WalletsState> {
                         buttonLabel={buttonLabel}
                         isAccountActivated={isAccountActivated}
                     />
+                    {currency && <WalletHistory label="deposit" type="deposits" currency={currency} />}
+                </React.Fragment>
+            );
+        } else if (currency && currency.toLowerCase() === VALUATION_PRIMARY_CURRENCY.toLowerCase()) {
+            return (
+                <React.Fragment>
+                    <CurrencyInfo wallet={wallets[selectedWalletIndex]}/>
+                    <DepositPrimaryWallet translate={this.translate} />
                     {currency && <WalletHistory label="deposit" type="deposits" currency={currency} />}
                 </React.Fragment>
             );
