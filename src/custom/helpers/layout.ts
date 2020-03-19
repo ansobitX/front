@@ -41,7 +41,7 @@ const getLayouts = () => {
     const currentWindowHeight = window.innerHeight - headerHeight;
     const currentGridHeight = pixelsToGridUnits(currentWindowHeight, rowHeight, margin);
 
-    const gridCurrMinDiff = (currentGridHeight - minGridHeight) * 0.175;
+    const gridCurrMinDiff = (currentGridHeight - minGridHeight) * 0.177;
 
     const orderBookHeight = currentGridHeight >= minGridHeight ?
         minOrderBookHeight + gridCurrMinDiff : minOrderBookHeight;
