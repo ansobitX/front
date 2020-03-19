@@ -233,14 +233,13 @@ export class OrderForm extends React.Component<OrderFormProps, OrderFormState> {
                     </div>
                     <div className="cr-order-item">
                         <div className="cr-order-item__available">
-                            <label className="cr-order-item__available__label">
-                                {handleSetValue(availableText, 'Available')}
-                            </label>
                             <div className="cr-order-item__available__content">
-                                <span className="cr-order-item__available__content__amount">
-                                    {available ? Decimal.format(available, availablePrecision) : ''}
+                                <span>
+                                    {handleSetValue(availableText, 'Available')}&nbsp;
                                 </span>
-                                <span className="cr-order-item__available__content__currency">
+                                <span>
+                                    {available ? Decimal.format(available, availablePrecision) : ''}
+                                    &nbsp;
                                     {available ? availableCurrency.toUpperCase() : ''}
                                 </span>
                             </div>
@@ -260,18 +259,9 @@ export class OrderForm extends React.Component<OrderFormProps, OrderFormState> {
                         />
                     </div>
                     <div className="cr-order-item">
-                        <div className="cr-order-input">
-                            <fieldset className="cr-order-input__fieldset">
-                                <legend className={'cr-order-input__fieldset__label'}>
-                                    {handleSetValue(priceText, '')}
-                                </legend>
-                                <div className="cr-order-input__fieldset__input">
-                                    &asymp;<span className="cr-order-input__fieldset__input__price">{handleSetValue(Decimal.format(safePrice, currentMarketBidPrecision), '0')}</span>
-                                </div>
-                            </fieldset>
-                            <div className="cr-order-input__crypto-icon">
-                                {from.toUpperCase()}
-                            </div>
+                        <div className="cr-order-item__price">
+                            <span>{handleSetValue(priceText, '')}&nbsp;</span>
+                            <span>1&nbsp;{from.toUpperCase()}&nbsp;&asymp;&nbsp;{handleSetValue(Decimal.format(safePrice, currentMarketBidPrecision), '0')}</span>
                         </div>
                     </div>
                     <div className="cr-order-item">
@@ -280,15 +270,9 @@ export class OrderForm extends React.Component<OrderFormProps, OrderFormState> {
                                 {handleSetValue(totalText, 'Total')}
                             </label>
                             <div className="cr-order-item__total__content">
-                                {orderType === 'Limit' ? (
-                                    <span className="cr-order-item__total__content__amount">
-                                        {Decimal.format(total, currentMarketBidPrecision + currentMarketAskPrecision)}
-                                    </span>
-                                ) : (
-                                    <span className="cr-order-item__total__content__amount">
-                                        &asymp;{Decimal.format(total, currentMarketBidPrecision + currentMarketAskPrecision)}
-                                    </span>
-                                )}
+                                <span className="cr-order-item__total__content__amount">
+                                    {Decimal.format(total, currentMarketBidPrecision + currentMarketAskPrecision)}
+                                </span>
                                 <span className="cr-order-item__total__content__currency">
                                     {from.toUpperCase()}
                                 </span>
@@ -302,9 +286,9 @@ export class OrderForm extends React.Component<OrderFormProps, OrderFormState> {
                             disabled={checkButtonIsDisabled(safeAmount, safePrice, price, this.props, this.state)}
                             onClick={this.handleSubmit}
                             size="lg"
-                            variant={type === 'buy' ? 'success' : 'danger'}
+                            variant={type === 'buy' ? 'danger' : 'success'}
                         >
-                            {submitButtonText || type}
+                            {submitButtonText || type}&nbsp;{from.toUpperCase()}
                         </Button>
                     </div>
                 </div>

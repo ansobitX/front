@@ -171,7 +171,7 @@ class Order extends React.PureComponent<OrderComponentProps> {
             amountText,
             totalText,
             availableText,
-            submitBuyButtonText,
+            submitSellButtonText,
             labelFirst,
             orderTypes,
             orderTypesIndex,
@@ -204,7 +204,7 @@ class Order extends React.PureComponent<OrderComponentProps> {
                         amountText={amountText}
                         totalText={totalText}
                         availableText={availableText}
-                        submitButtonText={submitBuyButtonText}
+                        submitButtonText={submitSellButtonText}
                         listenInputPrice={listenInputPrice}
                         currencies={currencies}
                         markets={markets}
@@ -230,7 +230,7 @@ class Order extends React.PureComponent<OrderComponentProps> {
             amountText,
             totalText,
             availableText,
-            submitSellButtonText,
+            submitBuyButtonText,
             labelSecond,
             orderTypes,
             orderTypesIndex,
@@ -262,7 +262,7 @@ class Order extends React.PureComponent<OrderComponentProps> {
                         amountText={amountText}
                         totalText={totalText}
                         availableText={availableText}
-                        submitButtonText={submitSellButtonText}
+                        submitButtonText={submitBuyButtonText}
                         listenInputPrice={listenInputPrice}
                         currencies={currencies}
                         markets={markets}

@@ -53,4 +53,7 @@ export const en = {
     'page.body.profile.header.account.content.twoFactorAuthentication': 'Two-factor authentication',
     'page.body.profile.header.accountActivity.content.addressip': 'IP address',
 
+    'page.body.trade.header.newOrder.content.price': 'Price:',
+    'page.body.trade.header.newOrder.content.total': 'Total:',
+    'page.body.trade.header.newOrder.content.available': 'Available:',
 };

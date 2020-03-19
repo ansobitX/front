@@ -24,7 +24,7 @@ export class DepositPrimaryWallet extends React.Component<Props> {
                     {translate('page.body.deposit.primaryWallet.title')}&nbsp;
                     {currency ? currency.name : ''}
                 </h1>
-                <OrderComponent orderType="buy" currencies={currencies} />
+                <OrderComponent orderType="sell" currencies={currencies} />
             </div>
         );
     }
