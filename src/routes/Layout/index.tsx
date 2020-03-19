@@ -204,7 +204,7 @@ class LayoutComponent extends React.Component<LayoutProps, LayoutState> {
                     <PrivateRoute loading={userLoading} isLogged={isLoggedIn} path="/settings" component={ProfileScreen} />
                     <PrivateRoute loading={userLoading} isLogged={isLoggedIn} path="/accounts" component={WalletsScreen} />
                     <PrivateRoute loading={userLoading} isLogged={isLoggedIn} path="/security/2fa" component={ProfileTwoFactorAuthScreen} />
-                    <Route path="**"><Redirect to="/trading/" /></Route>
+                    <Route path="**"><Redirect to="/" /></Route>
                 </Switch>
                 {isLoggedIn && <WalletsFetch/>}
                 {isShownExpSessionModal && this.handleRenderExpiredSessionModal()}

@@ -406,8 +406,16 @@ export const ru: LangType = {
     'page.body.wallets.tabs.deposit.fiat.accountName': 'Имя счета',
     'page.body.wallets.tabs.deposit.fiat.phoneNumber': 'Номер телефона',
     'page.body.wallets.tabs.deposit.fiat.referenceCode': 'Ваш уникальный код',
-    'page.body.wallets.table.pending': 'Обрабатывается',
     'page.body.wallets.tabs.deposit.fiat.admin': 'Для того, чтобы вывести эту валюту, обратитесь к администратору!',
+
+    'page.body.wallets.table.succeed': 'Succeed',
+    'page.body.wallets.table.failed': 'Failed',
+    'page.body.wallets.table.accepted': 'Accepted',
+    'page.body.wallets.table.collected': 'Collected',
+    'page.body.wallets.table.canceled': 'Canceled',
+    'page.body.wallets.table.rejected': 'Rejected',
+    'page.body.wallets.table.pending': 'Pending',
+    'page.body.wallets.table.skipped': 'Skipped',
 
     'page.body.wallets.tabs.withdraw': 'Вывод',
     'page.body.wallets.tabs.withdraw.content.amount': 'Сумма вывода',

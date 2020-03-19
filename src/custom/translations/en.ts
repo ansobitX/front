@@ -38,6 +38,15 @@ export const en = {
     'page.body.history.withdraw': 'Withdrawals',
     'page.body.history.trade': 'Trades',
 
+    'page.body.wallets.table.succeed': 'Succeed',
+    'page.body.wallets.table.failed': 'Failed',
+    'page.body.wallets.table.accepted': 'Accepted',
+    'page.body.wallets.table.collected': 'Collected',
+    'page.body.wallets.table.canceled': 'Canceled',
+    'page.body.wallets.table.rejected': 'Rejected',
+    'page.body.wallets.table.pending': 'Pending',
+    'page.body.wallets.table.skipped': 'Skipped',
+
     'page.body.profile.header.account': 'Account',
     'page.body.profile.header.account.content.twoFactorAuthentication': 'Two-factor authentication',
     'page.body.profile.header.accountActivity.content.addressip': 'IP address',

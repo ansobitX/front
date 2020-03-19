@@ -10,7 +10,7 @@ import { Withdraw, WithdrawProps } from '../../containers';
 import { ModalWithdrawConfirmation } from '../../containers/ModalWithdrawConfirmation';
 import { ModalWithdrawSubmit } from '../../containers/ModalWithdrawSubmit';
 import { EstimatedValue } from '../../containers/Wallets/EstimatedValue';
-import { WalletHistory } from '../../containers/Wallets/History';
+import { WalletHistory } from '../../custom/containers/Wallets/History';
 import { formatCCYAddress, setDocumentTitle } from '../../helpers';
 import {
     alertPush,
