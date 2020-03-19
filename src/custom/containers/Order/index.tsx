@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { WalletItemProps } from '../../../components';
 import {
     alertPush,
+    Currency,
     RootState,
     selectCurrentPrice,
     selectDepthAsks,
@@ -12,9 +13,16 @@ import {
     selectUserLoggedIn,
     selectWallets,
     setCurrentPrice,
+    setCurrentMarket,
     Wallet, walletsFetch,
 } from '../../../modules';
-import { Market, selectCurrentMarket, selectMarketTickers } from '../../../modules/public/markets';
+import {
+    Market,
+    marketsFetch,
+    selectCurrentMarket,
+    selectMarkets,
+    selectMarketTickers,
+} from '../../../modules/public/markets';
 import {
     orderExecuteFetch,
     selectOrderExecuteLoading,
@@ -23,11 +31,13 @@ import { Order, OrderProps } from '../../components';
 
 interface OwnProps {
     orderType: string;
+    currencies: Currency[];
 }
 
 interface ReduxProps {
     currentMarket: Market | undefined;
     executeLoading: boolean;
+    markets: Market[];
     marketTickers: {
         [key: string]: {
             last: string;
@@ -45,7 +55,9 @@ interface StoreProps {
 }
 
 interface DispatchProps {
+    fetchMarkets: typeof marketsFetch;
     accountWallets: typeof walletsFetch;
+    setCurrentMarket: typeof setCurrentMarket;
     setCurrentPrice: typeof setCurrentPrice;
     orderExecute: typeof orderExecuteFetch;
     pushAlert: typeof alertPush;
@@ -72,6 +84,9 @@ class OrderInsert extends React.PureComponent<Props, StoreProps> {
 
     private orderRef;
 
+    public conponentDidMount() {
+        this.props.fetchMarkets();
+    }
 
     public componentWillReceiveProps(next: Props) {
         const {userLoggedIn, accountWallets} = this.props;
@@ -86,8 +101,19 @@ class OrderInsert extends React.PureComponent<Props, StoreProps> {
     }
 
     public render() {
-        const { executeLoading, marketTickers, currentMarket, wallets, asks, bids, orderType } = this.props;
-        if (!currentMarket.id) {
+        const {
+            asks,
+            bids,
+            currencies,
+            currentMarket,
+            executeLoading,
+            markets,
+            marketTickers,
+            orderType,
+            wallets,
+        } = this.props;
+
+        if (!currentMarket) {
             return null;
         }
 
@@ -131,6 +157,9 @@ class OrderInsert extends React.PureComponent<Props, StoreProps> {
                     submitSellButtonText={this.props.intl.formatMessage({ id: 'page.body.trade.header.newOrder.content.tabs.sell' })}
                     listenInputPrice={this.listenInputPrice}
                     orderType={orderType}
+                    currencies={currencies}
+                    markets={markets}
+                    setCurrentMarket={this.handleSetCurrentMarket}
                 />
                 {executeLoading && <div className="pg-order--loading"><Spinner animation="border" variant="primary" /></div>}
             </div>
@@ -241,6 +270,10 @@ class OrderInsert extends React.PureComponent<Props, StoreProps> {
         });
         this.props.setCurrentPrice();
     }
+
+    private handleSetCurrentMarket = (market: Market) => {
+        this.props.setCurrentMarket(market);
+    }
 }
 
 const mapStateToProps = (state: RootState) => ({
@@ -252,12 +285,15 @@ const mapStateToProps = (state: RootState) => ({
     wallets: selectWallets(state),
     currentPrice: selectCurrentPrice(state),
     userLoggedIn: selectUserLoggedIn(state),
+    markets: selectMarkets(state),
 });
 
 const mapDispatchToProps = dispatch => ({
     accountWallets: () => dispatch(walletsFetch()),
+    fetchMarkets: () => dispatch(marketsFetch()),
     orderExecute: payload => dispatch(orderExecuteFetch(payload)),
     pushAlert: payload => dispatch(alertPush(payload)),
+    setCurrentMarket: payload => dispatch(setCurrentMarket(payload)),
     setCurrentPrice: payload => dispatch(setCurrentPrice(payload)),
 });
 

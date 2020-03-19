@@ -366,7 +366,7 @@ class WalletsComponent extends React.Component<Props, WalletsState> {
             return (
                 <React.Fragment>
                     <CurrencyInfo wallet={wallets[selectedWalletIndex]}/>
-                    <DepositPrimaryWallet translate={this.translate} currency={currencyItem}/>
+                    <DepositPrimaryWallet translate={this.translate} currency={currencyItem} currencies={currencies}/>
                     {currency && <WalletHistory label="deposit" type="deposits" currency={currencyItem} />}
                 </React.Fragment>
             );

@@ -1,6 +1,7 @@
 import classnames from 'classnames';
 import * as React from 'react';
 import { TabPanel } from '../../../components';
+import { Currency, Market } from '../../../modules';
 import { OrderForm } from '../';
 
 export type FormType = 'buy' | 'sell';
@@ -124,6 +125,9 @@ export interface OrderComponentProps {
     asks: string[][];
     orderType: string;
     listenInputPrice?: () => void;
+    currencies?: Currency[];
+    markets?: Market[];
+    setCurrentMarket: (market: Market) => void;
 }
 
 const defaultOrderTypes: DropdownElem[] = [
@@ -173,7 +177,11 @@ class Order extends React.PureComponent<OrderComponentProps> {
             orderTypesIndex,
             asks,
             listenInputPrice,
+            currencies,
+            markets,
+            setCurrentMarket,
         } = this.props;
+
         return [
             {
                 content: (
@@ -198,6 +206,9 @@ class Order extends React.PureComponent<OrderComponentProps> {
                         availableText={availableText}
                         submitButtonText={submitBuyButtonText}
                         listenInputPrice={listenInputPrice}
+                        currencies={currencies}
+                        markets={markets}
+                        setCurrentMarket={setCurrentMarket}
                     />
                 ),
                 label: labelFirst ? labelFirst : 'Buy',
@@ -225,7 +236,11 @@ class Order extends React.PureComponent<OrderComponentProps> {
             orderTypesIndex,
             bids,
             listenInputPrice,
+            currencies,
+            markets,
+            setCurrentMarket,
         } = this.props;
+
         return [
             {
                 content: (
@@ -249,6 +264,9 @@ class Order extends React.PureComponent<OrderComponentProps> {
                         availableText={availableText}
                         submitButtonText={submitSellButtonText}
                         listenInputPrice={listenInputPrice}
+                        currencies={currencies}
+                        markets={markets}
+                        setCurrentMarket={setCurrentMarket}
                     />
                 ),
                 label: labelSecond ? labelSecond : 'Sell',
