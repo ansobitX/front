@@ -6,11 +6,12 @@ import { connect, MapDispatchToProps } from 'react-redux';
 import { RouterProps } from 'react-router';
 import { withRouter } from 'react-router-dom';
 import { CurrencyInfo, DepositCrypto, DepositFiat, TabPanel, WalletItemProps, WalletList } from '../../components';
+import { VALUATION_PRIMARY_CURRENCY } from '../../constants';
 import { Withdraw, WithdrawProps } from '../../containers';
 import { ModalWithdrawConfirmation } from '../../containers/ModalWithdrawConfirmation';
 import { ModalWithdrawSubmit } from '../../containers/ModalWithdrawSubmit';
 import { EstimatedValue } from '../../containers/Wallets/EstimatedValue';
-import { WalletHistory } from '../../containers/Wallets/History';
+import { DepositPrimaryWallet, WalletHistory } from '../../custom/containers/Wallets';
 import { formatCCYAddress, setDocumentTitle } from '../../helpers';
 import {
     alertPush,
@@ -213,7 +214,7 @@ class WalletsComponent extends React.Component<Props, WalletsState> {
                         {walletsLoading && <Spinner animation="border" variant="primary" />}
                     </div>
                     <div className={`row no-gutters pg-wallet__tabs-content ${!historyList.length && 'pg-wallet__tabs-content-height'}`}>
-                        <div className={`col-md-5 col-sm-12 col-12 ${mobileWalletChosen && 'd-none d-md-block'}`}>
+                        <div className={`pg-wallet__list col-md-4 col-sm-12 col-12 ${mobileWalletChosen && 'd-none d-md-block'}`}>
                             <WalletList
                                 onWalletSelectionChange={this.onWalletSelectionChange}
                                 walletItems={filteredWallets || formattedWallets}
@@ -221,7 +222,7 @@ class WalletsComponent extends React.Component<Props, WalletsState> {
                                 onActiveIndexChange={this.onActiveIndexChange}
                             />
                         </div>
-                        <div className={`pg-wallet__tabs col-md-7 col-sm-12 col-12 ${!mobileWalletChosen && 'd-none d-md-block'}`}>
+                        <div className={`pg-wallet__tabs col-md-8 col-sm-12 col-12 ${!mobileWalletChosen && 'd-none d-md-block'}`}>
                             <TabPanel
                                 panels={this.renderTabs()}
                                 onTabChange={this.onTabChange}
@@ -359,6 +360,14 @@ class WalletsComponent extends React.Component<Props, WalletsState> {
                         isAccountActivated={isAccountActivated}
                     />
                     {currency && <WalletHistory label="deposit" type="deposits" currency={currency} />}
+                </React.Fragment>
+            );
+        } else if (currency && currency.toLowerCase() === VALUATION_PRIMARY_CURRENCY.toLowerCase()) {
+            return (
+                <React.Fragment>
+                    <CurrencyInfo wallet={wallets[selectedWalletIndex]}/>
+                    <DepositPrimaryWallet translate={this.translate} currency={currencyItem} currencies={currencies}/>
+                    {currency && <WalletHistory label="deposit" type="deposits" currency={currencyItem} />}
                 </React.Fragment>
             );
         } else {

@@ -1,0 +1,52 @@
+.cr-wallet-item__single {
+  background: transparent;
+  display: flex;
+  padding: 0 0 calc(var(--gap) * 4);
+  border-bottom: 1px solid var(--header-border);
+  margin: 0 calc(var(--gap) * 3);
+  align-items: center;
+
+  &-balance {
+    display: flex;
+    flex-grow: 2;
+    justify-content: space-between;
+    padding: 0 18px;
+  }
+
+  &__image-icon {
+    margin-right: calc(var(--gap) * 7);
+    max-height: calc(var(--gap) * 8);
+  }
+
+  .cr-wallet-item {
+    &__icon-code {
+      font-size: calc(var(--gap) * 8);
+      color: var(--bright-1);
+      background: transparent;
+    }
+
+    &__amount-locked {
+      margin-right: calc(var(--gap) * 8);
+    }
+
+    &__balance, &__amount-locked {
+      background: transparent;
+      color: var(--table-text-color);
+      display: flex;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 22px;
+      padding-top: 0;
+      letter-spacing: 0.5px;
+
+      &-amount, &-locked {
+        background: transparent;
+        color: var(--wallets-balance);
+        font-size: 22px;
+        font-weight: 500;
+        line-height: 27px;
+        padding: 0;
+      }
+    }
+  }
+}

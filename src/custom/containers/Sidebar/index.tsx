@@ -280,10 +280,6 @@ class SidebarContainer extends React.Component<Props, State> {
 
     private handleChangeRoute = (path: string) => {
         window.scrollTo(0,0);
-
-        if (path.includes('/trading')) {
-            this.props.toggleSidebar(false);
-        }
     }
 
     private handleChangeLanguage = (language: string) => {

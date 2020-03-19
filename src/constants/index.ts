@@ -19,7 +19,7 @@ export const pgRoutes = (isLoggedIn: boolean, isLight?: boolean): string[][] => 
 
 export const DEFAULT_CCY_PRECISION = 4;
 export const STORAGE_DEFAULT_LIMIT = 50;
-export const VALUATION_PRIMARY_CURRENCY = 'EUR';
+export const VALUATION_PRIMARY_CURRENCY = 'ZAR';
 export const VALUATION_SECONDARY_CURRENCY = 'ETH';
 
 export const colors = {

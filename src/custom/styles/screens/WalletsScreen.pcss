@@ -36,6 +36,15 @@
     box-shadow: var(--shadow-primary);
   }
 
+  .pg-wallet__list {
+    min-width: 343px;
+  }
+
+
+  .pg-wallet__tabs {
+    max-width: calc(100% - 343px);
+  }
+
   .cr-crypto-icon {
     color: var(--white-color);
     opacity: 1;
@@ -339,12 +348,15 @@
         }
 
         .cr-deposit-crypto__copyable-area {
+          border: 1px solid var(--divider-color-0-5);
 
-          border: 1px solid var(--base);
           .custom-input {
             width: 85%;
+
             .input-group {
-              border: none;
+              border: none !important;
+              box-shadow: none !important;
+              outline: none !important;
             }
 
             label {
@@ -361,9 +373,17 @@
     border-bottom: 1px solid var(--header-border);
     border-radius: 0;
     margin-bottom: 0;
+
     &-navigation {
-      padding-bottom: 0;
       box-shadow: none;
+      margin-left: 36px;
+      padding-bottom: 0;
+
+      .cr-tab {
+        font-size: 11px;
+        font-weight: 500;
+        line-height: 15px;
+      }
     }
   }
 
@@ -490,8 +510,10 @@
 
   .pg-history-elem__label {
     color: var(--wallets-balance);
-    font-size: calc(var(--gap) * 5);
-    font-weight: 300;
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 0.25px;
+    line-height: 24px;
   }
 
   &__pagination {
@@ -519,13 +541,14 @@
           border-bottom: 1px solid var(--header-border);
           th {
             background-color: var(--background-dark);
-            color: var(--table-text-color);
-            font-size: 12px !important;
+            color: var(--icons);
+            font-size: 12px;
+            font-style: normal;
             font-weight: 500;
-            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            line-height: 15px;
             padding: calc(var(--gap) * 2.5) var(--gap) calc(var(--gap) * 2.5) var(--gap) !important;
-            text-align: right;
             position: static;
+            text-align: right;
             width: calc(var(--big-gap) * 2);
 
             &:first-child {
@@ -541,23 +564,28 @@
       }
       &__body {
         background-color: var(--background-dark);
+
         tr {
           background-color: var(--background-dark);
           border-bottom: 1px solid var(--header-border);
+
           td {
             background-color: var(--background-dark);
-            color: var(--table-text-color);
-            font-size: 13px !important;
-            font-weight: 400;
-            padding: calc(var(--gap) * 2.5) var(--gap) calc(var(--gap) * 2.5) var(--gap) !important;
-            margin-top: calc(var(--gap) * 1.66) !important;
+            color: var(--bright);
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.1px;
+            line-height: 12px;
             margin-bottom: calc(var(--gap) * 1.66) !important;
+            margin-top: calc(var(--gap) * 1.66) !important;
+            padding: calc(var(--gap) * 2.5) var(--gap) calc(var(--gap) * 2.5) var(--gap) !important;
             text-align: right;
 
             &:first-child {
               text-align: left;
               border-bottom-left-radius: calc(var(--gap) * .5);
             }
+
             &:last-child {
               border-bottom-right-radius: calc(var(--gap) * .5);
 
@@ -565,11 +593,25 @@
                 text-transform: uppercase;
               }
             }
+
             a {
               color: var(--table-text-color);
               text-decoration: none;
             }
+
+            .success {
+              color: var(--green);
+            }
+
+            .wait {
+              color: var(--yellow);
+            }
+
+            .fail {
+              color: var(--red);
+            }
           }
+
           &:last-child {
             td {
               border-bottom: none;
