@@ -1,6 +1,7 @@
 import classnames from 'classnames';
 import * as React from 'react';
-import { OrderForm, TabPanel } from '../../../components';
+import { TabPanel } from '../../../components';
+import { OrderForm } from '../';
 
 export type FormType = 'buy' | 'sell';
 

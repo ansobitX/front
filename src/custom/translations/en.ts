@@ -47,6 +47,8 @@ export const en = {
     'page.body.wallets.table.pending': 'Pending',
     'page.body.wallets.table.skipped': 'Skipped',
 
+    'page.body.deposit.primaryWallet.title': 'Buy',
+
     'page.body.profile.header.account': 'Account',
     'page.body.profile.header.account.content.twoFactorAuthentication': 'Two-factor authentication',
     'page.body.profile.header.accountActivity.content.addressip': 'IP address',

@@ -416,6 +416,7 @@ export const ru: LangType = {
     'page.body.wallets.table.rejected': 'Rejected',
     'page.body.wallets.table.pending': 'Pending',
     'page.body.wallets.table.skipped': 'Skipped',
+    'page.body.deposit.primaryWallet.title': 'Купить',
 
     'page.body.wallets.tabs.withdraw': 'Вывод',
     'page.body.wallets.tabs.withdraw.content.amount': 'Сумма вывода',
