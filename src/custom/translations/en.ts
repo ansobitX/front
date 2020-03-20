@@ -63,4 +63,10 @@ export const en = {
     'page.body.deploy.yourExchange.field.name.placeholder': 'ex. Opendax',
     'page.body.deploy.yourExchange.field.domain.label': 'Domain name',
     'page.body.deploy.yourExchange.field.domain.placeholder': 'ex. opendax.io',
+
+    'page.body.deploy.location.amsterdam.title': 'Amsterdam',
+    'page.body.deploy.location.montreal.title': 'Montreal',
+    'page.body.deploy.location.hongKong.title': 'Hong Kong',
+    'page.body.deploy.location.seoul.title': 'Seoul',
+    'page.body.deploy.location.comingSoon': 'Coming soon',
 };

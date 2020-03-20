@@ -21,7 +21,10 @@ export const DEFAULT_CCY_PRECISION = 4;
 export const STORAGE_DEFAULT_LIMIT = 50;
 export const VALUATION_PRIMARY_CURRENCY = 'EUR';
 export const VALUATION_SECONDARY_CURRENCY = 'ETH';
+
 export const AVAILABLE_PACKAGES = ['startUp', 'pro', 'business', 'corporate'];
+export const DEPLOY_LOCATIONS = ['amsterdam', 'montreal', 'hongKong', 'seoul'];
+export const AVAILABLE_DEPLOY_LOCATIONS = ['amsterdam'];
 
 export const colors = {
     light: {

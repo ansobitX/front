@@ -3,6 +3,7 @@ import * as React from 'react';
 import { InjectedIntlProps, injectIntl } from 'react-intl';
 import { connect } from 'react-redux';
 import {
+    DeployLocationSelect,
     DeployExchangeDetails,
     DeployPackageSelect,
 } from '../../components';
@@ -18,6 +19,7 @@ interface State {
     exchangeName: string;
     domainName: string;
     selectedPackage: string;
+    selectedLocation: string;
 }
 
 export class DeployScreenClass extends React.Component<Props, State> {
@@ -25,6 +27,7 @@ export class DeployScreenClass extends React.Component<Props, State> {
         exchangeName: '',
         domainName: '',
         selectedPackage: 'corporate',
+        selectedLocation: 'amsterdam',
     };
 
     public render() {
@@ -33,6 +36,7 @@ export class DeployScreenClass extends React.Component<Props, State> {
             exchangeName,
             domainName,
             selectedPackage,
+            selectedLocation,
         } = this.state;
 
         const containerClass = classnames('pg-container pg-deploy', {
@@ -50,6 +54,11 @@ export class DeployScreenClass extends React.Component<Props, State> {
                 <DeployPackageSelect
                     selectedPackage={selectedPackage}
                     handleSelectPackage={this.handleChangeInput}
+                    translate={this.translate}
+                />
+                <DeployLocationSelect
+                    selectedLocation={selectedLocation}
+                    handleSelectLocation={this.handleChangeInput}
                     translate={this.translate}
                 />
             </div>
