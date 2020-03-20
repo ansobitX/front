@@ -272,6 +272,8 @@ export const ru: LangType = {
     'page.body.landing.prices.card.startUp.cpu.value': '2',
     'page.body.landing.prices.card.startUp.ram.label': 'RAM',
     'page.body.landing.prices.card.startUp.ram.value': '6GB',
+    'page.body.landing.prices.card.startUp.marketPairs.label': 'Market Pair limit',
+    'page.body.landing.prices.card.startUp.marketPairs.value': '5',
     'page.body.landing.prices.card.startUp.currencies.label': 'ETH, ERC20',
     'page.body.landing.prices.card.startUp.arke.label': 'Arke Customization',
     'page.body.landing.prices.card.startUp.arke.value': 'Self-support',
@@ -291,7 +293,7 @@ export const ru: LangType = {
     'page.body.landing.prices.card.pro.ram.label': 'RAM',
     'page.body.landing.prices.card.pro.ram.value': '12GB',
     'page.body.landing.prices.card.pro.marketPairs.label': 'Market Pair limit',
-    'page.body.landing.prices.card.pro.marketPairs.value': '80',
+    'page.body.landing.prices.card.pro.marketPairs.value': '15',
     'page.body.landing.prices.card.pro.monitoring.label': 'Monitoring Service',
     'page.body.landing.prices.card.pro.currencies.label': 'ETH, ERC20',
     'page.body.landing.prices.card.pro.currencies2.label': 'BTC, LTC, XRP',
@@ -396,6 +398,9 @@ export const ru: LangType = {
     'page.body.deploy.location.hongKong.title': 'Hong Kong',
     'page.body.deploy.location.seoul.title': 'Seoul',
     'page.body.deploy.location.comingSoon': 'Coming soon',
+
+    'page.body.deploy.packageDetails.title': 'Details',
+    'page.body.deploy.packageDetails.selectedPlan.title': 'Selected plan',
 
 
     /* Wallets */

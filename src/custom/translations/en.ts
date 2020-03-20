@@ -69,4 +69,7 @@ export const en = {
     'page.body.deploy.location.hongKong.title': 'Hong Kong',
     'page.body.deploy.location.seoul.title': 'Seoul',
     'page.body.deploy.location.comingSoon': 'Coming soon',
+
+    'page.body.deploy.packageDetails.title': 'Details',
+    'page.body.deploy.packageDetails.selectedPlan.title': 'Selected plan',
 };

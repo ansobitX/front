@@ -3,8 +3,9 @@ import * as React from 'react';
 import { InjectedIntlProps, injectIntl } from 'react-intl';
 import { connect } from 'react-redux';
 import {
-    DeployLocationSelect,
     DeployExchangeDetails,
+    DeployLocationSelect,
+    DeployPackageDetails,
     DeployPackageSelect,
 } from '../../components';
 import { RootState, selectSidebarState } from '../../../modules';
@@ -61,6 +62,12 @@ export class DeployScreenClass extends React.Component<Props, State> {
                     handleSelectLocation={this.handleChangeInput}
                     translate={this.translate}
                 />
+                <div className="pg-deploy__row-wrap">
+                    <DeployPackageDetails
+                        selectedPackage={selectedPackage}
+                        translate={this.translate}
+                    />
+                </div>
             </div>
         );
     }

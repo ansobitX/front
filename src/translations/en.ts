@@ -266,6 +266,8 @@ export const en = {
     'page.body.landing.prices.card.startUp.cpu.value': '2',
     'page.body.landing.prices.card.startUp.ram.label': 'RAM',
     'page.body.landing.prices.card.startUp.ram.value': '6GB',
+    'page.body.landing.prices.card.startUp.marketPairs.label': 'Market Pair limit',
+    'page.body.landing.prices.card.startUp.marketPairs.value': '5',
     'page.body.landing.prices.card.startUp.currencies.label': 'ETH, ERC20',
     'page.body.landing.prices.card.startUp.arke.label': 'Arke Customization',
     'page.body.landing.prices.card.startUp.arke.value': 'Self-support',
