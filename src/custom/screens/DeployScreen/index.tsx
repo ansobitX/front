@@ -2,7 +2,10 @@ import classnames from 'classnames';
 import * as React from 'react';
 import { InjectedIntlProps, injectIntl } from 'react-intl';
 import { connect } from 'react-redux';
-import { DeployYourExchange } from '../../components';
+import {
+    DeployExchangeDetails,
+    DeployPackageSelect,
+} from '../../components';
 import { RootState, selectSidebarState } from '../../../modules';
 
 interface ReduxProps {
@@ -14,12 +17,14 @@ type Props = ReduxProps & InjectedIntlProps;
 interface State {
     exchangeName: string;
     domainName: string;
+    selectedPackage: string;
 }
 
 export class DeployScreenClass extends React.Component<Props, State> {
     public state = {
         exchangeName: '',
         domainName: '',
+        selectedPackage: 'corporate',
     };
 
     public render() {
@@ -27,6 +32,7 @@ export class DeployScreenClass extends React.Component<Props, State> {
         const {
             exchangeName,
             domainName,
+            selectedPackage,
         } = this.state;
 
         const containerClass = classnames('pg-container pg-deploy', {
@@ -35,10 +41,15 @@ export class DeployScreenClass extends React.Component<Props, State> {
 
         return (
             <div className={containerClass}>
-                <DeployYourExchange
+                <DeployExchangeDetails
                     exchangeName={exchangeName}
                     domainName={domainName}
                     handleChangeInput={this.handleChangeInput}
+                    translate={this.translate}
+                />
+                <DeployPackageSelect
+                    selectedPackage={selectedPackage}
+                    handleSelectPackage={this.handleChangeInput}
                     translate={this.translate}
                 />
             </div>

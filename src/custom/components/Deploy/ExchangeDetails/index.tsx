@@ -10,7 +10,7 @@ interface OwnProps {
 
 type Props = OwnProps;
 
-export class DeployYourExchange extends React.Component<Props> {
+export class DeployExchangeDetails extends React.Component<Props> {
     public render() {
         const {
             exchangeName,
