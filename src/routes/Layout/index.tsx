@@ -38,7 +38,10 @@ import {
     SignInScreen,
     SignUpScreen,
 } from '../../screens';
-import { ProfileScreen } from '../../custom/screens';
+import {
+    DeployScreen,
+    ProfileScreen,
+} from '../../custom/screens';
 import { ExpiredSessionModal } from '../../components';
 
 interface ReduxProps {
@@ -204,6 +207,7 @@ class LayoutComponent extends React.Component<LayoutProps, LayoutState> {
                     <PrivateRoute loading={userLoading} isLogged={isLoggedIn} path="/settings" component={ProfileScreen} />
                     <PrivateRoute loading={userLoading} isLogged={isLoggedIn} path="/accounts" component={WalletsScreen} />
                     <PrivateRoute loading={userLoading} isLogged={isLoggedIn} path="/security/2fa" component={ProfileTwoFactorAuthScreen} />
+                    <PrivateRoute loading={userLoading} isLogged={isLoggedIn} path="/deploy" component={DeployScreen} />
                     <Route path="**"><Redirect to="/" /></Route>
                 </Switch>
                 {isLoggedIn && <WalletsFetch/>}

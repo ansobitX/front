@@ -56,4 +56,11 @@ export const en = {
     'page.body.trade.header.newOrder.content.price': 'Price:',
     'page.body.trade.header.newOrder.content.total': 'Total:',
     'page.body.trade.header.newOrder.content.available': 'Available:',
+
+    /* Deploy Now */
+    'page.body.deploy.yourExchange.title': 'Deploy your Exchange',
+    'page.body.deploy.yourExchange.field.name.label': 'Exchange name',
+    'page.body.deploy.yourExchange.field.name.placeholder': 'ex. Opendax',
+    'page.body.deploy.yourExchange.field.domain.label': 'Domain name',
+    'page.body.deploy.yourExchange.field.domain.placeholder': 'ex. opendax.io',
 };
