@@ -13,6 +13,8 @@ const InfoIcon = require('../../../assets/images/InfoIcon.svg');
 
 interface OwnProps {
     currencies: Currency[];
+    exchangeName: string;
+    domainName: string;
     termsAccepted: boolean;
     handleAgreeTerms: (key: string, value: boolean) => void;
     handleClickDeploy: () => void;
@@ -110,7 +112,7 @@ export class DeployTotalActions extends React.Component<Props, State> {
                 <Button
                     block={true}
                     type="button"
-                    disabled={remainingValue < 0 || !termsAccepted}
+                    disabled={!this.handleCheckEnabledButton(remainingValue, termsAccepted)}
                     onClick={this.handleClickSubmit}
                     size="lg"
                     variant="success"
@@ -141,6 +143,12 @@ export class DeployTotalActions extends React.Component<Props, State> {
         const balance = currentBalance ? currentBalance : 0;
 
         return +balance - priceToPay;
+    }
+
+    private handleCheckEnabledButton = (remainingValue: number, termsAccepted: boolean) => {
+        const { exchangeName, domainName } = this.props;
+
+        return remainingValue >= 0 && termsAccepted && exchangeName && domainName;
     }
 
     private handleClickSubmit = e => {

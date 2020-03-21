@@ -109,6 +109,8 @@ export class DeployScreenClass extends React.Component<Props, State> {
                         translate={this.translate}
                     />
                     <DeployTotalActions
+                        exchangeName={exchangeName}
+                        domainName={domainName}
                         currencies={currencies}
                         handleAgreeTerms={this.handleChangeInput}
                         handleClickDeploy={this.handleDeploy}
