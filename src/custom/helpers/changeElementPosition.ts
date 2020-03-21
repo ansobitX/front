@@ -5,7 +5,7 @@ export const changeElementPosition = (className: string, index: number, gapX: nu
         const x = e.clientX;
         const y = e.clientY;
 
-        if (targetElement) {
+        if (targetElement[index]) {
             (targetElement[index] as HTMLElement).style.top = `${+y + gapY}px`;
             (targetElement[index] as HTMLElement).style.left = `${+x + gapX}px`;
         }

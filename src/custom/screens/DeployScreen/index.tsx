@@ -2,6 +2,7 @@ import classnames from 'classnames';
 import * as React from 'react';
 import { InjectedIntlProps, injectIntl } from 'react-intl';
 import { connect, MapDispatchToPropsFunction } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { WalletItemProps } from '../../../components';
 import {
     DeployExchangeDetails,
@@ -26,12 +27,16 @@ interface ReduxProps {
     wallets: WalletItemProps[];
 }
 
+interface RouterProps {
+    history: History;
+}
+
 interface DispatchProps {
     fetchCurrencies: typeof currenciesFetch;
     fetchWallets: typeof walletsFetch;
 }
 
-type Props = ReduxProps & DispatchProps & InjectedIntlProps;
+type Props = ReduxProps & DispatchProps & RouterProps & InjectedIntlProps;
 
 interface State {
     exchangeName: string;
@@ -125,7 +130,7 @@ export class DeployScreenClass extends React.Component<Props, State> {
     }
 
     private handleDeploy = () => {
-        window.console.log('Success!');
+        this.props.history.push('/success-deploy');
     }
 
     private translate = (key: string) => this.props.intl.formatMessage({id: key});
@@ -143,4 +148,5 @@ const mapDispatchToProps: MapDispatchToPropsFunction<DispatchProps, {}> =
         fetchWallets: () => dispatch(walletsFetch()),
     });
 
-export const DeployScreen = injectIntl(connect(mapStateToProps, mapDispatchToProps)(DeployScreenClass));
+// tslint:disable-next-line:no-any
+export const DeployScreen = withRouter(injectIntl(connect(mapStateToProps, mapDispatchToProps)(DeployScreenClass)) as any);

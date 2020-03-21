@@ -416,6 +416,14 @@ export const ru: LangType = {
     'page.body.deploy.totalActions.submit': 'Deploy',
 
 
+    /* Success deploy */
+    'page.body.successDeploy.title': 'Success!',
+    'page.body.successDeploy.subtitle': 'OpenDAX is deploying your exchange.',
+    'page.body.successDeploy.text1': 'It may take up to 5 business days.',
+    'page.body.successDeploy.text2': 'You can monitor the status on the cloud page.',
+    'page.body.successDeploy.link': 'Go to Cloud',
+
+
     /* Wallets */
     'page.body.wallets.estimated_value': 'Оценочная стоимость',
 

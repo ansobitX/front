@@ -41,6 +41,7 @@ import {
 import {
     DeployScreen,
     ProfileScreen,
+    SuccessDeployScreen,
 } from '../../custom/screens';
 import { ExpiredSessionModal } from '../../components';
 
@@ -201,6 +202,7 @@ class LayoutComponent extends React.Component<LayoutProps, LayoutState> {
                     <PublicRoute loading={userLoading} isLogged={isLoggedIn} path="/email-verification" component={EmailVerificationScreen} />
                     <Route exact={true} path="/trading/:market?" component={TradingScreen} />
                     <Route exact={true} path="/" component={LandingScreen} />
+                    <Route exact={true} path="/success-deploy" component={SuccessDeployScreen} />
                     <PrivateRoute loading={userLoading} isLogged={isLoggedIn} path="/orders" component={OrdersTabScreen} />
                     <PrivateRoute loading={userLoading} isLogged={isLoggedIn} path="/history" component={HistoryScreen} />
                     <PrivateRoute loading={userLoading} isLogged={isLoggedIn} path="/confirm" component={ConfirmScreen} />
