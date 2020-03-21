@@ -51,32 +51,35 @@
       border: 1px solid var(--green);
 
       h2 {
-        background: var(--landing-cards-startup-bg);
         color: var(--white);
         transition: .2s;
       }
     }
 
-    &:nth-child(1).pg-deploy-package-select__item--selected {
+    &:nth-child(1).pg-deploy-package-select__item--selected,
+    &:nth-child(1):hover {
       h2 {
         background: var(--landing-cards-startup-bg);
       }
     }
 
-    &:nth-child(2).pg-deploy-package-select__item--selected {
+    &:nth-child(2).pg-deploy-package-select__item--selected,
+    &:nth-child(2):hover {
       h2 {
         background: var(--landing-cards-pro-bg);
       }
     }
 
 
-    &:nth-child(3).pg-deploy-package-select__item--selected {
+    &:nth-child(3).pg-deploy-package-select__item--selected,
+    &:nth-child(3):hover {
       h2 {
         background: var(--landing-cards-business-bg);
       }
     }
 
-    &:nth-child(4).pg-deploy-package-select__item--selected {
+    &:nth-child(4).pg-deploy-package-select__item--selected,
+    &:nth-child(4):hover {
       h2 {
         background: var(--bright);
       }
