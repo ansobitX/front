@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Button, Form } from 'react-bootstrap';
+import MouseTooltip from 'react-sticky-mouse-tooltip';
 import { Link } from 'react-router-dom';
 import { WalletItemProps, Decimal } from '../../../../components';
 import { VALUATION_PRIMARY_CURRENCY } from '../../../../constants';
@@ -21,7 +22,15 @@ interface OwnProps {
 
 type Props = OwnProps;
 
-export class DeployTotalActions extends React.Component<Props> {
+interface State {
+    isMouseTooltipVisible: boolean;
+}
+
+export class DeployTotalActions extends React.Component<Props, State> {
+    public state = {
+        isMouseTooltipVisible: false,
+    };
+
     public render() {
         const {
             currencies,
@@ -29,6 +38,7 @@ export class DeployTotalActions extends React.Component<Props> {
             translate,
             wallets,
         } = this.props;
+        const { isMouseTooltipVisible } = this.state;
 
         const currentCurrency = currencies.length && currencies.find(currency => currency.id === VALUATION_PRIMARY_CURRENCY.toLowerCase());
         const currentWallet = wallets.length && wallets.find(wallet => wallet.currency === VALUATION_PRIMARY_CURRENCY.toLowerCase());
@@ -76,7 +86,12 @@ export class DeployTotalActions extends React.Component<Props> {
                         {currentCurrency ? currentCurrency.symbol : null}&nbsp;
                         {(currentCurrency && priceToPay) ? Decimal.format(priceToPay, currentCurrency.precision, ',') : '-'}
                     </span>
-                    <img src={InfoIcon} alt="tooltip"/>
+                    <img
+                        src={InfoIcon}
+                        alt="tooltip"
+                        onMouseEnter={this.toggleMouseTooltip}
+                        onMouseLeave={this.toggleMouseTooltip}
+                    />
                 </div>
                 <Form className="pg-deploy-total-actions__checkbox">
                     <Form.Check
@@ -98,6 +113,14 @@ export class DeployTotalActions extends React.Component<Props> {
                 >
                     {translate('page.body.deploy.totalActions.submit')}
                 </Button>
+                <MouseTooltip
+                    className="tooltip-hover"
+                    offsetX={-100}
+                    offsetY={20}
+                    visible={isMouseTooltipVisible}
+                >
+                    <span>{translate(`page.body.deploy.totalActions.tooltip`)}</span>
+                </MouseTooltip>
             </div>
         );
     }
@@ -124,4 +147,8 @@ export class DeployTotalActions extends React.Component<Props> {
     private handleClickSubmit = e => {
         this.props.handleClickDeploy();
     }
+
+    private toggleMouseTooltip = () => {
+        this.setState(prevState => ({ isMouseTooltipVisible: !prevState.isMouseTooltipVisible }));
+    };
 }
