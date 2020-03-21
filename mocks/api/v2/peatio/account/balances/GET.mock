@@ -48,7 +48,7 @@ Access-Control-Allow-Credentials: true
   },
   {
     "currency":"eur",
-    "balance":"1000.0",
+    "balance":"5000.0",
     "locked":"0.0"
   }
 ]

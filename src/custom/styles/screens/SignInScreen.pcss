@@ -1,8 +1,10 @@
 .pg-sign-in-screen {
   display: flex;
   justify-content: center;
-  height: calc(100vh - 58px);
-  margin-top: 50px;
+  height: calc(100vh - 58px) !important;
+  min-height: 768px;
+  margin: 0 !important;
+  margin-top: 50px !important;
   background-color: var(--accent);
 
   &__background {
@@ -25,8 +27,8 @@
 
   .pg-sign-in-screen__container {
     background: transparent;
-    margin-top: 0;
-    width: 100%;
+    margin-top: 0 !important;
+    width: 100% !important;
     z-index: 2;
   }
 

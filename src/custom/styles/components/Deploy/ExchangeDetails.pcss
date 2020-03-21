@@ -1,0 +1,82 @@
+.pg-deploy-your-exchange {
+  align-items: flex-start;
+  background: var(--main-bg);
+  border-radius: 4px;
+  border: 1px solid var(--light-item-border);
+  box-shadow: var(--shadow-primary);
+  display: flex;
+  flex-direction: column;
+  height: max-content;
+  justify-content: flex-start;
+  margin-bottom: 36px;
+  padding: 25px 36px 37px 36px;
+  width: 100%;
+
+  h1 {
+    align-items: center;
+    color: var(--bright);
+    display: flex;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0.25px;
+    line-height: 24px;
+    margin-block-end: 0;
+    margin-block-start: 0;
+    margin-inline-end: 0;
+    margin-inline-start: 0;
+    margin: 0;
+    margin-bottom: 36px;
+    text-align: center;
+  }
+
+  &__fields {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+
+    &__item {
+      align-items: flex-start;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      margin: 0 12px;
+      width: calc(50% - 12px);
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      .label {
+        color: var(--bright);
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 15px;
+        margin-bottom: 7px;
+      }
+
+      .custom-input {
+        height: 49px;
+        width: 100%;
+
+        .form-control {
+          border-radius: 4px;
+          border: 1px solid var(--divider-color);
+          color: var(--bright) !important;
+          font-size: 14px;
+          font-weight: 500;
+          height: 49px !important;
+          letter-spacing: 0.1px;
+          line-height: 22px;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

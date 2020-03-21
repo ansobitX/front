@@ -38,7 +38,11 @@ import {
     SignInScreen,
     SignUpScreen,
 } from '../../screens';
-import { ProfileScreen } from '../../custom/screens';
+import {
+    DeployScreen,
+    ProfileScreen,
+    SuccessDeployScreen,
+} from '../../custom/screens';
 import { ExpiredSessionModal } from '../../components';
 
 interface ReduxProps {
@@ -198,12 +202,14 @@ class LayoutComponent extends React.Component<LayoutProps, LayoutState> {
                     <PublicRoute loading={userLoading} isLogged={isLoggedIn} path="/email-verification" component={EmailVerificationScreen} />
                     <Route exact={true} path="/trading/:market?" component={TradingScreen} />
                     <Route exact={true} path="/" component={LandingScreen} />
+                    <Route exact={true} path="/success-deploy" component={SuccessDeployScreen} />
                     <PrivateRoute loading={userLoading} isLogged={isLoggedIn} path="/orders" component={OrdersTabScreen} />
                     <PrivateRoute loading={userLoading} isLogged={isLoggedIn} path="/history" component={HistoryScreen} />
                     <PrivateRoute loading={userLoading} isLogged={isLoggedIn} path="/confirm" component={ConfirmScreen} />
                     <PrivateRoute loading={userLoading} isLogged={isLoggedIn} path="/settings" component={ProfileScreen} />
                     <PrivateRoute loading={userLoading} isLogged={isLoggedIn} path="/accounts" component={WalletsScreen} />
                     <PrivateRoute loading={userLoading} isLogged={isLoggedIn} path="/security/2fa" component={ProfileTwoFactorAuthScreen} />
+                    <PrivateRoute loading={userLoading} isLogged={isLoggedIn} path="/deploy" component={DeployScreen} />
                     <Route path="**"><Redirect to="/" /></Route>
                 </Switch>
                 {isLoggedIn && <WalletsFetch/>}

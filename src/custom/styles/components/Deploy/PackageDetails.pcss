@@ -1,0 +1,107 @@
+.pg-deploy-package-details {
+  align-items: flex-start;
+  background: var(--main-bg);
+  border-radius: 4px;
+  border: 1px solid var(--light-item-border);
+  box-shadow: var(--shadow-primary);
+  display: flex;
+  flex-direction: column;
+  height: 442px;
+  justify-content: flex-start;
+  margin-right: 12px;
+  padding: 24px 36px 36px 36px;
+  width: calc(60% - 12px);
+
+  h2 {
+    align-items: center;
+    color: var(--bright);
+    display: flex;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    justify-content: center;
+    letter-spacing: 0.25px;
+    line-height: 24px;
+    margin-block-end: 0;
+    margin-block-start: 0;
+    margin-inline-end: 0;
+    margin-inline-start: 0;
+    margin: 0;
+    margin-bottom: 19px;
+  }
+
+  &__info {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    height: max-content;
+    justify-content: space-between;
+    width: 100%;
+
+    &__col {
+      align-items: flex-start;
+      display: flex;
+      flex-direction: column;
+      height: max-content;
+      justify-content: flex-start;
+      margin: 0 12px;
+      width: calc(50% - 12px);
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+
+        .pg-deploy-package-details__info__col__value {
+          &:nth-child(8) {
+            border-top: 1px solid var(--divider-color);
+            padding-top: 24px;
+            margin-top: 24px;
+            height: 44px;
+
+            span:last-child {
+              text-transform: lowercase;
+
+              &:first-letter {
+                text-transform: uppercase;
+              }
+            }
+          }
+
+          &:last-child {
+            align-items: baseline;
+
+            span:last-child {
+              font-size: 20px;
+            }
+          }
+        }
+      }
+
+      &__value {
+        align-items: center;
+        color: var(--bright);
+        display: flex;
+        height: 20px;
+        justify-content: space-between;
+        margin: 5px 0;
+        width: 100%;
+
+        span {
+          font-size: 12px;
+          font-weight: 500;
+          line-height: 20px;
+
+          &:last-child {
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 28px;
+            letter-spacing: 0.25px;
+          }
+        }
+      }
+    }
+  }
+}

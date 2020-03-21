@@ -16,7 +16,6 @@ interface ReduxProps {
 type Props = ReduxProps & RouterProps;
 
 class ProfileComponent extends React.Component<Props, InjectedIntlProps> {
-
     public componentDidMount() {
         setDocumentTitle('Profile');
     }

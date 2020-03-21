@@ -272,6 +272,8 @@ export const ru: LangType = {
     'page.body.landing.prices.card.startUp.cpu.value': '2',
     'page.body.landing.prices.card.startUp.ram.label': 'RAM',
     'page.body.landing.prices.card.startUp.ram.value': '6GB',
+    'page.body.landing.prices.card.startUp.marketPairs.label': 'Market Pair limit',
+    'page.body.landing.prices.card.startUp.marketPairs.value': '5',
     'page.body.landing.prices.card.startUp.currencies.label': 'ETH, ERC20',
     'page.body.landing.prices.card.startUp.arke.label': 'Arke Customization',
     'page.body.landing.prices.card.startUp.arke.value': 'Self-support',
@@ -291,7 +293,7 @@ export const ru: LangType = {
     'page.body.landing.prices.card.pro.ram.label': 'RAM',
     'page.body.landing.prices.card.pro.ram.value': '12GB',
     'page.body.landing.prices.card.pro.marketPairs.label': 'Market Pair limit',
-    'page.body.landing.prices.card.pro.marketPairs.value': '80',
+    'page.body.landing.prices.card.pro.marketPairs.value': '15',
     'page.body.landing.prices.card.pro.monitoring.label': 'Monitoring Service',
     'page.body.landing.prices.card.pro.currencies.label': 'ETH, ERC20',
     'page.body.landing.prices.card.pro.currencies2.label': 'BTC, LTC, XRP',
@@ -382,6 +384,44 @@ export const ru: LangType = {
     'page.body.landing.footer.legal.cookie': 'Cookie Policy',
     'page.body.landing.footer.legal.gdpr': 'GDPR Statement',
     'page.body.landing.footer.allRightsReserved': '© 2020 OpenDAX.io - All rights reserved',
+
+
+    /* Deploy Now */
+    'page.body.deploy.yourExchange.title': 'Deploy your Exchange',
+    'page.body.deploy.yourExchange.field.name.label': 'Exchange name',
+    'page.body.deploy.yourExchange.field.name.placeholder': 'ex. Opendax',
+    'page.body.deploy.yourExchange.field.domain.label': 'Domain name',
+    'page.body.deploy.yourExchange.field.domain.placeholder': 'ex. opendax.io',
+
+    'page.body.deploy.packageSelect.tooltip': 'Select your Plan',
+
+    'page.body.deploy.location.amsterdam.title': 'Amsterdam',
+    'page.body.deploy.location.montreal.title': 'Montreal',
+    'page.body.deploy.location.hongKong.title': 'Hong Kong',
+    'page.body.deploy.location.seoul.title': 'Seoul',
+    'page.body.deploy.location.comingSoon': 'Coming soon',
+    'page.body.deploy.location.tooltip': 'Select Region',
+
+    'page.body.deploy.packageDetails.title': 'Details',
+    'page.body.deploy.packageDetails.selectedPlan.title': 'Selected plan',
+
+    'page.body.deploy.totalActions.title': 'Total',
+    'page.body.deploy.totalActions.balance.label': 'Your Balance',
+    'page.body.deploy.totalActions.balance.value': 'Remaining',
+    'page.body.deploy.totalActions.depositLink': 'Deposit funds into your wallet',
+    'page.body.deploy.totalActions.toPay': 'To pay',
+    'page.body.deploy.totalActions.terms.text': 'I agree with',
+    'page.body.deploy.totalActions.terms.link': 'terms and conditions',
+    'page.body.deploy.totalActions.tooltip': 'First and last month prepayment and setup fee are required to activate the service',
+    'page.body.deploy.totalActions.submit': 'Deploy',
+
+
+    /* Success deploy */
+    'page.body.successDeploy.title': 'Success!',
+    'page.body.successDeploy.subtitle': 'OpenDAX is deploying your exchange.',
+    'page.body.successDeploy.text1': 'It may take up to 5 business days.',
+    'page.body.successDeploy.text2': 'You can monitor the status on the cloud page.',
+    'page.body.successDeploy.link': 'Go to Cloud',
 
 
     /* Wallets */
