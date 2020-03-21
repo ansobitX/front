@@ -82,8 +82,7 @@ export class DeployTotalActions extends React.Component<Props, State> {
                 <div className="pg-deploy-total-actions__price">
                     <span>{translate('page.body.deploy.totalActions.toPay')}</span>
                     <span>
-                        {remainingValue < 0 ? '-' : null}
-                        {currentCurrency ? currentCurrency.symbol : null}&nbsp;
+                        -{currentCurrency ? currentCurrency.symbol : null}&nbsp;
                         {(currentCurrency && priceToPay) ? Decimal.format(priceToPay, currentCurrency.precision, ',') : '-'}
                     </span>
                     <img
