@@ -1,26 +1,44 @@
 import classnames from 'classnames';
 import * as React from 'react';
 import { InjectedIntlProps, injectIntl } from 'react-intl';
-import { connect } from 'react-redux';
+import { connect, MapDispatchToPropsFunction } from 'react-redux';
+import { WalletItemProps } from '../../../components';
 import {
     DeployExchangeDetails,
     DeployLocationSelect,
     DeployPackageDetails,
     DeployPackageSelect,
+    DeployTotalActions,
 } from '../../components';
-import { RootState, selectSidebarState } from '../../../modules';
+import {
+    currenciesFetch,
+    Currency,
+    RootState,
+    selectCurrencies,
+    selectSidebarState,
+    selectWallets,
+    walletsFetch,
+} from '../../../modules';
 
 interface ReduxProps {
+    currencies: Currency[];
     isSidebarOpen: boolean;
+    wallets: WalletItemProps[];
 }
 
-type Props = ReduxProps & InjectedIntlProps;
+interface DispatchProps {
+    fetchCurrencies: typeof currenciesFetch;
+    fetchWallets: typeof walletsFetch;
+}
+
+type Props = ReduxProps & DispatchProps & InjectedIntlProps;
 
 interface State {
     exchangeName: string;
     domainName: string;
     selectedPackage: string;
     selectedLocation: string;
+    termsAccepted: boolean;
 }
 
 export class DeployScreenClass extends React.Component<Props, State> {
@@ -29,15 +47,33 @@ export class DeployScreenClass extends React.Component<Props, State> {
         domainName: '',
         selectedPackage: 'corporate',
         selectedLocation: 'amsterdam',
+        termsAccepted: false,
     };
 
+    public componentDidMount() {
+        const { currencies, wallets } = this.props;
+
+        if (wallets.length === 0) {
+            this.props.fetchWallets();
+        }
+
+        if (currencies.length === 0) {
+            this.props.fetchCurrencies();
+        }
+    }
+
     public render() {
-        const { isSidebarOpen } = this.props;
+        const {
+            currencies,
+            isSidebarOpen,
+            wallets,
+        } = this.props;
         const {
             exchangeName,
             domainName,
             selectedPackage,
             selectedLocation,
+            termsAccepted,
         } = this.state;
 
         const containerClass = classnames('pg-container pg-deploy', {
@@ -67,23 +103,44 @@ export class DeployScreenClass extends React.Component<Props, State> {
                         selectedPackage={selectedPackage}
                         translate={this.translate}
                     />
+                    <DeployTotalActions
+                        currencies={currencies}
+                        handleAgreeTerms={this.handleChangeInput}
+                        handleClickDeploy={this.handleDeploy}
+                        selectedPackage={selectedPackage}
+                        termsAccepted={termsAccepted}
+                        translate={this.translate}
+                        wallets={wallets}
+                    />
                 </div>
             </div>
         );
     }
 
-    private handleChangeInput = (key: string, value: string) => {
+    private handleChangeInput = (key: string, value: string | boolean) => {
         // @ts-ignore
         this.setState({
             [key]: value,
         });
     }
 
+    private handleDeploy = () => {
+        window.console.log('Success!');
+    }
+
     private translate = (key: string) => this.props.intl.formatMessage({id: key});
 }
 
 const mapStateToProps = (state: RootState): ReduxProps => ({
+    currencies: selectCurrencies(state),
     isSidebarOpen: selectSidebarState(state),
+    wallets: selectWallets(state),
 });
 
-export const DeployScreen = injectIntl(connect(mapStateToProps)(DeployScreenClass));
+const mapDispatchToProps: MapDispatchToPropsFunction<DispatchProps, {}> =
+    dispatch => ({
+        fetchCurrencies: () => dispatch(currenciesFetch()),
+        fetchWallets: () => dispatch(walletsFetch()),
+    });
+
+export const DeployScreen = injectIntl(connect(mapStateToProps, mapDispatchToProps)(DeployScreenClass));

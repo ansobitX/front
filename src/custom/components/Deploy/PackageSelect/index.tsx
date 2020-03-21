@@ -46,7 +46,6 @@ export class DeployPackageSelect extends React.Component<Props> {
     }
 
     public render() {
-
         return (
             <div className="pg-deploy-package-select">
                 {AVAILABLE_PACKAGES.length && AVAILABLE_PACKAGES.map(item => this.renderPackage(item))}

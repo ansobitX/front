@@ -72,4 +72,13 @@ export const en = {
 
     'page.body.deploy.packageDetails.title': 'Details',
     'page.body.deploy.packageDetails.selectedPlan.title': 'Selected plan',
+
+    'page.body.deploy.totalActions.title': 'Total',
+    'page.body.deploy.totalActions.balance.label': 'Your Balance',
+    'page.body.deploy.totalActions.balance.value': 'Remaining',
+    'page.body.deploy.totalActions.depositLink': 'Deposit funds into your wallet',
+    'page.body.deploy.totalActions.toPay': 'To pay',
+    'page.body.deploy.totalActions.terms.text': 'I agree with',
+    'page.body.deploy.totalActions.terms.link': 'terms and conditions',
+    'page.body.deploy.totalActions.submit': 'Deploy',
 };
