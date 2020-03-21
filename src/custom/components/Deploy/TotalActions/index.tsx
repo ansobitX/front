@@ -110,7 +110,7 @@ export class DeployTotalActions extends React.Component<Props, State> {
                 <Button
                     block={true}
                     type="button"
-                    disabled={remainingValue < 0}
+                    disabled={remainingValue < 0 || !termsAccepted}
                     onClick={this.handleClickSubmit}
                     size="lg"
                     variant="success"
