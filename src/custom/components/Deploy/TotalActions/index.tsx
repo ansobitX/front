@@ -1,10 +1,11 @@
+import classnames from 'classnames';
 import * as React from 'react';
 import { Button, Form } from 'react-bootstrap';
-import MouseTooltip from 'react-sticky-mouse-tooltip';
 import { Link } from 'react-router-dom';
 import { WalletItemProps, Decimal } from '../../../../components';
 import { VALUATION_PRIMARY_CURRENCY } from '../../../../constants';
 import { Currency } from '../../../../modules';
+import { changeElementPosition } from '../../../helpers/changeElementPosition';
 
 /* Icons */
 const ArrowCircleIcon = require('../../../../assets/images/landing/icons/ArrowCircle.svg');
@@ -57,6 +58,10 @@ export class DeployTotalActions extends React.Component<Props, State> {
             </div>
         );
 
+        const tooltipClass = classnames('pg-deploy-total-actions__tooltip tooltip-hover', {
+            'tooltip-hover--visible': isMouseTooltipVisible,
+        });
+
         return (
             <div className="pg-deploy-total-actions">
                 <h2>{translate('page.body.deploy.totalActions.title')}</h2>
@@ -88,8 +93,8 @@ export class DeployTotalActions extends React.Component<Props, State> {
                     <img
                         src={InfoIcon}
                         alt="tooltip"
-                        onMouseEnter={this.toggleMouseTooltip}
-                        onMouseLeave={this.toggleMouseTooltip}
+                        onMouseEnter={e => this.handleHoverTooltipIcon()}
+                        onMouseLeave={e => this.handleToggleTooltipVisible()}
                     />
                 </div>
                 <Form className="pg-deploy-total-actions__checkbox">
@@ -112,14 +117,9 @@ export class DeployTotalActions extends React.Component<Props, State> {
                 >
                     {translate('page.body.deploy.totalActions.submit')}
                 </Button>
-                <MouseTooltip
-                    className="tooltip-hover"
-                    offsetX={-100}
-                    offsetY={20}
-                    visible={isMouseTooltipVisible}
-                >
-                    <span>{translate(`page.body.deploy.totalActions.tooltip`)}</span>
-                </MouseTooltip>
+                <span className={tooltipClass}>
+                    {translate(`page.body.deploy.totalActions.tooltip`)}
+                </span>
             </div>
         );
     }
@@ -147,7 +147,14 @@ export class DeployTotalActions extends React.Component<Props, State> {
         this.props.handleClickDeploy();
     }
 
-    private toggleMouseTooltip = () => {
-        this.setState(prevState => ({ isMouseTooltipVisible: !prevState.isMouseTooltipVisible }));
-    };
+    private handleToggleTooltipVisible = () => {
+        this.setState(prevState => ({
+            isMouseTooltipVisible: !prevState.isMouseTooltipVisible,
+        }));
+    }
+
+    private handleHoverTooltipIcon = () => {
+        changeElementPosition('pg-deploy-total-actions__tooltip', 0, -100, 20);
+        this.handleToggleTooltipVisible();
+    }
 }

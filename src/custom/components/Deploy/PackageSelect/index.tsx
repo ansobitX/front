@@ -1,7 +1,7 @@
 import classnames from 'classnames';
 import * as React from 'react';
-import MouseTooltip from 'react-sticky-mouse-tooltip';
 import { AVAILABLE_PACKAGES } from '../../../../constants';
+import { changeElementPosition } from '../../../helpers/changeElementPosition';
 
 interface OwnProps {
     selectedPackage: string;
@@ -9,24 +9,15 @@ interface OwnProps {
     translate: (key: string) => string;
 }
 
-interface State {
-    isMouseTooltipVisible: boolean;
-}
-
 type Props = OwnProps;
 
-export class DeployPackageSelect extends React.Component<Props, State> {
-    public state = {
-        isMouseTooltipVisible: false,
-    };
-
-    public renderPackage = (packageName: string) => {
+export class DeployPackageSelect extends React.Component<Props> {
+    public renderPackage = (packageName: string, index: number) => {
         const {
             selectedPackage,
             handleSelectPackage,
             translate,
         } = this.props;
-        const { isMouseTooltipVisible } = this.state;
 
         const packageClass = classnames('pg-deploy-package-select__item', {
             'pg-deploy-package-select__item--selected': selectedPackage === packageName,
@@ -34,10 +25,10 @@ export class DeployPackageSelect extends React.Component<Props, State> {
 
         return (
             <div
+                key={index}
                 className={packageClass}
                 onClick={e => handleSelectPackage('selectedPackage', packageName)}
-                onMouseEnter={this.toggleMouseTooltip}
-                onMouseLeave={this.toggleMouseTooltip}
+                onMouseEnter={e => changeElementPosition('pg-deploy-package-select__item__tooltip', index, -80, 20)}
             >
                 <h2>{translate(`page.body.landing.prices.card.${packageName}.title`)}</h2>
                 <div className="pg-deploy-package-select__item__value">
@@ -56,14 +47,9 @@ export class DeployPackageSelect extends React.Component<Props, State> {
                     <span>{translate(`page.body.landing.prices.card.${packageName}.subscriptionFee.label`)}</span>
                     <span>{translate(`page.body.landing.prices.card.${packageName}.subscriptionFee.value`)}</span>
                 </div>
-                <MouseTooltip
-                    className="tooltip-hover"
-                    offsetX={-80}
-                    offsetY={20}
-                    visible={isMouseTooltipVisible}
-                >
-                    <span>{translate(`page.body.deploy.packageSelect.tooltip`)}</span>
-                </MouseTooltip>
+                <span className="pg-deploy-package-select__item__tooltip tooltip-hover">
+                    {translate(`page.body.deploy.packageSelect.tooltip`)}
+                </span>
             </div>
         );
     }
@@ -71,12 +57,8 @@ export class DeployPackageSelect extends React.Component<Props, State> {
     public render() {
         return (
             <div className="pg-deploy-package-select">
-                {AVAILABLE_PACKAGES.length && AVAILABLE_PACKAGES.map(item => this.renderPackage(item))}
+                {AVAILABLE_PACKAGES.length && AVAILABLE_PACKAGES.map((item, index) => this.renderPackage(item, index))}
             </div>
         );
     }
-
-    private toggleMouseTooltip = () => {
-        this.setState(prevState => ({ isMouseTooltipVisible: !prevState.isMouseTooltipVisible }));
-    };
 }

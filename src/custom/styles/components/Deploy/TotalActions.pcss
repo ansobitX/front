@@ -168,11 +168,18 @@
   }
 
   .tooltip-hover {
+    display: none;
     background-color: var(--border-grey-primary-0-8) !important;
     height: 108px !important;
     line-height: 20px !important;
     width: 259px !important;
     text-align: left !important;
     padding: 14px 24px;
+
+    &--visible {
+      display: block;
+      position: fixed;
+      overflow: hidden;
+    }
   }
 }

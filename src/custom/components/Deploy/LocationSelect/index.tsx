@@ -1,7 +1,7 @@
 import classnames from 'classnames';
 import * as React from 'react';
-import MouseTooltip from 'react-sticky-mouse-tooltip';
 import { DEPLOY_LOCATIONS, AVAILABLE_DEPLOY_LOCATIONS } from '../../../../constants';
+import { changeElementPosition } from '../../../helpers/changeElementPosition';
 
 interface OwnProps {
     selectedLocation: string;
@@ -11,21 +11,12 @@ interface OwnProps {
 
 type Props = OwnProps;
 
-interface State {
-    isMouseTooltipVisible: boolean;
-}
-
-export class DeployLocationSelect extends React.Component<Props, State> {
-    public state = {
-        isMouseTooltipVisible: false,
-    };
-
-    public renderLocation = (locationName: string) => {
+export class DeployLocationSelect extends React.Component<Props> {
+    public renderLocation = (locationName: string, index: number) => {
         const {
             selectedLocation,
             translate,
         } = this.props;
-        const { isMouseTooltipVisible } = this.state;
         const locationAvailable = AVAILABLE_DEPLOY_LOCATIONS.includes(locationName);
 
         const locationClass = classnames('pg-deploy-location-select__item', {
@@ -35,10 +26,10 @@ export class DeployLocationSelect extends React.Component<Props, State> {
 
         return (
             <div
+                key={index}
                 className={locationClass}
                 onClick={e => this.handleClickLocationItem(locationName, locationAvailable)}
-                onMouseEnter={this.toggleMouseTooltip}
-                onMouseLeave={this.toggleMouseTooltip}
+                onMouseEnter={e => changeElementPosition('pg-deploy-location-select__item__tooltip', index, -60, 20)}
             >
                 <img src={require(`../../../assets/images/deploy/flags/${locationName}.png`)} alt={`${locationName} Flag`} />
                 {locationAvailable ? (
@@ -51,14 +42,9 @@ export class DeployLocationSelect extends React.Component<Props, State> {
                         <span>{translate(`page.body.deploy.location.comingSoon`)}</span>
                     </div>
                 )}
-                <MouseTooltip
-                    className="tooltip-hover"
-                    offsetX={-60}
-                    offsetY={20}
-                    visible={isMouseTooltipVisible}
-                >
-                    <span>{translate(`page.body.deploy.location.tooltip`)}</span>
-                </MouseTooltip>
+                <span className="pg-deploy-location-select__item__tooltip tooltip-hover">
+                    {translate(`page.body.deploy.location.tooltip`)}
+                </span>
             </div>
         );
     }
@@ -66,7 +52,7 @@ export class DeployLocationSelect extends React.Component<Props, State> {
     public render() {
         return (
             <div className="pg-deploy-location-select">
-                {DEPLOY_LOCATIONS.length && DEPLOY_LOCATIONS.map(item => this.renderLocation(item))}
+                {DEPLOY_LOCATIONS.length && DEPLOY_LOCATIONS.map((item, index) => this.renderLocation(item, index))}
             </div>
         );
     }
@@ -76,8 +62,4 @@ export class DeployLocationSelect extends React.Component<Props, State> {
             this.props.handleSelectLocation('selectedLocation', locationName);
         }
     }
-
-    private toggleMouseTooltip = () => {
-        this.setState(prevState => ({ isMouseTooltipVisible: !prevState.isMouseTooltipVisible }));
-    };
 }
