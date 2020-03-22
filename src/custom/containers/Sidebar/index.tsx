@@ -27,8 +27,8 @@ import {
 import { languages } from '../../../api/config';
 
 /* Icons */
-const LogoImage = require('../../../assets/images/landing/logo.svg');
-const LogoLightImage = require('../../../assets/images/landing/logoLight.svg');
+const LogoImage = require('../../assets/images/landing/logo.svg');
+const LogoLightImage = require('../../assets/images/landing/logoLight.svg');
 
 interface OwnProps {
     onLinkChange?: () => void;

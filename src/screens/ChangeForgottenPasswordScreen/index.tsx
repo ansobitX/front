@@ -9,7 +9,8 @@ import {
 } from 'react-redux';
 import { RouterProps } from 'react-router';
 import { withRouter } from 'react-router-dom';
-import { CustomInput, LandingHeader } from '../../components';
+import { CustomInput } from '../../components';
+import { LandingHeader } from '../../custom/components';
 import { PASSWORD_REGEX, setDocumentTitle } from '../../helpers';
 import {
     changeForgotPasswordFetch,

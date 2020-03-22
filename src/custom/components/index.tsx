@@ -1,4 +1,4 @@
 export * from './Deploy';
-export * from './Order';
-export * from './OrderForm';
+export * from './Landing';
+export * from './QuickBuy';
 export * from './RegisterInfo';

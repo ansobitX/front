@@ -32,8 +32,8 @@ import {
     signUp,
     toggleSidebar,
 } from '../../modules';
-import { SignUpForm, LandingHeader, Modal  } from '../../components';
-import { RegisterInfo } from '../../custom/components';
+import { SignUpForm, Modal  } from '../../components';
+import { LandingHeader, RegisterInfo } from '../../custom/components';
 
 interface ReduxProps {
     configs: Configs;

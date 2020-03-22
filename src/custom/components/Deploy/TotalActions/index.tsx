@@ -8,7 +8,7 @@ import { Currency } from '../../../../modules';
 import { changeElementPosition } from '../../../helpers/changeElementPosition';
 
 /* Icons */
-const ArrowCircleIcon = require('../../../../assets/images/landing/icons/ArrowCircle.svg');
+const ArrowCircleIcon = require('../../../assets/images/landing/icons/ArrowCircle.svg');
 const InfoIcon = require('../../../assets/images/InfoIcon.svg');
 
 interface OwnProps {

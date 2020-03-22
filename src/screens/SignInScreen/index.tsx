@@ -18,8 +18,8 @@ import {
     signUpRequireVerification,
     toggleSidebar,
 } from '../../modules';
-import { SignInComponent, LandingHeader, TwoFactorAuth } from '../../components';
-import { RegisterInfo } from '../../custom/components';
+import { SignInComponent, TwoFactorAuth } from '../../components';
+import { LandingHeader, RegisterInfo } from '../../custom/components';
 
 interface ReduxProps {
     isLoggedIn: boolean;

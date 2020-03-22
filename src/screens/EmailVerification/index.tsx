@@ -14,7 +14,7 @@ import {
     selectCurrentLanguage,
     selectSendEmailVerificationLoading,
 } from '../../modules';
-import { LandingHeader } from '../../components';
+import { LandingHeader } from '../../custom/components';
 
 interface OwnProps {
     history: History;

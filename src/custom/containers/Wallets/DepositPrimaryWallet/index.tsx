@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Currency } from '../../../../modules';
-import { OrderComponent } from '../../index';
+import { QuickBuy } from '../../index';
 
 interface OwnProps {
     currencies: Currency[];
@@ -24,7 +24,7 @@ export class DepositPrimaryWallet extends React.Component<Props> {
                     {translate('page.body.deposit.primaryWallet.title')}&nbsp;
                     {currency ? currency.name : ''}
                 </h1>
-                <OrderComponent orderType="sell" currencies={currencies} />
+                <QuickBuy orderType="sell" currencies={currencies} />
             </div>
         );
     }

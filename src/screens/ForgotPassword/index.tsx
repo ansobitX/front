@@ -10,7 +10,8 @@ import {
 } from 'react-redux';
 import { RouterProps } from 'react-router';
 import { withRouter } from 'react-router-dom';
-import { EmailForm, LandingHeader } from '../../components';
+import { EmailForm } from '../../components';
+import { LandingHeader } from '../../custom/components';
 import {
     EMAIL_REGEX,
     ERROR_INVALID_EMAIL,

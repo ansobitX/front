@@ -29,7 +29,6 @@ import {
     EmailVerificationScreen,
     ForgotPasswordScreen,
     HistoryScreen,
-    LandingScreen,
     OrdersTabScreen,
     ProfileTwoFactorAuthScreen,
     TradingScreen,
@@ -40,6 +39,7 @@ import {
 } from '../../screens';
 import {
     DeployScreen,
+    LandingScreen,
     ProfileScreen,
     SuccessDeployScreen,
 } from '../../custom/screens';
@@ -150,6 +150,14 @@ class LayoutComponent extends React.Component<LayoutProps, LayoutState> {
         this.props.changeColorTheme(colorThemeToSet);
     }
 
+    public componentWillReceiveProps(next: LayoutProps) {
+        const { history, isLoggedIn } = this.props;
+
+        if (isLoggedIn && !next.isLoggedIn) {
+            history.push('/');
+        }
+    }
+
     public componentDidUpdate(next: LayoutProps) {
         const { colorTheme, isLoggedIn, history } = this.props;
 
@@ -252,6 +260,7 @@ class LayoutComponent extends React.Component<LayoutProps, LayoutState> {
         const timeleft = this.getLastAction() + parseFloat(minutesUntilAutoLogout()) * 60 * 1000;
         const diff = timeleft - now;
         const isTimeout = diff < 0;
+
         if (isTimeout && user.email) {
             if (user.state === 'active') {
                 this.handleChangeExpSessionModalState();

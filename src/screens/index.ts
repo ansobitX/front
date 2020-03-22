@@ -4,7 +4,6 @@ export * from './ConfirmScreen';
 export * from './EmailVerification';
 export * from './ForgotPassword';
 export * from './History';
-export * from './LandingScreen';
 export * from './OrdersTabScreen';
 export * from './ProfileScreen';
 export * from './ProfileTwoFactorAuthScreen';

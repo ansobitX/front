@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 /* Icons */
-const CheckIcon = require('../../../../assets/images/landing/prices/Check.svg');
+const CheckIcon = require('../../../assets/images/landing/prices/Check.svg');
 const CrossIcon = require('../../../assets/images/deploy/CrossIcon.svg');
 
 interface OwnProps {
