@@ -16,6 +16,7 @@ const LandingAdaptiveStack = React.lazy(() => import('../../components/Landing/A
 const LandingBenefits      = React.lazy(() => import('../../components/Landing/Benefits'));
 const LandingBuildEasy     = React.lazy(() => import('../../components/Landing/BuildEasy'));
 const LandingCloudStack    = React.lazy(() => import('../../components/Landing/CloudStack'));
+const LandingCompany       = React.lazy(() => import('../../components/Landing/Company'));
 const LandingFeatures      = React.lazy(() => import('../../components/Landing/Features'));
 const LandingLooksComplex  = React.lazy(() => import('../../components/Landing/LooksComplex'));
 const LandingPrices        = React.lazy(() => import('../../components/Landing/Prices'));
@@ -44,6 +45,7 @@ class Landing extends React.Component<Props> {
                     <LandingBuildEasy changeRoute={this.changeRoute} translate={this.translate} />
                     <LandingLooksComplex changeRoute={this.changeRoute} translate={this.translate} />
                     <LandingPrices changeRoute={this.changeRoute} translate={this.translate} />
+                    <LandingCompany changeRoute={this.changeRoute} translate={this.translate} />
                     <LandingFooter changeRoute={this.changeRoute} translate={this.translate} />
                 </React.Suspense>
             </div>

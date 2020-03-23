@@ -343,6 +343,12 @@ export const en = {
 
     'page.body.landing.prices.salesLink': 'Got a custom Enterprise project in mind? Talk to our Technical Sales team',
 
+    /* Landing Company */
+    'page.body.landing.company.title': 'Openware is a market-leading blockchain technology company',
+    'page.body.landing.company.text1': 'Openware is a daughter company of Helios Technologies, founded in 2009 in Paris (France) to help companies scale on modern cloud architecture. Since forming Openware in 2018, we have built robust blockchain development components and tools to launch products across industries from finance to consumer markets.',
+    'page.body.landing.company.text2': 'We are helping privately held businesses, corporations and governments to unlock new blockchain-based business models, secure their IT infrastructure and optimize workflows. We are dedicated to transforming the world’s digital architecture into more transparent, secure and inclusive environment.',
+    'page.body.landing.company.text3': 'Our team core consists of over 30 top talents in SaaS Architecture, DevOps, Big Data Science, Cloud Computing, Software Engineering and Blockchain Technologies. With the ability to involve leading industry professionals, we can ensure an efficient development cycle and deliver high-quality results on time.',
+
     /* Landing Footer */
     'page.body.landing.footer.contactUs.button': 'Contact us',
     'page.body.landing.footer.contact.title': 'Contact',

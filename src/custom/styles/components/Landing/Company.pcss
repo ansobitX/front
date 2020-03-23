@@ -1,0 +1,70 @@
+.pg-landing-screen__company {
+  background: var(--landing-primary-cta-color);
+  height: 100vh;
+  min-height: 800px;
+  overflow: hidden;
+  position: relative;
+  width: 100vw;
+
+  &__background {
+    background-image: url(custom/assets/images/landing/company/Engine.svg);
+    background-position: center 35%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: "";
+    display: block;
+    height: 100vh;
+    left: 45%;
+    min-height: 800px;
+    position: absolute;
+    transform: translate3d(0,0,0);
+    width: 1200px;
+    z-index: 1;
+  }
+
+  &__wrap {
+    align-items: flex-start;
+    justify-content: flex-start;
+    z-index: 2;
+
+    h1 {
+      margin-bottom: 40px;
+      margin-top: 80px;
+      max-width: 850px;
+      text-align: left;
+    }
+
+    span {
+      color: var(--white);
+      display: block;
+      font-size: 18px;
+      font-weight: normal;
+      letter-spacing: 0.25px;
+      line-height: 28px;
+      margin-bottom: 40px;
+      max-width: 657px;
+    }
+  }
+}
+
+@media (max-width: 1400px) {
+  .pg-landing-screen__company {
+    height: 110vh;
+  
+    &__background {
+      height: 110vh;
+    }
+  }
+}
+
+@media (max-width: 1140px) {
+  .pg-landing-screen__company {
+    height: max-content;
+
+    &__wrap {
+      h1 {
+        text-align: left;
+      }
+    }
+  }
+}
