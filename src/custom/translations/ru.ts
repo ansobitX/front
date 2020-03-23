@@ -275,8 +275,6 @@ export const ru: LangType = {
     'page.body.landing.prices.card.startUp.marketPairs.label': 'Market Pair limit',
     'page.body.landing.prices.card.startUp.marketPairs.value': '5',
     'page.body.landing.prices.card.startUp.currencies.label': 'ETH, ERC20',
-    'page.body.landing.prices.card.startUp.arke.label': 'Arke Customization',
-    'page.body.landing.prices.card.startUp.arke.value': 'Self-support',
 
     'page.body.landing.prices.card.pro.title': 'PRO',
     'page.body.landing.prices.card.pro.liquidity.label': 'Liquidity Fee',
@@ -298,8 +296,6 @@ export const ru: LangType = {
     'page.body.landing.prices.card.pro.currencies.label': 'ETH, ERC20',
     'page.body.landing.prices.card.pro.currencies2.label': 'BTC, LTC, XRP',
     'page.body.landing.prices.card.pro.frontEnd.label': 'Front-End Customization',
-    'page.body.landing.prices.card.pro.arke.label': 'Arke Customization',
-    'page.body.landing.prices.card.pro.arke.value': 'Advanced',
 
     'page.body.landing.prices.card.business.title': 'BUSINESS',
     'page.body.landing.prices.card.business.liquidity.label': 'Liquidity Fee',
@@ -324,8 +320,6 @@ export const ru: LangType = {
     'page.body.landing.prices.card.business.currencies3.label': 'BCH, DASH, TRON, XLM',
     'page.body.landing.prices.card.business.frontEnd.label': 'Front-End Customization',
     'page.body.landing.prices.card.business.backEnd.label': 'Back-End Customization',
-    'page.body.landing.prices.card.business.arke.label': 'Arke Customization',
-    'page.body.landing.prices.card.business.arke.value': 'Advanced',
 
     'page.body.landing.prices.card.corporate.title': 'CORPORATE',
     'page.body.landing.prices.card.corporate.liquidity.label': 'Liquidity Fee',
@@ -352,8 +346,6 @@ export const ru: LangType = {
     'page.body.landing.prices.card.corporate.customBlockchains.label': 'Custom Blockchains',
     'page.body.landing.prices.card.corporate.frontEnd.label': 'Front-End Customization',
     'page.body.landing.prices.card.corporate.backEnd.label': 'Back-End Customization',
-    'page.body.landing.prices.card.corporate.arke.label': 'Arke Customization',
-    'page.body.landing.prices.card.corporate.arke.value': 'Enterprise',
 
     'page.body.landing.prices.salesLink': 'Got a custom Enterprise project in mind? Talk to our Technical Sales team',
 

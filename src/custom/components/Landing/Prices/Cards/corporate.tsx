@@ -84,10 +84,6 @@ export class LandingPricesCorporate extends React.Component<Props> {
                     <span>{translate('page.body.landing.prices.card.corporate.backEnd.label')}</span>
                     <img src={CheckIcon} alt=""/>
                 </div>
-                <div className="price-card__value">
-                    <span>{translate('page.body.landing.prices.card.corporate.arke.label')}</span>
-                    <span>{translate('page.body.landing.prices.card.corporate.arke.value')}</span>
-                </div>
             </div>
         );
     }
