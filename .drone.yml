@@ -80,10 +80,13 @@ steps:
     commands:
       - BUNDLE_GEMFILE=/sdk/Gemfile bundle exec rake --rakefile=/sdk/Rakefile ci:prebuild
 
-  - name: "Build docker image"
-    image: plugins/gcr
+  - name: "Build Docker image"
+    image: plugins/docker
     settings:
+      username:
+        from_secret: quay_username
+      password:
+        from_secret: quay_password
       repo:
-        from_secret: gcr_frontend_repo
-      json_key:
-        from_secret: opendax_gcp_creds_base64
+        from_secret: quay_repo
+      registry: quay.io
