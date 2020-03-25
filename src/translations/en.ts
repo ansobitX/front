@@ -349,6 +349,17 @@ export const en = {
     'page.body.landing.company.text2': 'We are helping privately held businesses, corporations and governments to unlock new blockchain-based business models, secure their IT infrastructure and optimize workflows. We are dedicated to transforming the world’s digital architecture into more transparent, secure and inclusive environment.',
     'page.body.landing.company.text3': 'Our team core consists of over 30 top talents in SaaS Architecture, DevOps, Big Data Science, Cloud Computing, Software Engineering and Blockchain Technologies. With the ability to involve leading industry professionals, we can ensure an efficient development cycle and deliver high-quality results on time.',
 
+    /* Landing Tools */
+    'page.body.landing.tools.title': 'Tools',
+    'page.body.landing.tools.subtitle': 'Cutting-edge and industry-standard technologies we use to empower your business',
+    'page.body.landing.tools.infrastructure.title': 'Infrastructure',
+    'page.body.landing.tools.backend.title': 'Backend',
+    'page.body.landing.tools.frontend.title': 'Frontend',
+    'page.body.landing.tools.databases.title': 'Databases',
+    'page.body.landing.tools.mobile.title': 'Mobile',
+    'page.body.landing.tools.blockchain.title': 'Blockchain',
+    'page.body.landing.tools.link': 'Got some specific tech in mind? Let us know',
+
     /* Landing Footer */
     'page.body.landing.footer.contactUs.button': 'Contact us',
     'page.body.landing.footer.contact.title': 'Contact',

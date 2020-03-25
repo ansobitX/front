@@ -22,6 +22,7 @@ const LandingLooksComplex  = React.lazy(() => import('../../components/Landing/L
 const LandingPrices        = React.lazy(() => import('../../components/Landing/Prices'));
 const LandingUnderHood     = React.lazy(() => import('../../components/Landing/UnderHood'));
 const LandingUseCases      = React.lazy(() => import('../../components/Landing/UseCases'));
+const LandingTools         = React.lazy(() => import('../../components/Landing/Tools'));
 
 type Props = HistoryProps & RouteProps & InjectedIntlProps;
 
@@ -46,6 +47,7 @@ class Landing extends React.Component<Props> {
                     <LandingLooksComplex changeRoute={this.changeRoute} translate={this.translate} />
                     <LandingPrices changeRoute={this.changeRoute} translate={this.translate} />
                     <LandingCompany changeRoute={this.changeRoute} translate={this.translate} />
+                    <LandingTools changeRoute={this.changeRoute} translate={this.translate} />
                     <LandingFooter changeRoute={this.changeRoute} translate={this.translate} />
                 </React.Suspense>
             </div>
