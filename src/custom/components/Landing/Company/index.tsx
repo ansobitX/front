@@ -1,4 +1,5 @@
 import * as React from 'react';
+import ScrollableAnchor from 'react-scrollable-anchor';
 import VisibilitySensor from 'react-visibility-sensor';
 
 interface OwnProps {
@@ -14,6 +15,7 @@ export default class LandingCompany extends React.Component<Props> {
         const { changeRoute, translate } = this.props;
 
         return (
+            <ScrollableAnchor id="company">
                 <div className="pg-landing-screen__company">
                     <div className="pg-landing-screen__company__background" />
                     <VisibilitySensor onChange={e => changeRoute(e, 'company')} partialVisibility={true}>
@@ -30,6 +32,7 @@ export default class LandingCompany extends React.Component<Props> {
                         </div>
                     </VisibilitySensor>
                 </div>
+            </ScrollableAnchor>
         );
     }
 }

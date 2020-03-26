@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
+import ScrollableAnchor from 'react-scrollable-anchor';
 import VisibilitySensor from 'react-visibility-sensor';
 import {
     LandingPricesBusiness,
@@ -24,8 +25,9 @@ export default class LandingPrices extends React.Component<Props> {
         const { changeRoute, translate } = this.props;
 
         return (
+            <ScrollableAnchor id="pricing">
                 <div className="pg-landing-screen__prices">
-                    <VisibilitySensor onChange={e => changeRoute(e, 'prices')} partialVisibility={true}>
+                    <VisibilitySensor onChange={e => changeRoute(e, 'pricing')} partialVisibility={true}>
                         <div className="pg-landing-screen__prices__wrap">
                             <h1
                                 data-aos="fade-down"
@@ -56,6 +58,7 @@ export default class LandingPrices extends React.Component<Props> {
                         </div>
                     </VisibilitySensor>
                 </div>
+            </ScrollableAnchor>
         );
     }
 }

@@ -22,7 +22,7 @@ export class LandingFooter extends React.Component<Props> {
 
         return (
             <div className="pg-landing-screen__footer">
-                <VisibilitySensor onChange={e => changeRoute(e, 'build-easily')} partialVisibility={true}>
+                <VisibilitySensor onChange={e => changeRoute(e, 'footer')} partialVisibility={true}>
                     <div className="pg-landing-screen__footer__wrap">
                         <div className="pg-landing-screen__footer__wrap__content">
                             <div className="pg-landing-screen__footer__wrap__content__col">
@@ -58,7 +58,7 @@ export class LandingFooter extends React.Component<Props> {
                             </div>
                             <div className="pg-landing-screen__footer__wrap__content__col">
                                 <span className="title">{translate('page.body.landing.footer.explore.title')}</span>
-                                <a className="footer-link" href="/">{translate('page.body.landing.footer.explore.products')}</a>
+                                <a className="footer-link" href="/#">{translate('page.body.landing.footer.explore.products')}</a>
                                 <a className="footer-link" href="#benefits">{translate('page.body.landing.footer.explore.benefits')}</a>
                                 <a className="footer-link" href="#technology">{translate('page.body.landing.footer.explore.underHood')}</a>
                                 <a className="footer-link" href="#features">{translate('page.body.landing.footer.explore.features')}</a>

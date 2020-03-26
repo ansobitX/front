@@ -28,9 +28,6 @@ export class LandingHeader extends React.Component<Props, State> {
         return (
             <React.Fragment>
                 <div className="pg-landing-screen__header__middle">
-                    <a href="/" className="header-link">
-                        {translate('page.body.landing.header.link.products')}
-                    </a>
                     <a href="#benefits" className="header-link">
                         {translate('page.body.landing.header.link.benefits')}
                     </a>
@@ -46,16 +43,19 @@ export class LandingHeader extends React.Component<Props, State> {
                     <a href="#cloud-stack" className="header-link">
                         {translate('page.body.landing.header.link.stack')}
                     </a>
-                    <a href="#tools" className="header-link">
-                        {translate('page.body.landing.header.link.tools')}
+                    <a href="#pricing" className="header-link">
+                        {translate('page.body.landing.header.link.pricing')}
                     </a>
                     <a href="#company" className="header-link">
                         {translate('page.body.landing.header.link.company')}
                     </a>
+                    <a href="#tools" className="header-link">
+                        {translate('page.body.landing.header.link.tools')}
+                    </a>
                 </div>
                 <div className="pg-landing-screen__header__right">
                     <Link to="/signup" className="landing-button">
-                        {translate('page.body.landing.header.link.pricing')}
+                        {translate('page.body.landing.header.link.register')}
                     </Link>
                 </div>
             </React.Fragment>

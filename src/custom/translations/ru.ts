@@ -103,7 +103,8 @@ export const ru: LangType = {
     'page.body.landing.header.link.stack': 'stack',
     'page.body.landing.header.link.tools': 'tools',
     'page.body.landing.header.link.company': 'company',
-    'page.body.landing.header.link.pricing': 'Register',
+    'page.body.landing.header.link.pricing': 'Pricing',
+    'page.body.landing.header.link.register': 'Register',
 
     /* Landing Launch */
     'page.body.landing.content.title': 'Launch your blockchain business with OpenDAX',

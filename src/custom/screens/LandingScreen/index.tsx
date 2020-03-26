@@ -28,12 +28,16 @@ type Props = HistoryProps & RouteProps & InjectedIntlProps;
 
 class Landing extends React.Component<Props> {
     public componentDidMount() {
-        this.handleScroll();
+        window.addEventListener('scroll', this.handleScroll);
+    }
+
+    public UNSAFE_componentWillUnmount(){
+        window.removeEventListener('scroll', this.handleScroll);
     }
 
     public render() {
         return (
-            <div className="pg-landing-screen" onWheel={this.handleScroll}>
+            <div className="pg-landing-screen">
                 <React.Suspense fallback={null}>
                     <LandingHeader id="landingStickyHeader" translate={this.translate} />
                     <LandingLaunch changeRoute={this.changeRoute} translate={this.translate} />
