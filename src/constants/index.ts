@@ -39,6 +39,8 @@ export const colors = {
             logout: '#28334E',
             sun: '#959EAB',
             moon: '#fff',
+            selectorArrow: '#d7d7d7',
+            selectorArrowActive: '#fff',
         },
     },
     basic: {

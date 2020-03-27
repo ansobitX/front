@@ -11,7 +11,7 @@ window.env = {
     gaTrackerKey: '',
     rangerReconnectPeriod: '1',
     msAlertDisplayTime: '5000',
-    incrementalOrderBook: true,
+    incrementalOrderBook: false,
     finex: true,
     isResizable: false,
     isDraggable: false,

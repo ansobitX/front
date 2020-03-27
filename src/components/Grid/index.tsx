@@ -102,7 +102,7 @@ export const Grid: React.FunctionComponent<GridProps> = props => {
         handleResize,
     } = props;
     const cx = classnames('cr-grid', className);
-    const margin = 5;
+    const margin = 12;
 
     return (
         <div data-react-toolbox="grid" className={cx}>

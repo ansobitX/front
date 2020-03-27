@@ -27,45 +27,38 @@ export const pixelsToGridUnits = (pixels: number, rowHeight: number, margin: num
 };
 
 const getLayouts = () => {
-    const minOrderHeight = 21; //+
-    const minOrderBookHeight = 5;
-    const minTradingChartHeight = 5;
-    const minOpenOrdersHeight = 13;
-    const minRecentTradesHeight = 5;
+    const minOrderHeight = 15;
+    const minOrderBookHeight = 11;
+    const minTradingChartHeight = 11;
+    const minOpenOrdersHeight = 15;
+    const minRecentTradesHeight = 11;
 
     const rowHeight = 0;
     const headerHeight = 56;
-    const margin = 6;
+    const margin = 12;
 
     const minGridHeight = 45;
     const currentWindowHeight = window.innerHeight - headerHeight;
     const currentGridHeight = pixelsToGridUnits(currentWindowHeight, rowHeight, margin);
 
-    const gridCurrMinDiff = (currentGridHeight - minGridHeight) * 0.177;
+    const gridCurrMinDiff = (currentGridHeight - minGridHeight) * 0.223;
 
     const orderBookHeight = currentGridHeight >= minGridHeight ?
         minOrderBookHeight + gridCurrMinDiff : minOrderBookHeight;
     const tradingChartHeight = currentGridHeight >= minGridHeight ?
-        minOpenOrdersHeight + gridCurrMinDiff : minTradingChartHeight;
+        minTradingChartHeight + gridCurrMinDiff : minTradingChartHeight;
     const recentTradesHeight = currentGridHeight >= minGridHeight ?
         minRecentTradesHeight + gridCurrMinDiff : minRecentTradesHeight;
 
     return {
-        lg: [
-            { x: 14, y: 14, w: 10, h: minOrderHeight, i: '1', isDraggable: false, isResizable: false },
-            { x: 0, y: 5, w: 14, h: tradingChartHeight, i: '2', isDraggable: false, isResizable: false },
-            { x: 14, y: 5, w: 5, h: orderBookHeight, i: '3', isDraggable: false, isResizable: false },
-            { x: 0, y: 19, w: 14, h: minOpenOrdersHeight, i: '4', isDraggable: false, isResizable: false },
-            { x: 19, y: 0, w: 5, h: recentTradesHeight, i: '5', isDraggable: false, isResizable: false },
-        ],
-        md: [
-            { x: 14, y: 14, w: 10, h: minOrderHeight, i: '1', isDraggable: false, isResizable: false },
-            { x: 0, y: 5, w: 14, h: tradingChartHeight, i: '2', isDraggable: false, isResizable: false },
-            { x: 14, y: 5, w: 5, h: orderBookHeight, i: '3', isDraggable: false, isResizable: false },
-            { x: 0, y: 19, w: 14, h: minOpenOrdersHeight, i: '4', isDraggable: false, isResizable: false },
-            { x: 19, y: 0, w: 5, h: recentTradesHeight, i: '5', isDraggable: false, isResizable: false },
-        ],
         sm: [
+            { x: 18, y: 19, w: 6, h: minOrderHeight, i: '1', isDraggable: false, isResizable: false },
+            { x: 0, y: 5, w: 12, h: tradingChartHeight, i: '2', isDraggable: false, isResizable: false },
+            { x: 18, y: 5, w: 6, h: orderBookHeight, i: '3', isDraggable: false, isResizable: false },
+            { x: 0, y: 19, w: 18, h: minOpenOrdersHeight, i: '4', isDraggable: false, isResizable: false },
+            { x: 12, y: 0, w: 6, h: recentTradesHeight, i: '5', isDraggable: false, isResizable: false },
+        ],
+        xs: [
             { x: 0, y: 40, w: 12, h: 24, i: '1', isDraggable: false, isResizable: false },
             { x: 0, y: 60, w: 12, h: 15, i: '2',isDraggable: false, isResizable: false },
             { x: 0, y: 80, w: 12, h: 15, i: '3', isDraggable: false, isResizable: false },

@@ -1,0 +1,39 @@
+.cr-open-orders {
+  .cr-table {
+    th,
+    td {
+      .close {
+        position: relative;
+        display: inline-block;
+        margin-left: 12px;
+        height: 16px;
+        width: 16px;
+        outline: none;
+
+        span {
+          display: none;
+          outline: none;
+        }
+    
+        &::before,
+        &::after {
+          background: var(--icons);
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 0;
+          height: 1px;
+          width: 100%;
+        }
+    
+        &::before {
+          transform: rotate(45deg);
+        }
+    
+        &::after {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+}

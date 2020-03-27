@@ -49,15 +49,17 @@ input[type=text], input[type=button] {
   overflow-y: scroll;
 
   &-header__content {
-    height: auto;
-    padding: 9px 12px 9px;
-    cursor: move;
     background: var(--table-dark-header-color);
-    box-shadow: inset 0 -1px 0 var(--header-border);
+    color: var(--bright);
+    font-size: 14px;
+    font-weight: 500;
+    height: auto;
+    letter-spacing: 0.25px;
+    line-height: 14px;
+    padding: 9px 12px 9px;
     position: sticky;
     top: 0;
     z-index: 9999;
-    color: var(--title-component-color);
   }
 
   &-background {
@@ -122,8 +124,8 @@ body {
   box-sizing: border-box;
   display: flex;
   justify-content: space-around;
-  margin-left: 84px;
   margin: 0;
+  margin-left: 84px;
   min-height: 100vh;
   transition: .2s linear;
   width: 940px;
@@ -210,8 +212,8 @@ body {
 
 .react-grid-item {
   background: transparent !important;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  border: none !important;
+  box-shadow: var(--shadow-primary);
+  border: 1px solid var(--border-primary);
   border-radius: 3px;
   overflow: hidden;
   &.resizing {

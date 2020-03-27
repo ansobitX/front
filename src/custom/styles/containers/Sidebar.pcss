@@ -1,19 +1,6 @@
-.pg-sidebar__toggler {
-  cursor: pointer;
-  width: 18px;
-  height: 14px;
-  display: block;
-  margin-right: 18px;
-  margin-top: -5px;
-
-  &-item {
-    background: var(--header-text);
-    display: block;
-    width: 18px;
-    height: 2px;
-    border-radius: 5px;
-    margin-bottom: 5px;
-    transition: all 0.2s linear;
+.pg-sidebar {
+  &__toggler {
+    display: none;
   }
 }
 
@@ -137,10 +124,6 @@
         opacity: 0;
       }
     }
-  }
-
-  &--trading {
-    margin-left: -250px;
   }
 
   &--active {

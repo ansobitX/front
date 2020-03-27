@@ -1,0 +1,106 @@
+.pg-trading-header-selector {
+  &-list-container-open {
+    animation-duration: var(--market-selector-animation-duration);
+    animation-name: pg-trading-header-selector-list-container-open;
+    background: var(--trading-header-background);
+    border-radius: 4px;
+    border: 1px solid var(--divider-color);
+    box-shadow: var(--shadow-primary);
+    display: block;
+    height: calc(100vh - 72px);
+    left: calc(var(--big-gap) * -0.23);
+    margin-left: 12px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding-left: 0;
+    position: absolute;
+    top: 0;
+    width: 466px;
+    z-index: 10;
+
+    .pg-trading-header-fast-search-container {
+      border: none;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 12px;
+      padding: 0 24px;
+    }
+
+    .pg-trading-header-fast-search-button-active {
+      border-bottom: 2px solid var(--green);
+    }
+
+    .pg-dropdown-markets-list-container {
+      padding-right: 0;
+    }
+  }
+
+  &-list-container-close {
+    top: 0;
+    width: 0;
+    height: 0;
+    display: none;
+    z-index: 10;
+    animation-name: pg-trading-header-selector-list-container-close;
+    animation-duration: var(--market-selector-animation-duration);
+  }
+
+  &-search-wrapper {
+    position: relative;
+  }
+}
+
+@keyframes pg-trading-header-selector-open {
+  from {
+    margin-left: 0;
+  }
+  to {
+    margin-left: calc(var(--big-gap) * 1.5);
+  }
+}
+
+@keyframes pg-trading-header-selector-close {
+  from {
+    margin-left: calc(var(--big-gap) * 1.5);
+  }
+  to {
+    margin-left: 0;
+  }
+}
+
+@keyframes pg-trading-header-selector-list-container-open {
+  from {
+    width: 0;
+    height: 0;
+    top: 0;
+  }
+  to {
+    width: 466px;
+    height: calc(100vh - 72px);
+    top: calc(var(--big-gap) * -0.082);
+  }
+}
+
+@keyframes pg-trading-header-selector-list-container-close {
+  from {
+    width: 466px;
+    height: calc(100vh - 72px);
+    top: calc(var(--big-gap) * -0.082);
+  }
+  to {
+    width: 0;
+    height: 0;
+    top: 0;
+  }
+}
+
+@keyframes pg-trading-header-selector-search {
+  from {
+    width: 0;
+    height: 0;
+  }
+  to {
+    height: calc(var(--big-gap) * 0.7);
+    width: 466px;
+  }
+}

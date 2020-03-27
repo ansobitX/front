@@ -166,7 +166,6 @@ class SidebarContainer extends React.Component<Props, State> {
             lightBox,
             'pg-sidebar-wrapper--active': isActive,
             'pg-sidebar-wrapper--hidden': !isActive,
-            'pg-sidebar-wrapper--trading': address.includes('/trading'),
         });
 
         return (

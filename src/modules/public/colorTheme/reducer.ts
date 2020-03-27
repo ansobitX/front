@@ -30,13 +30,11 @@ export const changeColorThemeReducer = (state = initialChangeColorThemeState, ac
             return {
                 ...state,
                 sideBarActive: action.payload,
-                marketSelectorActive: false,
             };
         case TOGGLE_MARKET_SELECTOR:
             return {
                 ...state,
                 marketSelectorActive: !state.marketSelectorActive,
-                sideBarActive: false,
             };
         default:
             return state;

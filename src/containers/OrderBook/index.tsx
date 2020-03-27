@@ -91,8 +91,8 @@ class OrderBookContainer extends React.Component<Props, State> {
                 maxVolume={calcMaxVolume(bids, asks)}
                 orderBookEntryAsks={accumulateVolume(asks)}
                 orderBookEntryBids={accumulateVolume(bids)}
-                rowBackgroundColorAsks={'rgba(174, 10, 4, 0.5)'}
-                rowBackgroundColorBids={'rgba(31, 193, 167, 0.5)'}
+                rowBackgroundColorAsks={'rgb(236,196,195)'}
+                rowBackgroundColorBids={'rgb(201, 240, 234)'}
                 dataAsks={this.renderOrderBook(asksData, 'asks', this.props.intl.formatMessage({id: 'page.noDataToShow'}), this.props.currentMarket)}
                 dataBids={this.renderOrderBook(bids, 'bids', this.props.intl.formatMessage({id: 'page.noDataToShow'}), this.props.currentMarket)}
                 headers={this.renderHeaders()}
@@ -119,21 +119,29 @@ class OrderBookContainer extends React.Component<Props, State> {
               <React.Fragment>
                   <span className={cn}>
                       {Decimal.format(Number((marketTickers[currentMarket.id] || defaultTicker).last), currentMarket.price_precision)} {currentMarket.quote_unit.toUpperCase()}
+                      &nbsp;
+                      {currentMarket.quote_unit.toUpperCase()}
                   </span>
                   <span>{this.props.intl.formatMessage({id: 'page.body.trade.orderbook.lastMarket'})}</span>
               </React.Fragment>
             );
         } else {
-          return <React.Fragment><span className={'cr-combined-order-book__market-negative'}>0</span><span>{this.props.intl.formatMessage({id: 'page.body.trade.orderbook.lastMarket'})}</span></React.Fragment>;
+          return (
+            <React.Fragment>
+                <span className={'cr-combined-order-book__market-negative'}>0&nbsp;{currentMarket ? currentMarket.quote_unit.toUpperCase() : ''}</span>
+                <span>{this.props.intl.formatMessage({id: 'page.body.trade.orderbook.lastMarket'})}</span>
+            </React.Fragment>
+        );
         }
     };
 
     private renderHeaders = () => {
-        const { intl, currentMarket } = this.props;
+        const { intl } = this.props;
+
         return [
-            `${intl.formatMessage({id: 'page.body.trade.orderbook.header.price'})}\n(${currentMarket && currentMarket.quote_unit.toUpperCase()})`,
-            `${intl.formatMessage({id: 'page.body.trade.orderbook.header.amount'})}\n(${currentMarket && currentMarket.base_unit.toUpperCase()})`,
-            `${intl.formatMessage({id: 'page.body.trade.orderbook.header.volume'})}\n(${currentMarket && currentMarket.base_unit.toUpperCase()})`,
+            `${intl.formatMessage({id: 'page.body.trade.orderbook.header.price'})}`,
+            `${intl.formatMessage({id: 'page.body.trade.orderbook.header.amount'})}`,
+            `${intl.formatMessage({id: 'page.body.trade.orderbook.header.volume'})}`,
         ];
     };
 

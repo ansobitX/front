@@ -1,3 +1,4 @@
+import classnames from 'classnames';
 import * as React from 'react';
 import { InjectedIntlProps, injectIntl } from 'react-intl';
 import { connect, MapDispatchToPropsFunction, MapStateToProps } from 'react-redux';
@@ -18,6 +19,7 @@ import {
     RootState,
     selectCurrentMarket,
     selectMarketTickers,
+    selectSidebarState,
     selectUserInfo,
     selectUserLoggedIn,
     setCurrentMarket,
@@ -44,7 +46,7 @@ const breakpoints = {
 const cols = {
     lg: 24,
     md: 24,
-    sm: 12,
+    sm: 24,
     xs: 12,
     xxs: 12,
 };
@@ -60,6 +62,7 @@ interface ReduxProps {
     tickers: {
         [pair: string]: Ticker,
     };
+    sidebarOpened: boolean;
 }
 
 interface DispatchProps {
@@ -167,12 +170,16 @@ class Trading extends React.Component<Props, StateProps> {
     }
 
     public render() {
+        const { rgl, sidebarOpened } = this.props;
         const rowHeight = 14;
         const allGridItems = [...this.gridItems];
-        const {rgl} = this.props;
+
+        const tradingClass = classnames('pg-trading-screen', {
+            'pg-trading-screen--open': sidebarOpened,
+        });
 
         return (
-            <div className={'pg-trading-screen'}>
+            <div className={tradingClass}>
                 <div className={'pg-trading-wrap'}>
                     <ToolBar/>
                     <Grid
@@ -232,6 +239,7 @@ const mapStateToProps: MapStateToProps<ReduxProps, {}, RootState> = state => ({
     userLoggedIn: selectUserLoggedIn(state),
     rgl: selectGridLayoutState(state),
     tickers: selectMarketTickers(state),
+    sidebarOpened: selectSidebarState(state),
 });
 
 const mapDispatchToProps: MapDispatchToPropsFunction<DispatchProps, {}> = dispatch => ({

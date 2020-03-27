@@ -1,8 +1,10 @@
+import classnames from 'classnames';
 import { History } from 'history';
 import * as React from 'react';
 import { InjectedIntlProps, injectIntl } from 'react-intl';
 import { connect, MapDispatchToPropsFunction } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import { colors } from '../../constants';
 import {
     Market,
     RootState,
@@ -20,6 +22,7 @@ import { NavBar } from '../NavBar';
 
 import logo from '../../assets/images/logo.svg';
 import logoLight from '../../assets/images/logoLight.svg';
+import { ArrowBottomIcon } from './arrows/ArrowBottomIcon';
 
 interface ReduxProps {
     currentMarket: Market | undefined;
@@ -44,14 +47,18 @@ type Props = ReduxProps & HistoryProps & DispatchProps & InjectedIntlProps;
 // tslint:disable jsx-no-multiline-js
 class Head extends React.Component<Props> {
     public render() {
-        const { colorTheme, mobileWallet } = this.props;
+        const { colorTheme, mobileWallet, sidebarOpened } = this.props;
         const tradingCls = window.location.pathname.includes('/trading') ? 'pg-container-trading' : '';
         const shouldRenderHeader = window.location.pathname.includes('/trading');
+
+        const headerClass = classnames('pg-header', {
+            'pg-header--open': sidebarOpened,
+        });
 
         return (
             <React.Fragment>
             {shouldRenderHeader &&
-                <header className={`pg-header`}>
+                <header className={headerClass}>
                     <div className={`pg-header__content ${tradingCls}`}>
                         <div
                             className={`pg-sidebar__toggler ${mobileWallet && 'pg-sidebar__toggler-mobile'}`}
@@ -109,22 +116,22 @@ class Head extends React.Component<Props> {
     };
 
     private renderMarketToggler = () => {
-        const { currentMarket, marketSelectorOpened, colorTheme } = this.props;
-        const isLight = colorTheme === 'light';
+        const { currentMarket, marketSelectorOpened } = this.props;
+
         if (!window.location.pathname.includes('/trading/')) {
             return null;
         }
 
+        const selectorClass = classnames('pg-header__market-selector-toggle', {
+            'pg-header__market-selector-toggle--open': marketSelectorOpened,
+        });
+
         return (
-            <div className="pg-header__market-selector-toggle" onClick={this.props.toggleMarketSelector}>
+            <div className={selectorClass} onClick={this.props.toggleMarketSelector}>
                 <p className="pg-header__market-selector-toggle-value">
                     {currentMarket && currentMarket.name}
                 </p>
-                {marketSelectorOpened ? (
-                    <img src={require(`./arrows/arrowBottom${isLight ? 'Light' : ''}.svg`)} alt="arrow"/>
-                ) : (
-                    <img src={require(`./arrows/arrowRight${isLight ? 'Light' : ''}.svg`)} alt="arrow"/>
-                )}
+                <ArrowBottomIcon fillColor={marketSelectorOpened ? colors.light.navbar.selectorArrowActive : colors.light.navbar.selectorArrow} />
             </div>
         );
     };
