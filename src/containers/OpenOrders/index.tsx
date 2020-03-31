@@ -72,7 +72,6 @@ export class OpenOrdersContainer extends React.Component<Props> {
                                 '' :
                                 <span className="cr-table-header__cancel" onClick={this.handleCancelAll}>
                                     <FormattedMessage id="page.body.openOrders.header.button.cancelAll" />
-                                    <span className="cr-table-header__close" />
                                 </span>
                         }
                     </div>

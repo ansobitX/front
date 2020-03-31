@@ -118,7 +118,7 @@ class OrderBookContainer extends React.Component<Props, State> {
           return (
               <React.Fragment>
                   <span className={cn}>
-                      {Decimal.format(Number((marketTickers[currentMarket.id] || defaultTicker).last), currentMarket.price_precision)} {currentMarket.quote_unit.toUpperCase()}
+                      {Decimal.format(Number((marketTickers[currentMarket.id] || defaultTicker).last), currentMarket.price_precision)}
                       &nbsp;
                       {currentMarket.quote_unit.toUpperCase()}
                   </span>
