@@ -25,6 +25,15 @@
       margin-top: 120px;
       min-height: 251px;
       height: 251px;
+      margin: 0 auto;
+
+      &__header {
+        height: auto !important;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 18px;
+        margin-bottom: 15px;
+      }
 
       .btn-primary {
         font-size: 14px;
@@ -66,16 +75,7 @@
         }
       }
 
-      &__header {
-        width: calc(var(--big-gap) * 6.3);
-        height: calc(var(--gap) * 4.33);
-        font-style: normal;
-        font-weight: normal;
-        line-height: calc(var(--gap) * 2.66);
-        font-size: calc(var(--gap) * 2.33);
-        color: var(--placeholder-text);
-        margin: calc(var(--gap) * 0.83);
-      }
+      
 
       &__cros-icon {
         position: absolute;
@@ -135,7 +135,8 @@
     margin-top: 50px;
     padding: 0 20px;
     overflow: hidden;
-    height: 91vh !important;
+    height: 94vh !important;
+
     .pg-sign-in-screen__container {
       margin: calc(var(--gap) * 3.33) calc(var(--gap) * 1.66) 0;
       width: 100%;
@@ -147,6 +148,7 @@
         width: 100%;
       }
       .cr-email-form {
+        margin-top: 120px;
         width: 100%;
       }
     }
