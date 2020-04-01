@@ -60,6 +60,13 @@
 
     &__option {
       background: var(--header);
+
+      &-inner {
+        text-transform: none;
+        font-size: 13px;
+        letter-spacing: 0.1px;
+      }
+
       .__selected {
         border-bottom: 2px solid var(--sign-in-accent);
         color: var(--color-white);
@@ -76,10 +83,6 @@
       flex-direction: column-reverse;
       margin-top: 0;
       max-width: 650px;
-
-      .cr-sign-in-form {
-        width: auto;
-      }
     }
 
     &__container {
@@ -90,6 +93,14 @@
 
     .register-info {
       padding: 0;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .pg-sign-in-screen {
+    .cr-sign-in-form {
+      width: auto;
     }
   }
 }

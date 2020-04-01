@@ -30,7 +30,7 @@
     border-top-right-radius: 3px;
 
     .__selected {
-      border-bottom: 2px solid var(--input-block-border-color);
+      border-bottom: 2.4px solid var(--input-block-border-color);
       color: var(--bright-1);
     }
   }
@@ -41,11 +41,11 @@
     height: 58px;
     margin: 0 auto;
     text-align: center;
-    text-transform: uppercase;
+    text-transform: none;
     line-height: 58px;
     font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
+    font-weight: bold;
+    font-size: 13px;
     letter-spacing: 0.0357143em;
     cursor: pointer;
   }
@@ -129,6 +129,11 @@
 
     .btn-primary {
       background-color: var(--green);
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 17px;
+      letter-spacing: 1px;
+      height: 40px;
 
       &:disabled,
       &:hover,
@@ -208,6 +213,12 @@
     z-index: 2;
     right: 0;
     left: 0;
-    top: 10px;
+    top: 5px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cr-sign-up-form__recaptcha {
+    top: -15px;
   }
 }
