@@ -24,6 +24,7 @@ import {
     toggle2faFetch,
     toggleUser2fa,
 } from '../../../modules/user/profile';
+import { ProfileTwoFactorAuthScreen } from '../../../screens';
 
 
 interface ReduxProps {
@@ -64,6 +65,7 @@ interface State {
     confirmPasswordFocus: boolean;
     code2FA: string;
     code2FAFocus: boolean;
+    showEnable2faModal: boolean;
 }
 
 type Props = ReduxProps & DispatchProps & RouterProps & ProfileProps & InjectedIntlProps & OnChangeEvent;
@@ -83,6 +85,7 @@ class ProfileAuthDetailsComponent extends React.Component<Props, State> {
             confirmPasswordFocus: false,
             code2FA: '',
             code2FAFocus: false,
+            showEnable2faModal: false,
         };
     }
 
@@ -250,6 +253,13 @@ class ProfileAuthDetailsComponent extends React.Component<Props, State> {
                 <div className="pg-profile-page__row">
                     <ProfileTwoFactorAuth is2faEnabled={this.props.user.otp} navigateTo2fa={this.handleNavigateTo2fa}/>
                 </div>
+                {this.state.showEnable2faModal &&
+                    <div className="pg-2fa-enable">
+                        <div className="pg-2fa-enable__modal">
+                            <ProfileTwoFactorAuthScreen closeModal={this.handleShowEnable2faModal}/>
+                        </div>
+                    </div>
+                }
             </React.Fragment>
         );
     };
@@ -368,7 +378,7 @@ class ProfileAuthDetailsComponent extends React.Component<Props, State> {
 
     private handleNavigateTo2fa = (enable2fa: boolean) => {
         if (enable2fa) {
-            this.props.history.push('/security/2fa', { enable2fa });
+            this.handleShowEnable2faModal();
         } else {
             this.setState({
                 showModal: !this.state.showModal,
@@ -424,6 +434,12 @@ class ProfileAuthDetailsComponent extends React.Component<Props, State> {
         const isConfirmPasswordValid = newPassword === confirmationPassword;
 
         return oldPassword && isNewPasswordValid && isConfirmPasswordValid;
+    }
+
+    private handleShowEnable2faModal = () => {
+        this.setState(prevState => ({
+            showEnable2faModal: !prevState.showEnable2faModal,
+        }));
     }
 }
 

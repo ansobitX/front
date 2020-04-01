@@ -16,6 +16,10 @@ import {
     toggleUser2fa,
 } from '../../modules/user/profile';
 
+interface OwnProps {
+    closeModal: () => void;
+}
+
 interface RouterProps {
     history: History;
 }
@@ -33,7 +37,7 @@ interface DispatchProps {
     fetchSuccess: typeof alertPush;
 }
 
-type Props = RouterProps & ReduxProps & DispatchProps & InjectedIntlProps;
+type Props = RouterProps & ReduxProps & DispatchProps & InjectedIntlProps & OwnProps;
 
 interface State {
     otpCode: string;
@@ -108,78 +112,74 @@ class ToggleTwoFactorAuthComponent extends React.Component<Props, State> {
         const submitHandler = enable2fa ? this.handleEnable2fa : this.handleDisable2fa;
 
         return (
-            <div className="container mt-5 pg-profile-two-factor-auth__form p-0">
-                <div className="row m-0 pg-profile-two-factor-auth__header">
-                    <div className="col-11 col-lg-7 offset-lg-4 mt-0 p-0 pl-3">
+            <div className="container pg-profile-two-factor-auth__form">
+                <div className="pg-profile-two-factor-auth__header">
+                    <div className="pg-profile-two-factor-auth__header__text">
                         {this.translate('page.body.profile.header.account.content.twoFactorAuthentication.header')}
                     </div>
-                    <div className="col-1 mx-0 p-0 px-1" onClick={this.goBack}>
+                    <div className="close" onClick={this.goBack}>
                         <img alt="" src={require('./close.svg')} />
                     </div>
                 </div>
 
-                <div className="row m-0 pg-profile-two-factor-auth__body">
-                    <div className="col-12 col-lg-8 col-md-9 pr-0 pl-2 pg-profile-two-factor-auth__body--text d-inline-block">
-                        <div className="row col-12 pg-profile-two-factor-auth__body--text--group">
-                            <div className="d-inline">
-                                <span>1   </span>
+                <div className="pg-profile-two-factor-auth__body">
+                    <div className="pg-profile-two-factor-auth__body--text">
+                        <div className="pg-profile-two-factor-auth__body--text--group">
+                            <div className="number">1</div>
+                            <div className="info">
                                 {this.translate('page.body.profile.header.account.content.twoFactorAuthentication.message.1')}
                                 <a target="_blank" rel="noopener noreferrer" href="https://itunes.apple.com/ru/app/google-authenticator/id388497605?mt=8">AppStore </a>
                                 {this.translate('page.body.profile.header.account.content.twoFactorAuthentication.message.or')}
                                 <a target="_blank" rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl">Google play</a>
                             </div>
                         </div>
-                        <div className="row col-12 pg-profile-two-factor-auth__body--text--group">
-                            <div className="d-inline">
-                                <span>2    </span>
-                                {this.translate('page.body.profile.header.account.content.twoFactorAuthentication.message.2')}
-                                <br />
-                                {this.translate('page.body.profile.header.account.content.twoFactorAuthentication.message.3')}
+                        <div className="pg-profile-two-factor-auth__body--text--group">
+                            <div className="number">2</div>
+                            <div className="info">
+                            {this.translate('page.body.profile.header.account.content.twoFactorAuthentication.message.2')}
+                            <br />
+                            {this.translate('page.body.profile.header.account.content.twoFactorAuthentication.message.3')}
                             </div>
                         </div>
                     </div>
-                    <div className="col-12 col-lg-4 col-md-3 pt-4 pg-profile-two-factor-auth__body--barcode">
+                    <div className="pg-profile-two-factor-auth__body--barcode">
                         {enable2fa && this.renderTwoFactorAuthQR(barcode)}
                     </div>
                 </div>
-                <div className="row m-0 p-5 pg-profile-two-factor-auth__copyablefield">
+                <div className="pg-profile-two-factor-auth__copyablefield">
                     {enable2fa && secret && this.renderSecret(secret)}
                 </div>
-                <div className="row m-0 pg-profile-two-factor-auth__body">
-                    <div className="col-12 pl-2 pg-profile-two-factor-auth__body--text d-inline-block">
-                        <div className="row col-12 pg-profile-two-factor-auth__body--text--group">
-                            <div className="col-12 col-md-8 col-sm-7">
-                                <span>3   </span>
-                                {this.translate('page.body.profile.header.account.content.twoFactorAuthentication.message.4')}
-                            </div>
-                            <div className="col-12 col-md-4 col-sm-5">
-                                <fieldset className="pg-profile-two-factor-auth__body--input">
-                                    <CustomInput
-                                        handleChangeInput={this.handleOtpCodeChange}
-                                        type="tel"
-                                        inputValue={otpCode}
-                                        placeholder={this.translate('page.body.profile.header.account.content.twoFactorAuthentication.subHeader')}
-                                        onKeyPress={this.handleEnterPress}
-                                        label={this.translate('page.body.profile.header.account.content.twoFactorAuthentication.subHeader')}
-                                        defaultLabel=""
-                                    />
-                                </fieldset>
-                            </div>
+                <div className="pg-profile-two-factor-auth__body">
+                    <div className="pg-profile-two-factor-auth__body--text">
+                        <div className="pg-profile-two-factor-auth__body--text--group">
+                                <div className="number">3</div>
+                                <div className="info">{this.translate('page.body.profile.header.account.content.twoFactorAuthentication.message.4')}</div>
                         </div>
                     </div>
-                </div>
-                <div className="row p-5">
-                    <div className="col-12 m-0">
-                        <Button
-                            onClick={submitHandler}
-                            size="lg"
-                            variant="primary"
-                            type="button"
-                            block={true}
-                        >
-                            {this.translate('page.body.profile.header.account.content.twoFactorAuthentication.enable')}
-                        </Button>
+                    <div className="input-2fa">
+                        <fieldset className="pg-profile-two-factor-auth__body--input">
+                            <CustomInput
+                                handleChangeInput={this.handleOtpCodeChange}
+                                type="tel"
+                                inputValue={otpCode}
+                                placeholder={this.translate('page.body.profile.header.account.content.twoFactorAuthentication.subHeader')}
+                                onKeyPress={this.handleEnterPress}
+                                label={this.translate('page.body.profile.header.account.content.twoFactorAuthentication.subHeader')}
+                                defaultLabel=""
+                            />
+                        </fieldset>
                     </div>
+                </div>
+                <div className="pg-profile-two-factor-auth__button">
+                    <Button
+                        onClick={submitHandler}
+                        size="lg"
+                        variant="primary"
+                        type="button"
+                        block={true}
+                    >
+                        {this.translate('page.body.profile.header.account.content.twoFactorAuthentication.enable')}
+                    </Button>
                 </div>
             </div>
         );
@@ -245,7 +245,7 @@ class ToggleTwoFactorAuthComponent extends React.Component<Props, State> {
     };
 
     private goBack = () => {
-        window.history.back();
+        this.props.closeModal();
     };
 }
 

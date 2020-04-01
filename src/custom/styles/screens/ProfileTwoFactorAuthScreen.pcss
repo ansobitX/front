@@ -1,0 +1,210 @@
+.pg-profile-two-factor-auth {
+  display: block;
+  margin: 0 auto;
+  width: 535px;
+  height: 479px;
+  background-color: var(--white);
+
+  &__form {
+    padding: 0;
+  }
+
+  &__header {
+    width: 100%;
+    height: 59px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-bottom: 1px solid var(--border-grey);
+    margin-bottom: 23px;
+
+    &__text {
+      font-weight: 600;
+      font-size: 13px;
+      line-height: 22px;
+      letter-spacing: 0.1px;
+    }
+
+    .close {
+      position: absolute;
+      right: 24px;
+    }
+  }
+
+  &__body {
+    padding: 0 22px;
+    display: flex;
+    justify-content: space-between;
+
+    &--barcode {
+      img {
+        width: 149px;
+        height: 149px;
+      }
+    }
+
+    &--text {
+      width: 65%;
+    }
+
+    &--text--group {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-height: 63px;
+
+      .number {
+        font-weight: bold;
+        font-size: 36px;
+        line-height: 44px;
+        letter-spacing: 0.25px;
+        color: var(--border-grey-primary);
+        width: 22px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .info {
+        font-weight: 500;
+        font-size: 11px;
+        line-height: 15px;
+        letter-spacing: 0.1px;
+        width: 266px;
+      }
+
+      &:first-child {
+        margin-bottom: 49px;
+        height: 28px;
+      }
+    }
+
+    &:nth-child(4) {
+      display: flex;
+      height: max-content;
+      margin-bottom: 20px;
+
+      .pg-profile-two-factor-auth__body--text {
+        display: flex;
+        align-items: center;
+
+        &--group {
+          margin-bottom: 0;
+          width: 100%;
+        }
+      }
+
+      .input-2fa {
+        width: 143px;
+        height: 49px;
+        display: flex;
+        align-items: center;
+        border: 1px solid var(--icons);
+        border-radius: 4px;
+        position: relative;
+
+        .custom-input {
+          label {
+            left: 13px;
+            font-weight: 500;
+            font-size: 11px;
+            line-height: 15px;
+            color: var(--placeholder-text);
+          }
+
+          input {
+            border: none !important;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 18px;
+            letter-spacing: 0.1px;
+            color: var(--bright-0-5);
+          }
+        }
+
+        &:focus-within {
+          border-color: var(--sign-in-accent);
+        }
+      }
+    }
+  }
+
+  &__copyablefield {
+    padding: 0 22px;
+    margin-top: 30px;
+    margin-bottom: 34px;
+
+    &__container {
+      position: relative;
+      border: 1px solid var(--icons);
+      border-radius: 4px;
+      height: 49px;
+      display: flex;
+      align-items: center;
+
+      fieldset {
+        width: 100%;
+
+        .cr-copyable-text-field {
+          padding: 0 13px;
+
+          .input-group {
+            justify-content: space-between;
+
+            .custom-input {
+              width: 75%;
+
+              input {
+                font-weight: 500;
+                font-size: 12px;
+                line-height: 18px;
+                letter-spacing: 0.1px;
+                color: var(--bright-0-5);
+                padding: 0;
+              }
+            }
+
+            &-append {
+              button {
+                background: var(--green) !important;
+                border: none !important;
+                border-radius: 4px;
+                width: 113px;
+              }
+            }
+          }
+        }
+      }
+
+      legend {
+        font-weight: 500;
+        font-size: 11px;
+        line-height: 15px;
+        position: absolute;
+        z-index: 1;
+        background: var(--main-bg);
+        top: -8px;
+        left: 13px;
+        width: auto;
+        padding: 0 3px;
+        color: var(--placeholder-text);
+      }
+    }
+  }
+
+  &__button {
+    padding: 0 22px;
+
+    button {
+      background: var(--green) !important;
+      border: none !important;
+      border-radius: 4px;
+
+      &:hover,
+      &:focus {
+        background: var(--green) !important;
+        border: none !important;
+      }
+    }
+  }
+}
