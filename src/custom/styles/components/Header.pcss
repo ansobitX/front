@@ -11,7 +11,8 @@
   top: 0;
   z-index: 10;
 
-  .pg-landing-screen__header__left {
+  .pg-landing-screen__header__left,
+  .pg-landing-screen__header__mobile__left {
     img {
       &:first-child {
         display: none;
@@ -19,6 +20,16 @@
 
       &:last-child {
         display: block;
+      }
+    }
+  }
+
+  .pg-landing-screen__header__mobile {
+    padding: 0 20px;
+
+    .hamburger-menu {
+      span {
+        background: var(--accent);
       }
     }
   }
