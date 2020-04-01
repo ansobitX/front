@@ -270,15 +270,21 @@
         .cr-modal__container-header {
           padding: 0;
           height: 58px;
+          position: relative;
 
           .cr-email-form__cros-icon {
             cursor: pointer;
             display: inline-block;
-            height: calc(var(--gap) * 2.5);
-            margin-top: calc(var(--gap) * 0.2);
-            margin-left: calc(var(--gap) * 3.6);
             position: absolute;
-            width: calc(var(--gap) * 2.5);
+            right: 10px;
+          }
+        }
+
+        .pg-exchange-modal-submit-footer {
+          button {
+            height: 40px;
+            background: var(--green) !important;
+            border: none !important;
           }
         }
 
@@ -561,13 +567,19 @@
       }
     }
     .button-confirmation {
-        margin: calc(var(--gap) * 3);
-        bottom: calc(var(--gap) * 4.33);
-        padding-left: calc(var(--gap) * 0.66);
+      margin: calc(var(--gap) * 3);
+      bottom: calc(var(--gap) * 4.33);
+      padding-left: calc(var(--gap) * 0.66);
 
-        input {
-          margin: auto;
-        }
+      button {
+        height: 40px;
+        background: var(--green) !important;
+        border: none !important;
+      }
+
+      input {
+        margin: auto;
+      }
     }
 
     .cr-button {
@@ -608,8 +620,11 @@
 
         fieldset {
           border: 1px solid var(--input-block-border-color);
-          padding: 0 8px 0 9px;
+          padding: 0 9px;
           border-radius: var(--gap);
+          height: 49px;
+          display: flex;
+          align-items: center;
 
           legend {
             color: var(--text-muted);
@@ -625,8 +640,11 @@
           }
 
           .cr-copyable-text-field {
-            padding: 9px 2px;
+            padding: 0;
             border: none;
+            height: 49px;
+            display: flex;
+            align-items: center;
 
             .input-group {
               display: flex;
@@ -634,10 +652,21 @@
               justify-content: space-between;
 
               .custom-input {
-                width: 70%;
+                width: 67%;
+                display: flex;
+                align-items: center;
 
                 label {
                   margin-top: -18px;
+                }
+              }
+
+              &-append {
+                button {
+                  border-radius: 4px;
+                  width: 113px;
+                  border: none !important;
+                  background: var(--green) !important;
                 }
               }
             }
@@ -701,7 +730,6 @@
 
   &__pull-right {
     float: right;
-
   }
 
   &__text-center {
@@ -854,13 +882,14 @@
 
   .custom-switch .custom-control-label::before {
     height: 14px;
+    width: 34px;
     border-radius: 12px;
-    background: rgba(#1FC1A7, 0.2);
-    border-color: rgba(#1FC1A7, 0.1);
+    background: var(--icons-light);
+    border-color: var(--icons-light);
     top: 0;
-    left: -30px;
+    left: -40px;
   }
-  
+
   .custom-control-input:checked~.custom-control-label::before {
     background: rgba(#1FC1A7, 0.38);
     border-color: rgba(#1FC1A7, 0.1);
@@ -869,7 +898,7 @@
     top: 0;
     left: -30px;
   }
-  
+
   .custom-switch .custom-control-input:checked~.custom-control-label::after,
   .custom-switch .custom-control-label::after {
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2), 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 0px 2px rgba(0, 0, 0, 0.14);
@@ -878,10 +907,11 @@
     width: 20px;
     border-radius: 10px;
     top: -3px;
+    left: -25px;
   }
   .custom-switch .custom-control-label::after {
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2), 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 0px 2px rgba(0, 0, 0, 0.14);
-    background: rgba(#1FC1A7, 0.38);
+    background: var(--icons);
     height: 20px;
     width: 20px;
     border-radius: 10px;
@@ -899,7 +929,7 @@
 .cr-modal {
   .cr-email-form {
     background: var(--email-form-bg);
-    min-height: calc(var(--big-gap) * 5);
+    min-height: calc(var(--big-gap) * 4);
     width: calc(var(--big-gap) * 7.06);
 
     &__option {
@@ -909,13 +939,17 @@
     &__options-group {
       width: 100%;
       height: calc(var(--big-gap) * 0.97);
-      border-bottom: 2px solid var(--email-form-border);
+      border-bottom: 1px solid var(--email-form-border);
     }
 
     &__label {
       background: var(--email-form-bg);
       position: absolute;
       top: 0px;
+    }
+
+    &__form-content {
+      top: 70px;
     }
 
     &__input {
@@ -936,26 +970,52 @@
     &__header {
       width: calc(var(--big-gap) * 6.3);
       height: calc(var(--gap) * 4.33);
-      font-style: normal;
-      font-weight: normal;
-      line-height: calc(var(--gap) * 2.66);
-      font-size: calc(var(--gap) * 2.33);
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 18px;
       color: var(--placeholder-text);
       margin: calc(var(--gap) * 0.83);
     }
 
+    &__group {
+      height: 49px;
+      border: 1px solid var(--icons);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+
+      .custom-input {
+        width: 100%;
+
+        input {
+          border: none !important;
+        }
+
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+      }
+    }
+
     &__group--focused {
+      border: 2px solid var(--sign-in-accent);
+
       .cr-sign-in-form__label {
         color: var(--sign-in-accent);
-      }
-
-      input {
-        border: 2px solid var(--sign-in-accent) !important;
       }
     }
 
     &__button-wrapper {
       min-height: calc(var(--gap) * 10);
+      position: initial;
+      
+      button {
+        height: 40px;
+        background: var(--green) !important;
+        border: none !important;
+      }
     }
 
     &__button {
@@ -990,14 +1050,14 @@
     }
 
     .pg-profile-page__close {
-        position: absolute;
-        display: inline-block;
-        right: calc(var(--gap) * 3.33);
-        margin-top: calc(var(--gap) * 2.6);
-        height: calc(var(--gap) * 2.5);
-        width: calc(var(--gap) * 2.5);
-        overflow: hidden;
-        cursor: pointer;
+      position: absolute;
+      display: inline-block;
+      right: calc(var(--gap) * 3.33);
+      margin-top: calc(var(--gap) * 2.6);
+      height: calc(var(--gap) * 2.5);
+      width: calc(var(--gap) * 2.5);
+      overflow: hidden;
+      cursor: pointer;
     }
   }
 }
