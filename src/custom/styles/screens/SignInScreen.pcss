@@ -43,14 +43,15 @@
 
   .cr-sign-in-form {
     background: var(--base-bright);
-    margin: 0 auto;
     border-radius: calc(var(--gap) * 0.66);
+    margin: 0 30px;
     min-height: calc(var(--big-gap) * 10);
+    min-width: 348px;
 
     &__options-group {
       width: 100%;
       height: calc(var(--big-gap) * 0.97);
-      border-bottom: 2px solid var(--sign-in-text);
+      border-bottom: none !important;
     }
 
 
@@ -94,6 +95,10 @@
     .register-info {
       padding: 0;
     }
+  }
+
+  .cr-sign-in-form {
+    margin: 0 auto !important;
   }
 }
 
