@@ -26,7 +26,8 @@ export interface EmailFormProps {
     renderCaptcha?: JSX.Element | null;
     reCaptchaSuccess?: boolean;
     geetestCaptchaSuccess?: boolean;
-    captcha_response?: string;}
+    captcha_response?: string;
+}
 
 export class EmailForm extends React.Component<EmailFormProps> {
     public render() {
