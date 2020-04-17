@@ -10,7 +10,7 @@ import { connect, MapStateToProps } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'redux';
 import { GeetestCaptcha } from '../../containers';
-import { setDocumentTitle } from '../../helpers';
+import { EMAIL_REGEX, setDocumentTitle } from '../../helpers';
 import {
     Configs,
     emailVerificationFetch,
@@ -71,6 +71,8 @@ class EmailVerificationComponent extends React.Component<Props, VerificationStat
         }
     }
 
+    public translate = (id: string) => this.props.intl.formatMessage({ id });
+
     public renderCaptcha = () => {
         const { shouldGeetestReset } = this.state;
         const { configs } = this.props;
@@ -102,26 +104,32 @@ class EmailVerificationComponent extends React.Component<Props, VerificationStat
     public render() {
         const { emailVerificationLoading } = this.props;
 
-        const title = this.props.intl.formatMessage({ id: 'page.header.signUp.modal.header' });
-        const text = this.props.intl.formatMessage({ id: 'page.header.signUp.modal.body' });
-        const button = this.props.intl.formatMessage({ id: 'page.resendConfirmation' });
+        const button = (
+            <button
+                className="pg-emailverification-body-container-button"
+                onClick={this.handleClick}
+                disabled={this.disableButton()}
+            >
+                {this.translate('page.resendConfirmation')}
+            </button>
+        );
 
         return (
             <div className="pg-emailverification-container">
                 <div className="pg-emailverification">
-                    <div className="pg-emailverification-title">{title}</div>
+                    <div className="pg-emailverification-title">{this.translate('page.header.signUp.modal.header')}</div>
                     <div className="pg-emailverification-body">
-                        <div className="pg-emailverification-body-text">{text}</div>
+                        <div className="pg-emailverification-body-text">{this.translate('page.header.signUp.modal.body')}</div>
                         <this.renderCaptcha />
                         <div className="pg-emailverification-body-container">
-                            {emailVerificationLoading ? <Spinner animation="border" variant="primary" /> : <button className="pg-emailverification-body-container-button" onClick={this.handleClick}>{button}</button>}
+                            {emailVerificationLoading && <Spinner animation="border" variant="primary" />}
+                            {!emailVerificationLoading && button}
                         </div>
                     </div>
                 </div>
             </div>
         );
     }
-
 
     private handleClick = () => {
         const { captcha_response } = this.state;
@@ -149,6 +157,25 @@ class EmailVerificationComponent extends React.Component<Props, VerificationStat
             geetestCaptchaSuccess: false,
             captcha_response: '',
         });
+    };
+
+    private disableButton = (): boolean => {
+        const { location, configs } = this.props;
+        const { geetestCaptchaSuccess, reCaptchaSuccess } = this.state;
+
+        if (location.state.email && !location.state.email.match(EMAIL_REGEX)) {
+            return true;
+        }
+
+        if (configs.captcha_type === 'recaptcha' && !reCaptchaSuccess) {
+            return true;
+        }
+
+        if (configs.captcha_type === 'geetest' && !geetestCaptchaSuccess) {
+            return true;
+        }
+
+        return false;
     };
 
     private handleReCaptchaSuccess = (value: string) => {
