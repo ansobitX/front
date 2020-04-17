@@ -6,6 +6,8 @@ import {
     MapStateToProps,
 } from 'react-redux';
 import { Redirect } from 'react-router';
+import { compose } from 'redux';
+import { languages } from '../../api';
 import {
     changeLanguage,
     RootState,
@@ -39,10 +41,12 @@ class Verification extends React.Component<Props, InjectedIntlProps> {
     public componentDidMount() {
         const token = extractToken(this.props);
         const lang = extractLang(this.props);
+
         if (token) {
             this.props.verification({ token });
         }
-        if (lang) {
+
+        if (lang && languages.includes(lang.toLowerCase())) {
             this.props.changeLanguage(lang.toLowerCase());
         }
     }
@@ -64,8 +68,7 @@ const mapDispatchToProps: MapDispatchToPropsFunction<DispatchProps, {}> =
         changeLanguage: lang => dispatch(changeLanguage(lang)),
     });
 
-const VerificationScreen = injectIntl(connect(mapStateToProps, mapDispatchToProps)(Verification));
-
-export {
-    VerificationScreen,
-};
+export const VerificationScreen = compose(
+    injectIntl,
+    connect(mapStateToProps, mapDispatchToProps),
+)(Verification) as any; // tslint:disable-line
