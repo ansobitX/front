@@ -22,7 +22,11 @@ export interface EmailFormProps {
     handleInputEmail: (value: string) => void;
     handleFieldFocus: () => void;
     handleReturnBack: () => void;
-}
+    captchaType?: 'recaptcha' | 'geetest' | 'none';
+    renderCaptcha?: JSX.Element | null;
+    reCaptchaSuccess?: boolean;
+    geetestCaptchaSuccess?: boolean;
+    captcha_response?: string;}
 
 export class EmailForm extends React.Component<EmailFormProps> {
     public render() {
@@ -35,14 +39,20 @@ export class EmailForm extends React.Component<EmailFormProps> {
             email,
             emailFocused,
             emailError,
+            captchaType,
         } = this.props;
+
+        const emailFormClass = cr('cr-email-form', {
+            'cr-email-form-high': captchaType && captchaType !== 'none',
+        });
+
         const emailGroupClass = cr('cr-email-form__group', {
             'cr-email-form__group--focused': emailFocused,
         });
 
         return (
             <form>
-                <div className="cr-email-form">
+                <div className={emailFormClass}>
                     <div className="cr-email-form__options-group">
                         <div className="cr-email-form__option">
                             <div className="cr-email-form__option-inner">
@@ -72,11 +82,12 @@ export class EmailForm extends React.Component<EmailFormProps> {
                             />
                             {emailError && <div className="cr-email-form__error">{emailError}</div>}
                         </div>
+                        {this.props.renderCaptcha}
                         <div className="cr-email-form__button-wrapper">
                             <Button
                                 block={true}
                                 type="button"
-                                disabled={isLoading || !email.match(EMAIL_REGEX)}
+                                disabled={this.disableButton()}
                                 onClick={e => this.handleClick(e)}
                                 size="lg"
                                 variant="primary"
@@ -114,5 +125,29 @@ export class EmailForm extends React.Component<EmailFormProps> {
         } else {
             this.handleSubmitForm();
         }
+    };
+
+    private disableButton = (): boolean => {
+        const {
+            email,
+            isLoading,
+            captchaType,
+            geetestCaptchaSuccess,
+            reCaptchaSuccess,
+        } = this.props;
+
+        if (isLoading || !email.match(EMAIL_REGEX)) {
+            return true;
+        }
+
+        if (captchaType === 'recaptcha' && !reCaptchaSuccess) {
+            return true;
+        }
+
+        if (captchaType === 'geetest' && !geetestCaptchaSuccess) {
+            return true;
+        }
+
+        return false;
     };
 }

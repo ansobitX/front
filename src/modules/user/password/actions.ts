@@ -1,5 +1,5 @@
 import { CommonError } from '../../types';
-
+import { GeetestCaptchaResponse } from '../auth';
 import {
     PASSWORD_CHANGE_FORGOT_PASSWORD_FETCH,
     PASSWORD_CHANGE_FORGOT_PASSWORD_SUCCESS,
@@ -14,6 +14,7 @@ export interface ForgotPasswordFetch {
     payload: {
         email: string;
         lang: string;
+        captcha_response?: string | GeetestCaptchaResponse;
     };
 }
 
