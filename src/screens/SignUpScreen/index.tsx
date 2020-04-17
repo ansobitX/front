@@ -388,14 +388,6 @@ class SignUp extends React.Component<Props> {
 
         if (refId) {
             switch (configs.captcha_type) {
-                case 'none':
-                    this.props.signUp({
-                        email,
-                        password,
-                        refid: refId,
-                        lang: i18n.toUpperCase(),
-                    });
-                    break;
                 case 'recaptcha':
                 case 'geetest':
                     this.props.signUp({
@@ -403,13 +395,13 @@ class SignUp extends React.Component<Props> {
                         password,
                         captcha_response,
                         refid: refId,
+                        lang: i18n.toUpperCase(),
                     });
                     break;
                 default:
                     this.props.signUp({
                         email,
                         password,
-                        captcha_response,
                         refid: refId,
                         lang: i18n.toUpperCase(),
                     });
@@ -417,20 +409,19 @@ class SignUp extends React.Component<Props> {
             }
         } else {
             switch (configs.captcha_type) {
-                case 'none':
-                    this.props.signUp({
-                        email,
-                        password,
-                        lang: i18n.toUpperCase(),
-                    });
-                    break;
                 case 'recaptcha':
                 case 'geetest':
-                default:
                     this.props.signUp({
                         email,
                         password,
                         captcha_response,
+                        lang: i18n.toUpperCase(),
+                    });
+                    break;
+                default:
+                    this.props.signUp({
+                        email,
+                        password,
                         lang: i18n.toUpperCase(),
                     });
                     break;
