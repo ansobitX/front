@@ -21,7 +21,7 @@ module.exports = function override(config, env) {
         const domain = process.env.BUILD_DOMAIN ? process.env.BUILD_DOMAIN.split(',') : [];
 
         config.plugins.push(
-            new JavaScriptObfuscator({ rotateUnicodeArray: true, domainLock: domain }, [commonJSFilename])
+            //new JavaScriptObfuscator({ rotateUnicodeArray: true, domainLock: domain }, //[commonJSFilename])
         );
     }
 
