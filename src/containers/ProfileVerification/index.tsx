@@ -104,7 +104,7 @@ class ProfileVerificationComponent extends React.Component<Props> {
     private renderVerificationLevel(text: string, userLevel, targetLevel) {
         if (userLevel === (targetLevel - 1)) {
             return (
-                <a href="/confirm" className="pg-profile-page__level-verification__url">
+                <a href="" className="pg-profile-page__level-verification__url">
                     <FormattedMessage id={`${text}.unverified.title`}/>
                 </a>
             );
@@ -139,7 +139,7 @@ class ProfileVerificationComponent extends React.Component<Props> {
               );
             } else {
               return (
-                <a href="/confirm" className="pg-profile-page__level-verification__url">
+                <a href="" className="pg-profile-page__level-verification__url">
                   <FormattedMessage id={`${text}.unverified.title`}/>
                 </a>
               );
