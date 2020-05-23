@@ -261,7 +261,7 @@ export const en = {
     'page.body.profile.header.account.profile.phone.unverified.title': 'Email to hello@ansobit.com to verify',
     'page.body.profile.header.account.profile.phone.title': 'Level 2 verified',
     'page.body.profile.header.account.profile.phone.message': 'Deposit/Trade enabled',
-    'page.body.profile.header.account.profile.identity.unverified.title': 'Email to hello@ansobit.com to verify',
+    'page.body.profile.header.account.profile.identity.unverified.title': 'Submit KYC Document',
     'page.body.profile.header.account.profile.identity.title': 'Level 3 verified',
     'page.body.profile.header.account.profile.identity.message': 'Withdraw enabled',
 
